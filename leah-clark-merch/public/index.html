@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leah Clark - Metal Prints</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #9d4edd;
+      --primary-dark: #7b2cbf;
+      --accent: #ff6b9d;
+      --gold: #ffd700;
+      --bg-dark: #0d0221;
+      --bg-card: #1a0a2e;
+      --text: #f0e6ff;
+      --text-muted: #a89cc8;
+    }
+    
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(ellipse at top, #1a0a2e 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #2d1b4e 0%, transparent 50%),
+        linear-gradient(180deg, #0d0221 0%, #1a0533 100%);
+      background-attachment: fixed;
+    }
+    
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.3), transparent);
+      background-size: 200px 200px;
+      animation: twinkle 4s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      margin-bottom: 30px;
+    }
+    
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold) 0%, #fff5c3 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+      letter-spacing: 3px;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    /* Email Entry Section */
+    .email-section {
+      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(157, 78, 221, 0.3);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .email-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--gold);
+    }
+    
+    .email-form {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .email-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 2px solid rgba(157, 78, 221, 0.5);
+      background: rgba(13, 2, 33, 0.8);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: 'Quicksand', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .email-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+    }
+    
+    .email-input::placeholder {
+      color: var(--text-muted);
+    }
+    
+    .btn {
+      padding: 15px 30px;
+      border-radius: 12px;
+      border: none;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
+    }
+    
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, #ffeb7a 100%);
+      color: var(--bg-dark);
+    }
+    
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Prints Grid */
+    .prints-section {
+      display: none;
+    }
+    
+    .prints-section.active {
+      display: block;
+    }
+    
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: var(--gold);
+      text-align: center;
+    }
+    
+    .prints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+    
+    .print-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(157, 78, 221, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    
+    .print-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 40px rgba(157, 78, 221, 0.3);
+    }
+    
+    .print-card.selected {
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    }
+    
+    .print-card.selected::before {
+      content: '✓';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 30px;
+      height: 30px;
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      z-index: 10;
+      animation: pop 0.3s ease;
+    }
+    
+    @keyframes pop {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    .print-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      background: #1a0a2e;
+    }
+    
+    .print-info {
+      padding: 20px;
+    }
+    
+    .print-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    
+    .print-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .print-size {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(157, 78, 221, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    
+    .print-price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    
+    .print-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: monospace;
+      opacity: 0.7;
+    }
+    
+    .add-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(157, 78, 221, 0.3);
+      color: var(--text);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .add-btn:hover {
+      background: var(--primary);
+    }
+    
+    .print-card.selected .add-btn {
+      background: var(--gold);
+      color: var(--bg-dark);
+    }
+    
+    /* Cart Summary */
+    .cart-summary {
+      position: sticky;
+      bottom: 20px;
+      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
+      border-radius: 20px;
+      padding: 25px;
+      border: 2px solid var(--primary);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    
+    .cart-summary.active {
+      display: block;
+    }
+    
+    .cart-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    
+    .cart-items {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+    
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+    }
+    
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    
+    .cart-item-name {
+      font-size: 0.95rem;
+    }
+    
+    .cart-item-price {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 2px solid var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .cart-total-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .cart-total-amount {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    
+    /* Confirmation Screen */
+    .confirmation {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .confirmation.active {
+      display: block;
+    }
+    
+    .confirmation-icon {
+      font-size: 80px;
+      margin-bottom: 30px;
+      animation: bounce 0.6s ease;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .confirmation h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .confirmation p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    
+    .order-summary {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px auto;
+      max-width: 500px;
+      text-align: left;
+      border: 1px solid rgba(157, 78, 221, 0.3);
+    }
+    
+    .order-summary h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(157, 78, 221, 0.3);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .email-form {
+        flex-direction: column;
+      }
+      
+      .prints-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cart-summary {
+        border-radius: 20px 20px 0 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        margin: 0;
+      }
+    }
+
+    /* Toast notifications */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  
+  <div class="container">
+    <header>
+      <h1 class="logo">Leah Clark</h1>
+      <p class="subtitle">Voice Actor • Metal Prints</p>
+    </header>
+    
+    <!-- Email Entry -->
+    <section class="email-section" id="emailSection">
+      <h2>✨ Start Your Order</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        Enter your email to browse prints. Your selection will be saved and ready when you reach the booth!
+      </p>
+      <div class="email-form">
+        <input 
+          type="email" 
+          class="email-input" 
+          id="emailInput" 
+          placeholder="your@email.com"
+          autocomplete="email"
+        >
+        <button class="btn btn-primary" onclick="startOrder()">
+          Browse Prints
+        </button>
+      </div>
+    </section>
+    
+    <!-- Prints Selection -->
+    <section class="prints-section" id="printsSection">
+      <h2 class="section-title">✨ Select Your Prints</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
+        Tap prints to add them to your order
+      </p>
+      
+      <div class="prints-grid" id="printsGrid">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Loading prints...</p>
+        </div>
+      </div>
+      
+      <!-- Cart Summary -->
+      <div class="cart-summary" id="cartSummary">
+        <h3 class="cart-title">🛒 Your Selection</h3>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total">
+          <span class="cart-total-label">Estimated Total:</span>
+          <span class="cart-total-amount" id="cartTotal">$0.00</span>
+        </div>
+        <button class="btn btn-gold" style="width: 100%;" onclick="submitOrder()">
+          Save My Order
+        </button>
+      </div>
+    </section>
+    
+    <!-- Confirmation -->
+    <section class="confirmation" id="confirmation">
+      <div class="confirmation-icon">🎉</div>
+      <h2>Order Saved!</h2>
+      <p>
+        Your selection has been saved. When you reach the booth, 
+        just give us your email and we'll have your order ready!
+      </p>
+      <div class="order-summary" id="orderSummary"></div>
+      <button class="btn btn-primary" onclick="modifyOrder()">
+        Modify Order
+      </button>
+    </section>
+  </div>
+  
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let prints = [];
+    let selectedPrints = new Map();
+    let userEmail = '';
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check for saved email in session
+      const savedEmail = sessionStorage.getItem('orderEmail');
+      if (savedEmail) {
+        document.getElementById('emailInput').value = savedEmail;
+      }
+    });
+    
+    async function startOrder() {
+      const email = document.getElementById('emailInput').value.trim();
+      
+      if (!email || !email.includes('@')) {
+        showToast('Please enter a valid email address');
+        return;
+      }
+      
+      userEmail = email;
+      sessionStorage.setItem('orderEmail', email);
+      
+      // Check for existing order
+      try {
+        const response = await fetch(`/api/orders/email/${encodeURIComponent(email)}`);
+        const data = await response.json();
+        
+        if (data.order) {
+          // Restore existing selections
+          data.order.items.forEach(item => {
+            selectedPrints.set(item.print_id, {
+              ...item,
+              quantity: item.quantity
+            });
+          });
+        }
+      } catch (err) {
+        console.error('Error checking existing order:', err);
+      }
+      
+      // Load prints and show section
+      await loadPrints();
+      
+      document.getElementById('emailSection').style.display = 'none';
+      document.getElementById('printsSection').classList.add('active');
+    }
+    
+    async function loadPrints() {
+      try {
+        const response = await fetch('/api/prints');
+        prints = await response.json();
+        renderPrints();
+      } catch (err) {
+        console.error('Error loading prints:', err);
+        document.getElementById('printsGrid').innerHTML = 
+          '<p style="color: var(--accent);">Error loading prints. Please refresh.</p>';
+      }
+    }
+    
+    function renderPrints() {
+      const grid = document.getElementById('printsGrid');
+      
+      // Group prints by image for better display
+      const printsByImage = {};
+      prints.forEach(print => {
+        const key = print.image_url;
+        if (!printsByImage[key]) {
+          printsByImage[key] = [];
+        }
+        printsByImage[key].push(print);
+      });
+      
+      grid.innerHTML = prints.map(print => `
+        <div class="print-card ${selectedPrints.has(print.id) ? 'selected' : ''}" 
+             data-id="${print.id}"
+             onclick="togglePrint(${print.id})">
+          <img src="${print.image_url}" alt="${print.name}" class="print-image" loading="lazy">
+          <div class="print-info">
+            <h3 class="print-name">${print.name}</h3>
+            <div class="print-details">
+              <span class="print-size">${print.size}</span>
+              <span class="print-price">$${print.price.toFixed(2)}</span>
+            </div>
+            <div class="print-label">${print.label}</div>
+            <button class="add-btn">
+              ${selectedPrints.has(print.id) ? '✓ Selected' : 'Add to Order'}
+            </button>
+          </div>
+        </div>
+      `).join('');
+      
+      updateCart();
+    }
+    
+    function togglePrint(printId) {
+      const print = prints.find(p => p.id === printId);
+      
+      if (selectedPrints.has(printId)) {
+        selectedPrints.delete(printId);
+      } else {
+        selectedPrints.set(printId, {
+          print_id: printId,
+          name: print.name,
+          size: print.size,
+          price: print.price,
+          quantity: 1
+        });
+      }
+      
+      renderPrints();
+    }
+    
+    function updateCart() {
+      const cartSummary = document.getElementById('cartSummary');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (selectedPrints.size === 0) {
+        cartSummary.classList.remove('active');
+        return;
+      }
+      
+      cartSummary.classList.add('active');
+      
+      let total = 0;
+      let itemsHtml = '';
+      
+      selectedPrints.forEach((item, id) => {
+        total += item.price * item.quantity;
+        itemsHtml += `
+          <div class="cart-item">
+            <span class="cart-item-name">${item.name} (${item.size})</span>
+            <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `;
+      });
+      
+      cartItems.innerHTML = itemsHtml;
+      cartTotal.textContent = `$${total.toFixed(2)}`;
+    }
+    
+    async function submitOrder() {
+      if (selectedPrints.size === 0) {
+        showToast('Please select at least one print');
+        return;
+      }
+      
+      const items = Array.from(selectedPrints.values()).map(item => ({
+        print_id: item.print_id,
+        quantity: item.quantity
+      }));
+      
+      try {
+        const response = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: userEmail,
+            items
+          })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          showConfirmation();
+        } else {
+          showToast('Error saving order. Please try again.');
+        }
+      } catch (err) {
+        console.error('Error submitting order:', err);
+        showToast('Error saving order. Please try again.');
+      }
+    }
+    
+    function showConfirmation() {
+      document.getElementById('printsSection').classList.remove('active');
+      document.getElementById('confirmation').classList.add('active');
+      
+      let total = 0;
+      let summaryHtml = '<h3>Your Order</h3><div class="cart-items">';
+      
+      selectedPrints.forEach((item) => {
+        total += item.price * item.quantity;
+        summaryHtml += `
+          <div class="cart-item">
+            <span class="cart-item-name">${item.name} (${item.size})</span>
+            <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `;
+      });
+      
+      summaryHtml += `</div>
+        <div class="cart-total">
+          <span class="cart-total-label">Total:</span>
+          <span class="cart-total-amount">$${total.toFixed(2)}</span>
+        </div>
+        <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.9rem;">
+          Order saved for: <strong>${userEmail}</strong>
+        </p>
+      `;
+      
+      document.getElementById('orderSummary').innerHTML = summaryHtml;
+    }
+    
+    function modifyOrder() {
+      document.getElementById('confirmation').classList.remove('active');
+      document.getElementById('printsSection').classList.add('active');
+    }
+    
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
