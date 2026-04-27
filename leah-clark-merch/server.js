@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Initialize lowdb
-const adapter = new JSONFile('db.json');
+const adapter = new JSONFile(path.join(__dirname, 'db.json'));
 const defaultData = {
   prints: [
     { id: 1, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT', size: '8.5x11', price: 15.00, image_url: '/prints/Aria_Chariot.png', active: true },
@@ -24,6 +24,12 @@ const defaultData = {
     { id: 6, name: 'Himiko Toga - Red', label: 'TOGA-RED-LG', size: '11x17', price: 25.00, image_url: '/prints/Cute_Red_Toga_11x17_tall.png', active: true },
     { id: 7, name: 'Himiko Toga - Mask', label: 'TOGA-MASK', size: '8.5x11', price: 15.00, image_url: '/prints/Himiko_Toga__Mask_2.jpg', active: true },
     { id: 8, name: 'Himiko Toga - Mask', label: 'TOGA-MASK-LG', size: '11x17', price: 25.00, image_url: '/prints/Himiko_Toga__Mask_2.jpg', active: true },
+    { id: 9, name: "Leah's Art", label: 'LEAHS-ART', size: '8.5x11', price: 15.00, image_url: '/prints/Leahs_Art.jpg', active: true },
+    { id: 10, name: "Leah's Art", label: 'LEAHS-ART-LG', size: '11x17', price: 25.00, image_url: '/prints/Leahs_Art.jpg', active: true },
+    { id: 11, name: 'Through The Key Hole', label: 'KEY-HOLE', size: '8.5x11', price: 15.00, image_url: '/prints/Through_The_Key_Hole.jpg', active: true },
+    { id: 12, name: 'Through The Key Hole', label: 'KEY-HOLE-LG', size: '11x17', price: 25.00, image_url: '/prints/Through_The_Key_Hole.jpg', active: true },
+    { id: 13, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN', size: '8.5x11', price: 15.00, image_url: '/prints/Toga_Chaco_Daylen.jpg', active: true },
+    { id: 14, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN-LG', size: '11x17', price: 25.00, image_url: '/prints/Toga_Chaco_Daylen.jpg', active: true },
   ],
   orders: [],
   nextOrderId: 1
@@ -37,8 +43,16 @@ if (!db.data) {
   db.data = defaultData;
 }
 if (!db.data.prints || db.data.prints.length === 0) {
-  db.data = { ...defaultData, ...db.data };
+  db.data.prints = defaultData.prints;
 }
+const existingPrintIds = new Set(db.data.prints.map((print) => print.id));
+defaultData.prints.forEach((print) => {
+  if (!existingPrintIds.has(print.id)) {
+    db.data.prints.push(print);
+  }
+});
+db.data.orders = Array.isArray(db.data.orders) ? db.data.orders : [];
+db.data.nextOrderId = Number.isInteger(db.data.nextOrderId) ? db.data.nextOrderId : 1;
 await db.write();
 
 // Middleware
@@ -59,13 +73,18 @@ app.get('/api/prints', (req, res) => {
 app.post('/api/orders', async (req, res) => {
   const { email, items } = req.body;
   
-  if (!email || !items || items.length === 0) {
+  if (!email || !Array.isArray(items) || items.length === 0) {
     return res.status(400).json({ error: 'Email and items are required' });
+  }
+
+  const normalizedEmail = String(email).trim().toLowerCase();
+  if (!/^\S+@\S+\.\S+$/.test(normalizedEmail)) {
+    return res.status(400).json({ error: 'A valid email is required' });
   }
   
   // Find existing pending order for this email
   const existingOrderIndex = db.data.orders.findIndex(
-    o => o.email.toLowerCase() === email.toLowerCase() && o.status === 'pending'
+    o => o.email.toLowerCase() === normalizedEmail && o.status === 'pending'
   );
   
   let orderId;
@@ -73,17 +92,25 @@ app.post('/api/orders', async (req, res) => {
   
   // Build items with print info
   const orderItems = items.map(item => {
-    const print = db.data.prints.find(p => p.id === item.print_id);
+    const printId = Number(item.print_id);
+    const print = db.data.prints.find(p => p.id === printId && p.active);
+    if (!print) return null;
+
+    const quantity = Math.max(1, Number.parseInt(item.quantity, 10) || 1);
     return {
-      print_id: item.print_id,
-      quantity: item.quantity || 1,
-      name: print?.name || 'Unknown',
-      label: print?.label || '',
-      size: print?.size || '',
-      price: print?.price || 0,
-      image_url: print?.image_url || ''
+      print_id: print.id,
+      quantity,
+      name: print.name,
+      label: print.label,
+      size: print.size,
+      price: print.price,
+      image_url: print.image_url
     };
-  });
+  }).filter(Boolean);
+
+  if (orderItems.length === 0) {
+    return res.status(400).json({ error: 'At least one valid print is required' });
+  }
   
   if (existingOrderIndex >= 0) {
     // Update existing order
@@ -95,7 +122,7 @@ app.post('/api/orders', async (req, res) => {
     orderId = db.data.nextOrderId++;
     db.data.orders.push({
       id: orderId,
-      email: email.toLowerCase(),
+      email: normalizedEmail,
       status: 'pending',
       items: orderItems,
       created_at: now,

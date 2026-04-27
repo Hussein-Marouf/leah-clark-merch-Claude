@@ -103,6 +103,8 @@
       border: 1px solid rgba(157, 78, 221, 0.3);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     }
+
+    .email-section.hidden { display: none; }
     
     .email-section h2 {
       font-family: 'Cinzel', serif;
@@ -139,6 +141,13 @@
     .email-input::placeholder {
       color: var(--text-muted);
     }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-weight: 600;
+    }
     
     .btn {
       padding: 15px 30px;
@@ -152,13 +161,20 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none !important;
+      box-shadow: none !important;
+    }
     
     .btn-primary {
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       color: white;
     }
     
-    .btn-primary:hover {
+    .btn-primary:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
     }
@@ -168,7 +184,7 @@
       color: var(--bg-dark);
     }
     
-    .btn-gold:hover {
+    .btn-gold:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
     }
@@ -180,6 +196,10 @@
     
     .prints-section.active {
       display: block;
+    }
+
+    body.cart-open .prints-section.active {
+      padding-bottom: 240px;
     }
     
     .section-title {
@@ -204,6 +224,12 @@
       border: 1px solid rgba(157, 78, 221, 0.2);
       transition: all 0.4s ease;
       position: relative;
+      cursor: pointer;
+    }
+
+    .print-card:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
     }
     
     .print-card:hover {
@@ -476,6 +502,17 @@
       }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
     /* Toast notifications */
     .toast {
       position: fixed;
@@ -513,6 +550,7 @@
       <p style="color: var(--text-muted); margin-bottom: 20px;">
         Enter your email to browse prints. Your selection will be saved and ready when you reach the booth!
       </p>
+      <label class="field-label" for="emailInput">Email address</label>
       <div class="email-form">
         <input 
           type="email" 
@@ -521,7 +559,7 @@
           placeholder="your@email.com"
           autocomplete="email"
         >
-        <button class="btn btn-primary" onclick="startOrder()">
+        <button class="btn btn-primary" id="startBtn" onclick="startOrder()">
           Browse Prints
         </button>
       </div>
@@ -549,7 +587,7 @@
           <span class="cart-total-label">Estimated Total:</span>
           <span class="cart-total-amount" id="cartTotal">$0.00</span>
         </div>
-        <button class="btn btn-gold" style="width: 100%;" onclick="submitOrder()">
+        <button class="btn btn-gold" id="saveBtn" style="width: 100%;" onclick="submitOrder()">
           Save My Order
         </button>
       </div>
@@ -570,16 +608,37 @@
     </section>
   </div>
   
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
     let prints = [];
     let selectedPrints = new Map();
     let userEmail = '';
+    let submitting = false;
+
+    const EMAIL_RE = /^\S+@\S+\.\S+$/;
+
+    const num = (value) => {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    };
+
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+
+    const fmt = (value) => `$${num(value).toFixed(2)}`;
+
+    const normalizeItem = (item, fallbackName = '', fallbackSize = '') => ({
+      print_id: item.print_id ?? item.id,
+      name: item.name ?? fallbackName,
+      size: item.size ?? fallbackSize,
+      price: num(item.price),
+      quantity: Math.max(1, num(item.quantity) || 1)
+    });
     
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      // Check for saved email in session
       const savedEmail = sessionStorage.getItem('orderEmail');
       if (savedEmail) {
         document.getElementById('emailInput').value = savedEmail;
@@ -589,43 +648,53 @@
     async function startOrder() {
       const email = document.getElementById('emailInput').value.trim();
       
-      if (!email || !email.includes('@')) {
+      if (!EMAIL_RE.test(email)) {
         showToast('Please enter a valid email address');
         return;
       }
       
       userEmail = email;
       sessionStorage.setItem('orderEmail', email);
+      selectedPrints.clear();
+
+      const startBtn = document.getElementById('startBtn');
+      startBtn.disabled = true;
       
-      // Check for existing order
       try {
         const response = await fetch(`/api/orders/email/${encodeURIComponent(email)}`);
-        const data = await response.json();
-        
-        if (data.order) {
-          // Restore existing selections
-          data.order.items.forEach(item => {
-            selectedPrints.set(item.print_id, {
-              ...item,
-              quantity: item.quantity
+        if (response.ok) {
+          const data = await response.json();
+          if (data.order && Array.isArray(data.order.items)) {
+            data.order.items.forEach((item) => {
+              const id = item.print_id ?? item.id;
+              if (id != null) {
+                selectedPrints.set(id, normalizeItem(item));
+              }
             });
-          });
+          }
         }
       } catch (err) {
         console.error('Error checking existing order:', err);
       }
       
-      // Load prints and show section
       await loadPrints();
       
-      document.getElementById('emailSection').style.display = 'none';
+      document.getElementById('emailSection').classList.add('hidden');
       document.getElementById('printsSection').classList.add('active');
+      startBtn.disabled = false;
     }
     
     async function loadPrints() {
       try {
         const response = await fetch('/api/prints');
-        prints = await response.json();
+        if (!response.ok) {
+          throw new Error(`Print request failed: ${response.status}`);
+        }
+        const data = await response.json();
+        prints = (Array.isArray(data) ? data : []).map((print) => ({
+          ...print,
+          price: num(print.price)
+        }));
         renderPrints();
       } catch (err) {
         console.error('Error loading prints:', err);
@@ -636,52 +705,57 @@
     
     function renderPrints() {
       const grid = document.getElementById('printsGrid');
+
+      if (!prints.length) {
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No prints available right now.</p>';
+        updateCart();
+        return;
+      }
       
-      // Group prints by image for better display
-      const printsByImage = {};
-      prints.forEach(print => {
-        const key = print.image_url;
-        if (!printsByImage[key]) {
-          printsByImage[key] = [];
-        }
-        printsByImage[key].push(print);
-      });
-      
-      grid.innerHTML = prints.map(print => `
-        <div class="print-card ${selectedPrints.has(print.id) ? 'selected' : ''}" 
+      grid.innerHTML = prints.map((print) => {
+        const isSelected = selectedPrints.has(print.id);
+        return `
+        <div class="print-card ${isSelected ? 'selected' : ''}"
              data-id="${print.id}"
-             onclick="togglePrint(${print.id})">
-          <img src="${print.image_url}" alt="${print.name}" class="print-image" loading="lazy">
+             role="button"
+             tabindex="0"
+             aria-pressed="${isSelected}"
+             aria-label="${esc(print.name)}, ${esc(print.size)}, ${fmt(print.price)}"
+             onclick="togglePrint(${print.id})"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePrint(${print.id});}">
+          <img src="${esc(print.image_url)}" alt="${esc(print.name)}" class="print-image" loading="lazy">
           <div class="print-info">
-            <h3 class="print-name">${print.name}</h3>
+            <h3 class="print-name">${esc(print.name)}</h3>
             <div class="print-details">
-              <span class="print-size">${print.size}</span>
-              <span class="print-price">$${print.price.toFixed(2)}</span>
+              <span class="print-size">${esc(print.size)}</span>
+              <span class="print-price">${fmt(print.price)}</span>
             </div>
-            <div class="print-label">${print.label}</div>
-            <button class="add-btn">
-              ${selectedPrints.has(print.id) ? '✓ Selected' : 'Add to Order'}
+            <div class="print-label">${esc(print.label)}</div>
+            <button class="add-btn" tabindex="-1">
+              ${isSelected ? '✓ Selected' : 'Add to Order'}
             </button>
           </div>
         </div>
-      `).join('');
+        `;
+      }).join('');
       
       updateCart();
     }
     
     function togglePrint(printId) {
-      const print = prints.find(p => p.id === printId);
+      const print = prints.find((p) => p.id === printId);
+      if (!print) return;
       
       if (selectedPrints.has(printId)) {
         selectedPrints.delete(printId);
       } else {
-        selectedPrints.set(printId, {
+        selectedPrints.set(printId, normalizeItem({
           print_id: printId,
           name: print.name,
           size: print.size,
           price: print.price,
           quantity: 1
-        });
+        }));
       }
       
       renderPrints();
@@ -694,52 +768,60 @@
       
       if (selectedPrints.size === 0) {
         cartSummary.classList.remove('active');
+        document.body.classList.remove('cart-open');
         return;
       }
       
       cartSummary.classList.add('active');
+      document.body.classList.add('cart-open');
       
       let total = 0;
       let itemsHtml = '';
       
-      selectedPrints.forEach((item, id) => {
-        total += item.price * item.quantity;
+      selectedPrints.forEach((item) => {
+        const lineTotal = num(item.price) * num(item.quantity);
+        total += lineTotal;
         itemsHtml += `
           <div class="cart-item">
-            <span class="cart-item-name">${item.name} (${item.size})</span>
-            <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+            <span class="cart-item-name">${esc(item.name)} (${esc(item.size)})</span>
+            <span class="cart-item-price">${fmt(lineTotal)}</span>
           </div>
         `;
       });
       
       cartItems.innerHTML = itemsHtml;
-      cartTotal.textContent = `$${total.toFixed(2)}`;
+      cartTotal.textContent = fmt(total);
     }
     
     async function submitOrder() {
+      if (submitting) return;
+
       if (selectedPrints.size === 0) {
         showToast('Please select at least one print');
         return;
       }
       
-      const items = Array.from(selectedPrints.values()).map(item => ({
+      const items = Array.from(selectedPrints.values()).map((item) => ({
         print_id: item.print_id,
-        quantity: item.quantity
+        quantity: num(item.quantity) || 1
       }));
+
+      const saveBtn = document.getElementById('saveBtn');
+      submitting = true;
+      const originalLabel = saveBtn.textContent;
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
       
       try {
         const response = await fetch('/api/orders', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: userEmail,
-            items
-          })
+          body: JSON.stringify({ email: userEmail, items })
         });
         
         const result = await response.json();
         
-        if (result.success) {
+        if (response.ok && result.success) {
           showConfirmation();
         } else {
           showToast('Error saving order. Please try again.');
@@ -747,6 +829,10 @@
       } catch (err) {
         console.error('Error submitting order:', err);
         showToast('Error saving order. Please try again.');
+      } finally {
+        submitting = false;
+        saveBtn.disabled = false;
+        saveBtn.textContent = originalLabel;
       }
     }
     
@@ -758,11 +844,12 @@
       let summaryHtml = '<h3>Your Order</h3><div class="cart-items">';
       
       selectedPrints.forEach((item) => {
-        total += item.price * item.quantity;
+        const lineTotal = num(item.price) * num(item.quantity);
+        total += lineTotal;
         summaryHtml += `
           <div class="cart-item">
-            <span class="cart-item-name">${item.name} (${item.size})</span>
-            <span class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+            <span class="cart-item-name">${esc(item.name)} (${esc(item.size)})</span>
+            <span class="cart-item-price">${fmt(lineTotal)}</span>
           </div>
         `;
       });
@@ -770,10 +857,10 @@
       summaryHtml += `</div>
         <div class="cart-total">
           <span class="cart-total-label">Total:</span>
-          <span class="cart-total-amount">$${total.toFixed(2)}</span>
+          <span class="cart-total-amount">${fmt(total)}</span>
         </div>
         <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.9rem;">
-          Order saved for: <strong>${userEmail}</strong>
+          Order saved for: <strong>${esc(userEmail)}</strong>
         </p>
       `;
       

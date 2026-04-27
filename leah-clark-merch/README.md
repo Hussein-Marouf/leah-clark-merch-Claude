@@ -151,6 +151,8 @@ leah-clark-merch/
 ├── package.json       # Dependencies
 ├── .gitignore         # Git ignore rules
 ├── db.json            # Database (auto-created)
+├── docs/              # UI/UX audit and upload notes
+├── documents/         # Booth/project documents for GitHub upload
 ├── public/
 │   ├── index.html     # Customer ordering page
 │   ├── admin.html     # Sales dashboard
@@ -159,8 +161,19 @@ leah-clark-merch/
     ├── Aria_Chariot.png
     ├── asia1-85x11.png
     ├── Cute_Red_Toga_11x17_tall.png
-    └── Himiko_Toga__Mask_2.jpg
+    ├── Himiko_Toga__Mask_2.jpg
+    ├── Leahs_Art.jpg
+    ├── Through_The_Key_Hole.jpg
+    └── Toga_Chaco_Daylen.jpg
 ```
+
+---
+
+## 📄 Documents
+
+Project documents can be added to the `documents/` folder before committing to GitHub. Review any files for customer data, payment details, private addresses, or API keys before pushing to a public repository.
+
+The `docs/` folder contains internal project notes, including the UI/UX audit and GitHub upload checklist.
 
 ---
 

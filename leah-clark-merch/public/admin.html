@@ -487,6 +487,17 @@
     let pendingAction = null;
     let refreshInterval = null;
     let lastOrderCount = 0;
+
+    const num = (value) => {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    };
+
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+
+    const fmt = (value) => `$${num(value).toFixed(2)}`;
     
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
@@ -508,6 +519,9 @@
       
       try {
         const response = await fetch('/api/admin/orders');
+        if (!response.ok) {
+          throw new Error(`Orders request failed: ${response.status}`);
+        }
         orders = await response.json();
         
         // Check for new orders
@@ -536,6 +550,9 @@
       
       try {
         const response = await fetch(`/api/admin/search?email=${encodeURIComponent(email)}`);
+        if (!response.ok) {
+          throw new Error(`Search request failed: ${response.status}`);
+        }
         orders = await response.json();
         renderOrders();
         updateStats();
@@ -572,11 +589,11 @@
         <div class="order-card ${expandedOrderId === order.id ? 'expanded' : ''}" 
              onclick="toggleOrder(${order.id})">
           <div class="order-header">
-            <div class="order-email">${order.email}</div>
+            <div class="order-email">${esc(order.email)}</div>
             <div class="order-meta">
-              <span class="order-time">${formatTime(order.created_at)}</span>
-              <span class="order-count">${order.item_count} items</span>
-              <span class="order-total">$${(order.total || 0).toFixed(2)}</span>
+              <span class="order-time">${esc(formatTime(order.created_at))}</span>
+              <span class="order-count">${num(order.item_count)} items</span>
+              <span class="order-total">${fmt(order.total)}</span>
             </div>
           </div>
           <div class="order-details" id="details-${order.id}">
@@ -614,6 +631,9 @@
     async function loadOrderDetails(orderId) {
       try {
         const response = await fetch(`/api/admin/orders/${orderId}`);
+        if (!response.ok) {
+          throw new Error(`Order details request failed: ${response.status}`);
+        }
         const order = await response.json();
         
         const itemsContainer = document.getElementById(`items-${orderId}`);
@@ -621,13 +641,13 @@
         
         itemsContainer.innerHTML = order.items.map(item => `
           <div class="order-item">
-            <img src="${item.image_url}" alt="${item.name}" class="order-item-image">
+            <img src="${esc(item.image_url)}" alt="${esc(item.name)}" class="order-item-image">
             <div class="order-item-info">
-              <div class="order-item-name">${item.name}</div>
-              <div class="order-item-size">${item.size}</div>
-              <div class="order-item-label">${item.label}</div>
+              <div class="order-item-name">${esc(item.name)}</div>
+              <div class="order-item-size">${esc(item.size)}</div>
+              <div class="order-item-label">${esc(item.label)}</div>
             </div>
-            <div class="order-item-price">$${item.price.toFixed(2)}</div>
+            <div class="order-item-price">${fmt(item.price)}</div>
           </div>
         `).join('');
       } catch (err) {
@@ -637,12 +657,12 @@
     
     function updateStats() {
       const pendingCount = orders.length;
-      const totalItems = orders.reduce((sum, o) => sum + (o.item_count || 0), 0);
-      const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+      const totalItems = orders.reduce((sum, order) => sum + num(order.item_count), 0);
+      const totalRevenue = orders.reduce((sum, order) => sum + num(order.total), 0);
       
       document.getElementById('pendingCount').textContent = pendingCount;
       document.getElementById('totalItems').textContent = totalItems;
-      document.getElementById('totalRevenue').textContent = `$${totalRevenue.toFixed(2)}`;
+      document.getElementById('totalRevenue').textContent = fmt(totalRevenue);
     }
     
     function completeOrder(orderId) {
@@ -651,7 +671,7 @@
       
       document.getElementById('modalTitle').textContent = 'Complete Sale';
       document.getElementById('modalMessage').textContent = 
-        `Mark order for ${order.email} as completed? This will remove it from the pending list.`;
+        `Mark order for ${order?.email || 'this customer'} as completed? This will remove it from the pending list.`;
       document.getElementById('modalConfirmBtn').className = 'btn btn-success';
       document.getElementById('modalConfirmBtn').textContent = 'Complete';
       document.getElementById('confirmModal').classList.add('active');
@@ -663,7 +683,7 @@
       
       document.getElementById('modalTitle').textContent = 'Delete Order';
       document.getElementById('modalMessage').textContent = 
-        `Are you sure you want to delete the order for ${order.email}? This cannot be undone.`;
+        `Are you sure you want to delete the order for ${order?.email || 'this customer'}? This cannot be undone.`;
       document.getElementById('modalConfirmBtn').className = 'btn btn-danger';
       document.getElementById('modalConfirmBtn').textContent = 'Delete';
       document.getElementById('confirmModal').classList.add('active');
@@ -679,9 +699,11 @@
       
       try {
         if (pendingAction.type === 'complete') {
-          await fetch(`/api/admin/orders/${pendingAction.orderId}/complete`, { method: 'POST' });
+          const response = await fetch(`/api/admin/orders/${pendingAction.orderId}/complete`, { method: 'POST' });
+          if (!response.ok) throw new Error('Complete request failed');
         } else if (pendingAction.type === 'delete') {
-          await fetch(`/api/admin/orders/${pendingAction.orderId}`, { method: 'DELETE' });
+          const response = await fetch(`/api/admin/orders/${pendingAction.orderId}`, { method: 'DELETE' });
+          if (!response.ok) throw new Error('Delete request failed');
         }
         
         closeModal();
