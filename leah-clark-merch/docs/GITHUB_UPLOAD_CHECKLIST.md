@@ -34,6 +34,11 @@ Add project, booth, inventory, or workflow documents here:
 leah-clark-merch/documents/
 ```
 
+The current Google Sheet schedule is stored as:
+
+- `documents/leah-current-schedule.csv`
+- `data/current-schedule.json`
+
 Before pushing public documents, check for:
 
 - customer emails

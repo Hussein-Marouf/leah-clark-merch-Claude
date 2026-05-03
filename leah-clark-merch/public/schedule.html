@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leah Clark - Current Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #9d4edd;
+      --accent: #ff6b9d;
+      --gold: #ffd700;
+      --bg-dark: #0d0221;
+      --bg-card: #1a0a2e;
+      --text: #f0e6ff;
+      --text-muted: #a89cc8;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at top, #1a0a2e 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #2d1b4e 0%, transparent 50%),
+        linear-gradient(180deg, #0d0221 0%, #1a0533 100%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(157, 78, 221, 0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid rgba(157, 78, 221, 0.45);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .schedule-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .event-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
+      border: 1px solid rgba(157, 78, 221, 0.25);
+      border-radius: 14px;
+      padding: 18px;
+      min-height: 150px;
+    }
+
+    .event-card.cancelled {
+      opacity: 0.68;
+      border-color: rgba(239, 68, 68, 0.45);
+    }
+
+    .event-date {
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .event-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .event-note {
+      color: var(--text-muted);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(239, 68, 68, 0.18);
+      color: #fecaca;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .empty {
+      color: var(--text-muted);
+      padding: 40px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="logo">Current Schedule</h1>
+      <a class="nav-link" href="/">Back to Prints</a>
+    </header>
+
+    <p class="meta" id="meta">Loading schedule...</p>
+    <main class="schedule-list" id="scheduleList"></main>
+  </div>
+
+  <script>
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+
+    async function loadSchedule() {
+      const meta = document.getElementById('meta');
+      const list = document.getElementById('scheduleList');
+
+      try {
+        const response = await fetch('/api/schedule');
+        if (!response.ok) throw new Error(`Schedule request failed: ${response.status}`);
+        const schedule = await response.json();
+        const events = Array.isArray(schedule.events) ? schedule.events : [];
+
+        meta.textContent = `Updated ${schedule.updated_at || 'from the current sheet'}`;
+
+        if (!events.length) {
+          list.innerHTML = '<p class="empty">No events available.</p>';
+          return;
+        }
+
+        list.innerHTML = events.map((event) => `
+          <article class="event-card ${event.status === 'cancelled' ? 'cancelled' : ''}">
+            <div class="event-date">${esc(event.date)}</div>
+            <h2 class="event-name">${esc(event.event)}</h2>
+            ${event.notes ? `<p class="event-note">${esc(event.notes)}</p>` : ''}
+            ${event.status === 'cancelled' ? '<span class="status">Cancelled</span>' : ''}
+          </article>
+        `).join('');
+      } catch (err) {
+        console.error('Error loading schedule:', err);
+        meta.textContent = 'Unable to load schedule.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadSchedule);
+  </script>
+</body>
+</html>

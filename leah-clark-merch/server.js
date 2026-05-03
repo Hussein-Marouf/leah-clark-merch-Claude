@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import QRCode from 'qrcode';
+import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { Low } from 'lowdb';
@@ -60,6 +61,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/prints', express.static(path.join(__dirname, 'prints')));
+app.use('/documents', express.static(path.join(__dirname, 'documents')));
 
 // API Routes
 
@@ -67,6 +69,17 @@ app.use('/prints', express.static(path.join(__dirname, 'prints')));
 app.get('/api/prints', (req, res) => {
   const prints = db.data.prints.filter(p => p.active);
   res.json(prints);
+});
+
+// Get current event schedule exported from the shared Google Sheet
+app.get('/api/schedule', async (req, res) => {
+  try {
+    const schedulePath = path.join(__dirname, 'data', 'current-schedule.json');
+    const schedule = JSON.parse(await fs.readFile(schedulePath, 'utf8'));
+    res.json(schedule);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to load schedule' });
+  }
 });
 
 // Create or update order
@@ -252,6 +265,10 @@ app.get('/admin', (req, res) => {
 
 app.get('/qr', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'qr.html'));
+});
+
+app.get('/schedule', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'schedule.html'));
 });
 
 // Start server

@@ -93,6 +93,29 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .header-link {
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid rgba(157, 78, 221, 0.45);
+      border-radius: 10px;
+      padding: 9px 13px;
+      font-weight: 600;
+    }
+
+    .header-link:hover,
+    .header-link:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
     
     /* Email Entry Section */
     .email-section {
@@ -542,6 +565,9 @@
     <header>
       <h1 class="logo">Leah Clark</h1>
       <p class="subtitle">Voice Actor • Metal Prints</p>
+      <nav class="header-links" aria-label="Primary">
+        <a class="header-link" href="/schedule">Current Schedule</a>
+      </nav>
     </header>
     
     <!-- Email Entry -->

@@ -151,8 +151,10 @@ leah-clark-merch/
 ├── package.json       # Dependencies
 ├── .gitignore         # Git ignore rules
 ├── db.json            # Database (auto-created)
+├── data/
+│   └── current-schedule.json
 ├── docs/              # UI/UX audit and upload notes
-├── documents/         # Booth/project documents for GitHub upload
+├── documents/         # Booth/project documents and sheet exports
 ├── public/
 │   ├── index.html     # Customer ordering page
 │   ├── admin.html     # Sales dashboard
@@ -174,6 +176,11 @@ leah-clark-merch/
 Project documents can be added to the `documents/` folder before committing to GitHub. Review any files for customer data, payment details, private addresses, or API keys before pushing to a public repository.
 
 The `docs/` folder contains internal project notes, including the UI/UX audit and GitHub upload checklist.
+
+The current event schedule is sourced from the shared Google Sheet and saved in two places:
+
+- `documents/leah-current-schedule.csv` keeps the raw sheet export.
+- `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
 ---
 

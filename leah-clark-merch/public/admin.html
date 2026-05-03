@@ -140,6 +140,22 @@
       background: var(--primary);
       color: white;
     }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background: var(--primary);
+      color: white;
+      outline: none;
+    }
     
     .btn-small {
       padding: 8px 16px;
@@ -434,6 +450,7 @@
           <button class="btn btn-primary" onclick="searchOrders()">Search</button>
         </div>
         <button class="btn btn-outline" onclick="clearSearch()">Show All</button>
+        <a class="nav-link" href="/schedule">Schedule</a>
         <span class="refresh-indicator" id="refreshIndicator">Auto-refresh: ON</span>
       </div>
     </header>
