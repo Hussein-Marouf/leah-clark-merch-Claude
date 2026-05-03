@@ -160,6 +160,7 @@ leah-clark-merch/
 │   ├── admin.html     # Sales dashboard
 │   └── qr.html        # QR code display
 └── prints/
+    ├── display/                  # Web-optimized catalog images
     ├── Aria_Chariot.png
     ├── asia1-85x11.png
     ├── Cute_Red_Toga_11x17_tall.png
@@ -175,7 +176,7 @@ leah-clark-merch/
 
 Project documents can be added to the `documents/` folder before committing to GitHub. Review any files for customer data, payment details, private addresses, or API keys before pushing to a public repository.
 
-The `docs/` folder contains internal project notes, including the UI/UX audit and GitHub upload checklist.
+The `docs/` folder contains internal project notes, including the UI/UX audit, white glove audit, and GitHub upload checklist.
 
 The current event schedule is sourced from the shared Google Sheet and saved in two places:
 
@@ -203,6 +204,8 @@ Edit `server.js` and add entries to the `defaultData.prints` array:
 ```
 
 Then add the image to the `prints/` folder.
+
+For best mobile performance, create a display-sized copy in `prints/display/` and point `image_url` at that file. Keep the original high-resolution art file in `prints/` for production/reference.
 
 ### Changing Prices
 

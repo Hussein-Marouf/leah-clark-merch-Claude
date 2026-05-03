@@ -128,6 +128,12 @@
     }
 
     .email-section.hidden { display: none; }
+
+    .helper-text {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
     
     .email-section h2 {
       font-family: 'Cinzel', serif;
@@ -232,6 +238,76 @@
       color: var(--gold);
       text-align: center;
     }
+
+    .catalog-toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .catalog-search {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 2px solid rgba(157, 78, 221, 0.45);
+      background: rgba(13, 2, 33, 0.75);
+      color: var(--text);
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+    }
+
+    .catalog-search:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 18px rgba(255, 107, 157, 0.22);
+    }
+
+    .filter-group {
+      display: inline-flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(157, 78, 221, 0.45);
+      background: rgba(157, 78, 221, 0.12);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .filter-btn[aria-pressed="true"],
+    .filter-btn:hover,
+    .filter-btn:focus-visible {
+      background: var(--primary);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .result-count {
+      color: var(--text-muted);
+      text-align: center;
+      margin: -10px 0 20px;
+      min-height: 1.4em;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     
     .prints-grid {
       display: grid;
@@ -293,8 +369,9 @@
     .print-image {
       width: 100%;
       aspect-ratio: 3/4;
-      object-fit: cover;
+      object-fit: contain;
       background: #1a0a2e;
+      display: block;
     }
     
     .print-info {
@@ -337,6 +414,7 @@
     }
     
     .add-btn {
+      display: block;
       width: 100%;
       padding: 12px;
       border: none;
@@ -345,6 +423,7 @@
       color: var(--text);
       font-family: 'Quicksand', sans-serif;
       font-weight: 600;
+      text-align: center;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -507,6 +586,18 @@
         font-size: 1.8rem;
       }
       
+      .catalog-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-group {
+        justify-content: stretch;
+      }
+
+      .filter-btn {
+        flex: 1;
+      }
+
       .email-form {
         flex-direction: column;
       }
@@ -572,9 +663,9 @@
     
     <!-- Email Entry -->
     <section class="email-section" id="emailSection">
-      <h2>✨ Start Your Order</h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">
-        Enter your email to browse prints. Your selection will be saved and ready when you reach the booth!
+      <h2>Start Your Order</h2>
+      <p class="helper-text" id="emailHelp">
+        Browse prints first, then enter your email when you are ready to save. If you already saved an order, this will pull it back up.
       </p>
       <label class="field-label" for="emailInput">Email address</label>
       <div class="email-form">
@@ -584,19 +675,38 @@
           id="emailInput" 
           placeholder="your@email.com"
           autocomplete="email"
+          aria-describedby="emailHelp"
         >
         <button class="btn btn-primary" id="startBtn" onclick="startOrder()">
-          Browse Prints
+          Use Email
         </button>
       </div>
     </section>
     
     <!-- Prints Selection -->
-    <section class="prints-section" id="printsSection">
-      <h2 class="section-title">✨ Select Your Prints</h2>
+    <section class="prints-section active" id="printsSection">
+      <h2 class="section-title">Select Your Prints</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
-        Tap prints to add them to your order
+        Tap a print to add it to your order. You can save once your selection looks right.
       </p>
+
+      <div class="catalog-toolbar" aria-label="Print catalog tools">
+        <label class="visually-hidden" for="printSearch">Search prints</label>
+        <input
+          class="catalog-search"
+          id="printSearch"
+          type="search"
+          placeholder="Search by print name or label..."
+          oninput="applySearch(this.value)"
+        >
+        <div class="filter-group" aria-label="Filter by size">
+          <button type="button" class="filter-btn" data-size="all" aria-pressed="true" onclick="setSizeFilter('all')">All</button>
+          <button type="button" class="filter-btn" data-size="8.5x11" aria-pressed="false" onclick="setSizeFilter('8.5x11')">8.5x11</button>
+          <button type="button" class="filter-btn" data-size="11x17" aria-pressed="false" onclick="setSizeFilter('11x17')">11x17</button>
+        </div>
+      </div>
+
+      <p class="result-count" id="resultCount"></p>
       
       <div class="prints-grid" id="printsGrid">
         <div class="loading">
@@ -607,7 +717,7 @@
       
       <!-- Cart Summary -->
       <div class="cart-summary" id="cartSummary">
-        <h3 class="cart-title">🛒 Your Selection</h3>
+        <h3 class="cart-title" id="cartTitle">Your Selection</h3>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-total">
           <span class="cart-total-label">Estimated Total:</span>
@@ -641,6 +751,8 @@
     let selectedPrints = new Map();
     let userEmail = '';
     let submitting = false;
+    let activeSize = 'all';
+    let searchTerm = '';
 
     const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
@@ -656,18 +768,25 @@
     const fmt = (value) => `$${num(value).toFixed(2)}`;
 
     const normalizeItem = (item, fallbackName = '', fallbackSize = '') => ({
-      print_id: item.print_id ?? item.id,
+      print_id: Number(item.print_id ?? item.id),
       name: item.name ?? fallbackName,
       size: item.size ?? fallbackSize,
       price: num(item.price),
-      quantity: Math.max(1, num(item.quantity) || 1)
+      quantity: Math.max(1, Math.trunc(num(item.quantity)) || 1)
     });
     
     // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       const savedEmail = sessionStorage.getItem('orderEmail');
       if (savedEmail) {
         document.getElementById('emailInput').value = savedEmail;
+        userEmail = savedEmail;
+      }
+
+      await loadPrints();
+
+      if (savedEmail) {
+        await restoreExistingOrder(savedEmail, { silent: true });
       }
     });
     
@@ -681,37 +800,26 @@
       
       userEmail = email;
       sessionStorage.setItem('orderEmail', email);
-      selectedPrints.clear();
 
       const startBtn = document.getElementById('startBtn');
       startBtn.disabled = true;
-      
+
       try {
-        const response = await fetch(`/api/orders/email/${encodeURIComponent(email)}`);
-        if (response.ok) {
-          const data = await response.json();
-          if (data.order && Array.isArray(data.order.items)) {
-            data.order.items.forEach((item) => {
-              const id = item.print_id ?? item.id;
-              if (id != null) {
-                selectedPrints.set(id, normalizeItem(item));
-              }
-            });
-          }
-        }
-      } catch (err) {
-        console.error('Error checking existing order:', err);
+        await restoreExistingOrder(email);
+      } finally {
+        startBtn.disabled = false;
       }
-      
-      await loadPrints();
-      
-      document.getElementById('emailSection').classList.add('hidden');
-      document.getElementById('printsSection').classList.add('active');
-      startBtn.disabled = false;
     }
     
     async function loadPrints() {
       try {
+        document.getElementById('printsGrid').innerHTML = `
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading prints...</p>
+          </div>
+        `;
+
         const response = await fetch('/api/prints');
         if (!response.ok) {
           throw new Error(`Print request failed: ${response.status}`);
@@ -722,23 +830,85 @@
           price: num(print.price)
         }));
         renderPrints();
+        return true;
       } catch (err) {
         console.error('Error loading prints:', err);
         document.getElementById('printsGrid').innerHTML = 
-          '<p style="color: var(--accent);">Error loading prints. Please refresh.</p>';
+          '<p style="color: var(--accent); text-align: center;">Error loading prints. Please refresh or ask booth staff for help.</p>';
+        document.getElementById('resultCount').textContent = '';
+        return false;
       }
+    }
+
+    async function restoreExistingOrder(email, options = {}) {
+      try {
+        const response = await fetch(`/api/orders/email/${encodeURIComponent(email)}`);
+        if (!response.ok) {
+          throw new Error(`Order lookup failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.order && Array.isArray(data.order.items)) {
+          selectedPrints.clear();
+          data.order.items.forEach((item) => {
+            const normalized = normalizeItem(item);
+            if (Number.isInteger(normalized.print_id)) {
+              selectedPrints.set(normalized.print_id, normalized);
+            }
+          });
+          renderPrints();
+          if (!options.silent) showToast('Existing order loaded');
+          return;
+        }
+
+        renderPrints();
+        if (!options.silent) showToast('Email saved. Pick your prints below.');
+      } catch (err) {
+        console.error('Error checking existing order:', err);
+        if (!options.silent) showToast('Could not check existing orders. You can still save a new order.');
+      }
+    }
+
+    function setSizeFilter(size) {
+      activeSize = size;
+      document.querySelectorAll('.filter-btn').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.size === size));
+      });
+      renderPrints();
+    }
+
+    function applySearch(value) {
+      searchTerm = String(value || '').trim().toLowerCase();
+      renderPrints();
     }
     
     function renderPrints() {
       const grid = document.getElementById('printsGrid');
+      const resultCount = document.getElementById('resultCount');
 
       if (!prints.length) {
         grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No prints available right now.</p>';
+        resultCount.textContent = '';
+        updateCart();
+        return;
+      }
+
+      const filteredPrints = prints.filter((print) => {
+        const matchesSize = activeSize === 'all' || print.size === activeSize;
+        const haystack = `${print.name || ''} ${print.label || ''} ${print.size || ''}`.toLowerCase();
+        return matchesSize && (!searchTerm || haystack.includes(searchTerm));
+      });
+
+      resultCount.textContent = `${filteredPrints.length} of ${prints.length} prints shown`;
+
+      if (!filteredPrints.length) {
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No prints match that search.</p>';
         updateCart();
         return;
       }
       
-      grid.innerHTML = prints.map((print) => {
+      grid.innerHTML = filteredPrints.map((print) => {
         const isSelected = selectedPrints.has(print.id);
         return `
         <div class="print-card ${isSelected ? 'selected' : ''}"
@@ -749,7 +919,7 @@
              aria-label="${esc(print.name)}, ${esc(print.size)}, ${fmt(print.price)}"
              onclick="togglePrint(${print.id})"
              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePrint(${print.id});}">
-          <img src="${esc(print.image_url)}" alt="${esc(print.name)}" class="print-image" loading="lazy">
+          <img src="${esc(print.image_url)}" alt="${esc(print.name)}" class="print-image" loading="lazy" decoding="async">
           <div class="print-info">
             <h3 class="print-name">${esc(print.name)}</h3>
             <div class="print-details">
@@ -757,9 +927,9 @@
               <span class="print-price">${fmt(print.price)}</span>
             </div>
             <div class="print-label">${esc(print.label)}</div>
-            <button class="add-btn" tabindex="-1">
+            <span class="add-btn" aria-hidden="true">
               ${isSelected ? '✓ Selected' : 'Add to Order'}
-            </button>
+            </span>
           </div>
         </div>
         `;
@@ -785,12 +955,14 @@
       }
       
       renderPrints();
+      document.querySelector(`[data-id="${printId}"]`)?.focus();
     }
     
     function updateCart() {
       const cartSummary = document.getElementById('cartSummary');
       const cartItems = document.getElementById('cartItems');
       const cartTotal = document.getElementById('cartTotal');
+      const cartTitle = document.getElementById('cartTitle');
       
       if (selectedPrints.size === 0) {
         cartSummary.classList.remove('active');
@@ -800,6 +972,7 @@
       
       cartSummary.classList.add('active');
       document.body.classList.add('cart-open');
+      cartTitle.textContent = `Your Selection (${selectedPrints.size})`;
       
       let total = 0;
       let itemsHtml = '';
@@ -826,6 +999,19 @@
         showToast('Please select at least one print');
         return;
       }
+
+      const emailInput = document.getElementById('emailInput');
+      const email = emailInput.value.trim();
+
+      if (!EMAIL_RE.test(email)) {
+        showToast('Enter a valid email to save your order');
+        document.getElementById('emailSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        emailInput.focus();
+        return;
+      }
+
+      userEmail = email;
+      sessionStorage.setItem('orderEmail', email);
       
       const items = Array.from(selectedPrints.values()).map((item) => ({
         print_id: item.print_id,
@@ -865,6 +1051,7 @@
     function showConfirmation() {
       document.getElementById('printsSection').classList.remove('active');
       document.getElementById('confirmation').classList.add('active');
+      document.body.classList.remove('cart-open');
       
       let total = 0;
       let summaryHtml = '<h3>Your Order</h3><div class="cart-items">';
@@ -896,6 +1083,7 @@
     function modifyOrder() {
       document.getElementById('confirmation').classList.remove('active');
       document.getElementById('printsSection').classList.add('active');
+      document.getElementById('printsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     
     function showToast(message) {

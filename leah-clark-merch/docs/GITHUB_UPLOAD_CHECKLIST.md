@@ -16,6 +16,12 @@ Add updated print image files here:
 leah-clark-merch/prints/
 ```
 
+Add web catalog copies here:
+
+```text
+leah-clark-merch/prints/display/
+```
+
 After adding images, update the `defaultData.prints` array in `server.js` with:
 
 - unique `id`
@@ -25,6 +31,8 @@ After adding images, update the `defaultData.prints` array in `server.js` with:
 - `price`
 - `image_url`
 - `active`
+
+Use the smaller `prints/display/` file for `image_url` so the mobile catalog stays fast. Keep the original high-resolution image in `prints/`.
 
 ## Document Uploads
 

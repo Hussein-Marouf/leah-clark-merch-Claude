@@ -101,6 +101,19 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
+    .btn:focus-visible,
+    .search-input:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none !important;
+      box-shadow: none !important;
+    }
     
     .btn-primary {
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
@@ -228,6 +241,11 @@
     
     .order-card:hover {
       background: rgba(157, 78, 221, 0.1);
+    }
+
+    .order-card:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: -4px;
     }
     
     .order-card.expanded {
@@ -417,6 +435,28 @@
     .refresh-indicator.updating {
       color: var(--accent);
     }
+
+    .status-message {
+      min-height: 1.5em;
+      color: var(--text-muted);
+      margin: -16px 0 20px;
+    }
+
+    .status-message.error {
+      color: #fecaca;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     
     /* Responsive */
     @media (max-width: 768px) {
@@ -440,6 +480,7 @@
       <h1 class="logo">Sales Dashboard</h1>
       <div class="header-actions">
         <div class="search-box">
+          <label class="visually-hidden" for="searchInput">Search orders by email</label>
           <input 
             type="email" 
             class="search-input" 
@@ -454,6 +495,8 @@
         <span class="refresh-indicator" id="refreshIndicator">Auto-refresh: ON</span>
       </div>
     </header>
+
+    <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
     
     <!-- Stats -->
     <div class="stats-row">
@@ -487,8 +530,8 @@
   </div>
   
   <!-- Confirmation Modal -->
-  <div class="modal-overlay" id="confirmModal">
-    <div class="modal">
+  <div class="modal-overlay" id="confirmModal" onclick="if(event.target === this) closeModal();">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <h3 class="modal-title" id="modalTitle">Confirm Action</h3>
       <p id="modalMessage"></p>
       <div class="modal-actions">
@@ -504,6 +547,8 @@
     let pendingAction = null;
     let refreshInterval = null;
     let lastOrderCount = 0;
+    let currentSearch = '';
+    let actionInFlight = false;
 
     const num = (value) => {
       const n = Number(value);
@@ -520,11 +565,18 @@
     document.addEventListener('DOMContentLoaded', () => {
       loadOrders();
       startAutoRefresh();
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeModal();
+      });
     });
     
     function startAutoRefresh() {
       refreshInterval = setInterval(() => {
-        loadOrders(true);
+        if (currentSearch) {
+          searchOrders(true);
+        } else {
+          loadOrders(true);
+        }
       }, 5000); // Refresh every 5 seconds
     }
     
@@ -549,16 +601,19 @@
         
         renderOrders();
         updateStats();
+        setStatus('');
       } catch (err) {
         console.error('Error loading orders:', err);
+        setStatus('Unable to refresh orders. Check the connection and try again.', true);
       } finally {
         document.getElementById('refreshIndicator').classList.remove('updating');
         document.getElementById('refreshIndicator').textContent = 'Auto-refresh: ON';
       }
     }
     
-    async function searchOrders() {
+    async function searchOrders(silent = false) {
       const email = document.getElementById('searchInput').value.trim();
+      currentSearch = email;
       
       if (!email) {
         loadOrders();
@@ -566,6 +621,7 @@
       }
       
       try {
+        if (!silent) setStatus('Searching...');
         const response = await fetch(`/api/admin/search?email=${encodeURIComponent(email)}`);
         if (!response.ok) {
           throw new Error(`Search request failed: ${response.status}`);
@@ -573,8 +629,10 @@
         orders = await response.json();
         renderOrders();
         updateStats();
+        setStatus(`${orders.length} pending order${orders.length === 1 ? '' : 's'} found`);
       } catch (err) {
         console.error('Error searching orders:', err);
+        setStatus('Unable to search orders. Try again.', true);
       }
     }
     
@@ -586,6 +644,7 @@
     
     function clearSearch() {
       document.getElementById('searchInput').value = '';
+      currentSearch = '';
       loadOrders();
     }
     
@@ -604,7 +663,11 @@
       
       list.innerHTML = orders.map(order => `
         <div class="order-card ${expandedOrderId === order.id ? 'expanded' : ''}" 
-             onclick="toggleOrder(${order.id})">
+             role="button"
+             tabindex="0"
+             aria-expanded="${expandedOrderId === order.id}"
+             onclick="toggleOrder(${order.id})"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleOrder(${order.id});}">
           <div class="order-header">
             <div class="order-email">${esc(order.email)}</div>
             <div class="order-meta">
@@ -635,12 +698,11 @@
       }
     }
     
-    async function toggleOrder(orderId) {
+    function toggleOrder(orderId) {
       if (expandedOrderId === orderId) {
         expandedOrderId = null;
       } else {
         expandedOrderId = orderId;
-        await loadOrderDetails(orderId);
       }
       renderOrders();
     }
@@ -656,19 +718,24 @@
         const itemsContainer = document.getElementById(`items-${orderId}`);
         if (!itemsContainer) return;
         
-        itemsContainer.innerHTML = order.items.map(item => `
+        itemsContainer.innerHTML = order.items.map(item => {
+          const quantity = Math.max(1, num(item.quantity) || 1);
+          const lineTotal = num(item.price) * quantity;
+          return `
           <div class="order-item">
             <img src="${esc(item.image_url)}" alt="${esc(item.name)}" class="order-item-image">
             <div class="order-item-info">
               <div class="order-item-name">${esc(item.name)}</div>
-              <div class="order-item-size">${esc(item.size)}</div>
+              <div class="order-item-size">${esc(item.size)} · Qty ${quantity}</div>
               <div class="order-item-label">${esc(item.label)}</div>
             </div>
-            <div class="order-item-price">${fmt(item.price)}</div>
+            <div class="order-item-price">${fmt(lineTotal)}</div>
           </div>
-        `).join('');
+        `;
+        }).join('');
       } catch (err) {
         console.error('Error loading order details:', err);
+        setStatus('Unable to load order details. Try refreshing.', true);
       }
     }
     
@@ -706,13 +773,18 @@
       document.getElementById('confirmModal').classList.add('active');
     }
     
-    function closeModal() {
+    function closeModal(force = false) {
+      if (actionInFlight && !force) return;
       document.getElementById('confirmModal').classList.remove('active');
       pendingAction = null;
     }
     
     async function confirmAction() {
-      if (!pendingAction) return;
+      if (!pendingAction || actionInFlight) return;
+
+      const confirmBtn = document.getElementById('modalConfirmBtn');
+      actionInFlight = true;
+      confirmBtn.disabled = true;
       
       try {
         if (pendingAction.type === 'complete') {
@@ -723,16 +795,22 @@
           if (!response.ok) throw new Error('Delete request failed');
         }
         
-        closeModal();
+        closeModal(true);
         expandedOrderId = null;
+        setStatus('Order updated');
         loadOrders();
       } catch (err) {
         console.error('Error performing action:', err);
+        setStatus('Unable to complete that action. Try again.', true);
+      } finally {
+        actionInFlight = false;
+        confirmBtn.disabled = false;
       }
     }
     
     function formatTime(timestamp) {
       const date = new Date(timestamp);
+      if (Number.isNaN(date.getTime())) return 'Unknown time';
       const now = new Date();
       const diffMs = now - date;
       const diffMins = Math.floor(diffMs / 60000);
@@ -762,8 +840,14 @@
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.5);
       } catch (e) {
-        console.log('Audio notification not available');
+        // Audio notifications can be unavailable until the page receives a user gesture.
       }
+    }
+
+    function setStatus(message, isError = false) {
+      const status = document.getElementById('statusMessage');
+      status.textContent = message;
+      status.classList.toggle('error', Boolean(isError));
     }
   </script>
 </body>

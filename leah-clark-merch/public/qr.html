@@ -161,6 +161,25 @@
       outline: none;
       border-color: #ff6b9d;
     }
+
+    .field-label {
+      display: block;
+      text-align: left;
+      color: #f0e6ff;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .status {
+      min-height: 1.4em;
+      color: #a89cc8;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .status.error {
+      color: #fecaca;
+    }
     
     .btn {
       padding: 12px 30px;
@@ -225,14 +244,17 @@
     
     <!-- Controls -->
     <div class="controls">
+      <label class="field-label" for="customUrl">Ordering page URL</label>
       <input 
-        type="text" 
+        type="url"
         class="url-input" 
         id="customUrl" 
         placeholder="Enter custom URL (or leave blank for auto-detect)"
+        inputmode="url"
       >
-      <button class="btn btn-primary" onclick="generateQR()">Generate QR Code</button>
+      <button class="btn btn-primary" id="generateBtn" onclick="generateQR()">Generate QR Code</button>
       <button class="btn btn-outline" onclick="printPage()">Print Sign</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
     </div>
   </div>
   
@@ -245,16 +267,42 @@
     async function generateQR() {
       const customUrl = document.getElementById('customUrl').value.trim();
       const url = customUrl || window.location.origin;
+      const status = document.getElementById('status');
+      const button = document.getElementById('generateBtn');
+
+      status.textContent = '';
+      status.classList.remove('error');
+
+      try {
+        const parsedUrl = new URL(url);
+        if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+          throw new Error('URL must start with http:// or https://');
+        }
+      } catch (err) {
+        status.textContent = 'Enter a valid web URL before printing.';
+        status.classList.add('error');
+        return;
+      }
       
       try {
+        button.disabled = true;
         const response = await fetch(`/api/qrcode?url=${encodeURIComponent(url)}`);
+        if (!response.ok) {
+          throw new Error(`QR request failed: ${response.status}`);
+        }
         const data = await response.json();
         
         document.getElementById('qrCode').src = data.qrcode;
+        document.getElementById('qrCode').alt = `QR code for ${data.url}`;
         document.getElementById('urlDisplay').textContent = data.url;
+        status.textContent = 'QR code ready to print.';
       } catch (err) {
         console.error('Error generating QR code:', err);
         document.getElementById('urlDisplay').textContent = 'Error generating QR code';
+        status.textContent = 'Could not generate the QR code. Check the URL and try again.';
+        status.classList.add('error');
+      } finally {
+        button.disabled = false;
       }
     }
     

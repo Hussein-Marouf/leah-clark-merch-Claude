@@ -12,25 +12,27 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const DB_PATH = path.join(__dirname, 'db.json');
+const SCHEDULE_PATH = path.join(__dirname, 'data', 'current-schedule.json');
 
 // Initialize lowdb
-const adapter = new JSONFile(path.join(__dirname, 'db.json'));
+const adapter = new JSONFile(DB_PATH);
 const defaultData = {
   prints: [
-    { id: 1, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT', size: '8.5x11', price: 15.00, image_url: '/prints/Aria_Chariot.png', active: true },
-    { id: 2, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT-LG', size: '11x17', price: 25.00, image_url: '/prints/Aria_Chariot.png', active: true },
-    { id: 3, name: 'Asia Argento', label: 'ASIA-ARGENTO', size: '8.5x11', price: 15.00, image_url: '/prints/asia1-85x11.png', active: true },
-    { id: 4, name: 'Asia Argento', label: 'ASIA-ARGENTO-LG', size: '11x17', price: 25.00, image_url: '/prints/asia1-85x11.png', active: true },
-    { id: 5, name: 'Himiko Toga - Red', label: 'TOGA-RED', size: '8.5x11', price: 15.00, image_url: '/prints/Cute_Red_Toga_11x17_tall.png', active: true },
-    { id: 6, name: 'Himiko Toga - Red', label: 'TOGA-RED-LG', size: '11x17', price: 25.00, image_url: '/prints/Cute_Red_Toga_11x17_tall.png', active: true },
-    { id: 7, name: 'Himiko Toga - Mask', label: 'TOGA-MASK', size: '8.5x11', price: 15.00, image_url: '/prints/Himiko_Toga__Mask_2.jpg', active: true },
-    { id: 8, name: 'Himiko Toga - Mask', label: 'TOGA-MASK-LG', size: '11x17', price: 25.00, image_url: '/prints/Himiko_Toga__Mask_2.jpg', active: true },
-    { id: 9, name: "Leah's Art", label: 'LEAHS-ART', size: '8.5x11', price: 15.00, image_url: '/prints/Leahs_Art.jpg', active: true },
-    { id: 10, name: "Leah's Art", label: 'LEAHS-ART-LG', size: '11x17', price: 25.00, image_url: '/prints/Leahs_Art.jpg', active: true },
-    { id: 11, name: 'Through The Key Hole', label: 'KEY-HOLE', size: '8.5x11', price: 15.00, image_url: '/prints/Through_The_Key_Hole.jpg', active: true },
-    { id: 12, name: 'Through The Key Hole', label: 'KEY-HOLE-LG', size: '11x17', price: 25.00, image_url: '/prints/Through_The_Key_Hole.jpg', active: true },
-    { id: 13, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN', size: '8.5x11', price: 15.00, image_url: '/prints/Toga_Chaco_Daylen.jpg', active: true },
-    { id: 14, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN-LG', size: '11x17', price: 25.00, image_url: '/prints/Toga_Chaco_Daylen.jpg', active: true },
+    { id: 1, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT', size: '8.5x11', price: 15.00, image_url: '/prints/display/Aria_Chariot.jpg', active: true },
+    { id: 2, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Aria_Chariot.jpg', active: true },
+    { id: 3, name: 'Asia Argento', label: 'ASIA-ARGENTO', size: '8.5x11', price: 15.00, image_url: '/prints/display/asia1-85x11.jpg', active: true },
+    { id: 4, name: 'Asia Argento', label: 'ASIA-ARGENTO-LG', size: '11x17', price: 25.00, image_url: '/prints/display/asia1-85x11.jpg', active: true },
+    { id: 5, name: 'Himiko Toga - Red', label: 'TOGA-RED', size: '8.5x11', price: 15.00, image_url: '/prints/display/Cute_Red_Toga_11x17_tall.jpg', active: true },
+    { id: 6, name: 'Himiko Toga - Red', label: 'TOGA-RED-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Cute_Red_Toga_11x17_tall.jpg', active: true },
+    { id: 7, name: 'Himiko Toga - Mask', label: 'TOGA-MASK', size: '8.5x11', price: 15.00, image_url: '/prints/display/Himiko_Toga__Mask_2.jpg', active: true },
+    { id: 8, name: 'Himiko Toga - Mask', label: 'TOGA-MASK-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Himiko_Toga__Mask_2.jpg', active: true },
+    { id: 9, name: "Leah's Art", label: 'LEAHS-ART', size: '8.5x11', price: 15.00, image_url: '/prints/display/Leahs_Art.jpg', active: true },
+    { id: 10, name: "Leah's Art", label: 'LEAHS-ART-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Leahs_Art.jpg', active: true },
+    { id: 11, name: 'Through The Key Hole', label: 'KEY-HOLE', size: '8.5x11', price: 15.00, image_url: '/prints/display/Through_The_Key_Hole.jpg', active: true },
+    { id: 12, name: 'Through The Key Hole', label: 'KEY-HOLE-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Through_The_Key_Hole.jpg', active: true },
+    { id: 13, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN', size: '8.5x11', price: 15.00, image_url: '/prints/display/Toga_Chaco_Daylen.jpg', active: true },
+    { id: 14, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Toga_Chaco_Daylen.jpg', active: true },
   ],
   orders: [],
   nextOrderId: 1
@@ -39,77 +41,85 @@ const defaultData = {
 const db = new Low(adapter, defaultData);
 await db.read();
 
-// Initialize default data if empty or null
+const normalizeEmail = (email) => String(email || '').trim().toLowerCase();
+const isValidEmail = (email) => /^\S+@\S+\.\S+$/.test(email);
+const parseOrderId = (value) => {
+  const id = Number.parseInt(value, 10);
+  return Number.isInteger(id) && id > 0 ? id : null;
+};
+const isSafeHttpUrl = (value) => {
+  try {
+    const url = new URL(String(value || '').trim());
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+};
+const orderTotals = (order) => {
+  const items = Array.isArray(order.items) ? order.items : [];
+  return {
+    ...order,
+    item_count: items.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0),
+    total: items.reduce((sum, item) => sum + ((Number(item.price) || 0) * (Number(item.quantity) || 0)), 0)
+  };
+};
+
+// Initialize data and keep the seeded print catalog current across deploys.
 if (!db.data) {
   db.data = defaultData;
 }
-if (!db.data.prints || db.data.prints.length === 0) {
-  db.data.prints = defaultData.prints;
+const currentPrints = Array.isArray(db.data.prints) ? db.data.prints : [];
+const currentPrintsById = new Map(currentPrints.map((print) => [print.id, print]));
+const seededPrintIds = new Set(defaultData.prints.map((print) => print.id));
+db.data.prints = [
+  ...defaultData.prints.map((print) => {
+    const existingPrint = currentPrintsById.get(print.id);
+    return {
+      ...(existingPrint || {}),
+      ...print,
+      active: typeof existingPrint?.active === 'boolean' ? existingPrint.active : print.active
+    };
+  }),
+  ...currentPrints.filter((print) => {
+    const id = Number(print?.id);
+    return Number.isInteger(id) && !seededPrintIds.has(id);
+  })
+];
+db.data.orders = Array.isArray(db.data.orders)
+  ? db.data.orders.filter((order) => {
+    if (!order || !isValidEmail(normalizeEmail(order.email))) return false;
+    order.email = normalizeEmail(order.email);
+    order.items = Array.isArray(order.items) ? order.items : [];
+    order.status = order.status || 'pending';
+    return true;
+  })
+  : [];
+db.data.nextOrderId = Number.isInteger(db.data.nextOrderId) && db.data.nextOrderId > 0
+  ? db.data.nextOrderId
+  : Math.max(0, ...db.data.orders.map((order) => Number(order.id) || 0)) + 1;
+
+const highestExistingOrderId = Math.max(0, ...db.data.orders.map((order) => Number(order.id) || 0));
+if (db.data.nextOrderId <= highestExistingOrderId) {
+  db.data.nextOrderId = highestExistingOrderId + 1;
 }
-const existingPrintIds = new Set(db.data.prints.map((print) => print.id));
-defaultData.prints.forEach((print) => {
-  if (!existingPrintIds.has(print.id)) {
-    db.data.prints.push(print);
-  }
-});
-db.data.orders = Array.isArray(db.data.orders) ? db.data.orders : [];
-db.data.nextOrderId = Number.isInteger(db.data.nextOrderId) ? db.data.nextOrderId : 1;
 await db.write();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/prints', express.static(path.join(__dirname, 'prints')));
-app.use('/documents', express.static(path.join(__dirname, 'documents')));
+const buildOrderItems = (items) => {
+  const quantityByPrintId = new Map();
 
-// API Routes
+  items.forEach((item) => {
+    const printId = Number(item?.print_id);
+    const quantity = Math.min(99, Math.max(1, Number.parseInt(item?.quantity, 10) || 1));
 
-// Get all active prints
-app.get('/api/prints', (req, res) => {
-  const prints = db.data.prints.filter(p => p.active);
-  res.json(prints);
-});
+    if (Number.isInteger(printId)) {
+      quantityByPrintId.set(printId, Math.min(99, (quantityByPrintId.get(printId) || 0) + quantity));
+    }
+  });
 
-// Get current event schedule exported from the shared Google Sheet
-app.get('/api/schedule', async (req, res) => {
-  try {
-    const schedulePath = path.join(__dirname, 'data', 'current-schedule.json');
-    const schedule = JSON.parse(await fs.readFile(schedulePath, 'utf8'));
-    res.json(schedule);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to load schedule' });
-  }
-});
-
-// Create or update order
-app.post('/api/orders', async (req, res) => {
-  const { email, items } = req.body;
-  
-  if (!email || !Array.isArray(items) || items.length === 0) {
-    return res.status(400).json({ error: 'Email and items are required' });
-  }
-
-  const normalizedEmail = String(email).trim().toLowerCase();
-  if (!/^\S+@\S+\.\S+$/.test(normalizedEmail)) {
-    return res.status(400).json({ error: 'A valid email is required' });
-  }
-  
-  // Find existing pending order for this email
-  const existingOrderIndex = db.data.orders.findIndex(
-    o => o.email.toLowerCase() === normalizedEmail && o.status === 'pending'
-  );
-  
-  let orderId;
-  const now = new Date().toISOString();
-  
-  // Build items with print info
-  const orderItems = items.map(item => {
-    const printId = Number(item.print_id);
-    const print = db.data.prints.find(p => p.id === printId && p.active);
+  return Array.from(quantityByPrintId.entries()).map(([printId, quantity]) => {
+    const print = db.data.prints.find((candidate) => candidate.id === printId && candidate.active);
     if (!print) return null;
 
-    const quantity = Math.max(1, Number.parseInt(item.quantity, 10) || 1);
     return {
       print_id: print.id,
       quantity,
@@ -120,6 +130,86 @@ app.post('/api/orders', async (req, res) => {
       image_url: print.image_url
     };
   }).filter(Boolean);
+};
+
+const findPendingOrderByEmail = (email) => {
+  const normalizedEmail = normalizeEmail(email);
+  return db.data.orders.find(
+    (order) => normalizeEmail(order.email) === normalizedEmail && order.status === 'pending'
+  );
+};
+
+const findPendingOrderIndexByEmail = (email) => {
+  const normalizedEmail = normalizeEmail(email);
+  return db.data.orders.findIndex(
+    (order) => normalizeEmail(order.email) === normalizedEmail && order.status === 'pending'
+  );
+};
+
+const findOrderIndexById = (id) => db.data.orders.findIndex((order) => order.id === id);
+
+const asyncRoute = (handler) => async (req, res, next) => {
+  try {
+    await handler(req, res, next);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// Middleware
+app.use(cors());
+app.use(express.json({ limit: '100kb' }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: '0' }));
+app.use('/prints', express.static(path.join(__dirname, 'prints'), { maxAge: '1h' }));
+app.use('/documents', express.static(path.join(__dirname, 'documents'), { maxAge: '5m' }));
+
+// API Routes
+
+// Get all active prints
+app.get('/api/prints', (req, res) => {
+  const prints = db.data.prints.filter(p => p.active);
+  res.json(prints);
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    ok: true,
+    prints: db.data.prints.filter((print) => print.active).length,
+    pending_orders: db.data.orders.filter((order) => order.status === 'pending').length
+  });
+});
+
+// Get current event schedule exported from the shared Google Sheet
+app.get('/api/schedule', asyncRoute(async (req, res) => {
+  const schedule = JSON.parse(await fs.readFile(SCHEDULE_PATH, 'utf8'));
+  res.json(schedule);
+}));
+
+// Create or update order
+app.post('/api/orders', asyncRoute(async (req, res) => {
+  const { email, items } = req.body;
+  
+  if (!email || !Array.isArray(items) || items.length === 0) {
+    return res.status(400).json({ error: 'Email and items are required' });
+  }
+
+  if (items.length > 100) {
+    return res.status(400).json({ error: 'Too many items in one order' });
+  }
+
+  const normalizedEmail = normalizeEmail(email);
+  if (!isValidEmail(normalizedEmail)) {
+    return res.status(400).json({ error: 'A valid email is required' });
+  }
+  
+  // Find existing pending order for this email
+  const existingOrderIndex = findPendingOrderIndexByEmail(normalizedEmail);
+  
+  let orderId;
+  const now = new Date().toISOString();
+  
+  // Build items with print info
+  const orderItems = buildOrderItems(items);
 
   if (orderItems.length === 0) {
     return res.status(400).json({ error: 'At least one valid print is required' });
@@ -144,34 +234,29 @@ app.post('/api/orders', async (req, res) => {
   }
   
   await db.write();
+
+  const savedOrder = db.data.orders.find((order) => order.id === orderId);
   
   res.json({ 
     success: true, 
     orderId,
+    order: orderTotals(savedOrder),
     message: existingOrderIndex >= 0 ? 'Order updated' : 'Order created'
   });
-});
+}));
 
 // Get order by email (customer view)
 app.get('/api/orders/email/:email', (req, res) => {
-  const { email } = req.params;
+  const order = findPendingOrderByEmail(req.params.email);
   
-  const order = db.data.orders.find(
-    o => o.email.toLowerCase() === email.toLowerCase() && o.status === 'pending'
-  );
-  
-  res.json({ order: order || null });
+  res.json({ order: order ? orderTotals(order) : null });
 });
 
 // Admin: Get all pending orders
 app.get('/api/admin/orders', (req, res) => {
   const pendingOrders = db.data.orders
     .filter(o => o.status === 'pending')
-    .map(order => ({
-      ...order,
-      item_count: order.items.reduce((sum, i) => sum + i.quantity, 0),
-      total: order.items.reduce((sum, i) => sum + (i.price * i.quantity), 0)
-    }))
+    .map(orderTotals)
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   
   res.json(pendingOrders);
@@ -179,19 +264,19 @@ app.get('/api/admin/orders', (req, res) => {
 
 // Admin: Get specific order
 app.get('/api/admin/orders/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseOrderId(req.params.id);
   const order = db.data.orders.find(o => o.id === id);
   
   if (!order) {
     return res.status(404).json({ error: 'Order not found' });
   }
   
-  res.json(order);
+  res.json(orderTotals(order));
 });
 
 // Admin: Search by email
 app.get('/api/admin/search', (req, res) => {
-  const { email } = req.query;
+  const email = normalizeEmail(req.query.email);
   
   if (!email) {
     return res.status(400).json({ error: 'Email query required' });
@@ -199,60 +284,64 @@ app.get('/api/admin/search', (req, res) => {
   
   const orders = db.data.orders
     .filter(o => 
-      o.email.toLowerCase().includes(email.toLowerCase()) && 
+      normalizeEmail(o.email).includes(email) &&
       o.status === 'pending'
     )
-    .map(order => ({
-      ...order,
-      item_count: order.items.reduce((sum, i) => sum + i.quantity, 0),
-      total: order.items.reduce((sum, i) => sum + (i.price * i.quantity), 0)
-    }))
+    .map(orderTotals)
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   
   res.json(orders);
 });
 
 // Admin: Complete order
-app.post('/api/admin/orders/:id/complete', async (req, res) => {
-  const id = parseInt(req.params.id);
-  const orderIndex = db.data.orders.findIndex(o => o.id === id);
+app.post('/api/admin/orders/:id/complete', asyncRoute(async (req, res) => {
+  const id = parseOrderId(req.params.id);
+  const orderIndex = findOrderIndexById(id);
   
-  if (orderIndex >= 0) {
-    db.data.orders[orderIndex].status = 'completed';
-    db.data.orders[orderIndex].completed_at = new Date().toISOString();
-    await db.write();
+  if (orderIndex < 0) {
+    return res.status(404).json({ error: 'Order not found' });
   }
-  
+
+  db.data.orders[orderIndex].status = 'completed';
+  db.data.orders[orderIndex].completed_at = new Date().toISOString();
+  await db.write();
+
   res.json({ success: true });
-});
+}));
 
 // Admin: Delete order
-app.delete('/api/admin/orders/:id', async (req, res) => {
-  const id = parseInt(req.params.id);
-  db.data.orders = db.data.orders.filter(o => o.id !== id);
+app.delete('/api/admin/orders/:id', asyncRoute(async (req, res) => {
+  const id = parseOrderId(req.params.id);
+  const orderIndex = findOrderIndexById(id);
+
+  if (orderIndex < 0) {
+    return res.status(404).json({ error: 'Order not found' });
+  }
+
+  db.data.orders.splice(orderIndex, 1);
   await db.write();
   
   res.json({ success: true });
-});
+}));
 
 // Generate QR code
-app.get('/api/qrcode', async (req, res) => {
-  const baseUrl = req.query.url || `${req.protocol}://${req.get('host')}`;
-  
-  try {
-    const qrDataUrl = await QRCode.toDataURL(baseUrl, {
-      width: 400,
-      margin: 2,
-      color: {
-        dark: '#000000',
-        light: '#ffffff'
-      }
-    });
-    res.json({ qrcode: qrDataUrl, url: baseUrl });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to generate QR code' });
+app.get('/api/qrcode', asyncRoute(async (req, res) => {
+  const baseUrl = String(req.query.url || `${req.protocol}://${req.get('host')}`).trim();
+
+  if (!isSafeHttpUrl(baseUrl)) {
+    return res.status(400).json({ error: 'Please enter a valid http or https URL' });
   }
-});
+
+  const qrDataUrl = await QRCode.toDataURL(baseUrl, {
+    width: 400,
+    margin: 2,
+    color: {
+      dark: '#000000',
+      light: '#ffffff'
+    }
+  });
+  res.json({ qrcode: qrDataUrl, url: baseUrl });
+}));
 
 // Serve pages
 app.get('/', (req, res) => {
@@ -271,6 +360,16 @@ app.get('/schedule', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'schedule.html'));
 });
 
+app.use('/api', (req, res) => {
+  res.status(404).json({ error: 'API route not found' });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  const message = req.path === '/api/schedule' ? 'Failed to load schedule' : 'Something went wrong';
+  res.status(500).json({ error: message });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log('');
@@ -282,6 +381,7 @@ app.listen(PORT, () => {
   console.log(`║  📱 Customer Page:  http://localhost:${PORT}                    ║`);
   console.log(`║  📋 Admin Panel:    http://localhost:${PORT}/admin              ║`);
   console.log(`║  🔲 QR Code Page:   http://localhost:${PORT}/qr                 ║`);
+  console.log(`║  🗓️  Schedule Page:  http://localhost:${PORT}/schedule           ║`);
   console.log('║                                                              ║');
   console.log('╚══════════════════════════════════════════════════════════════╝');
   console.log('');

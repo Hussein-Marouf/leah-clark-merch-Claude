@@ -81,6 +81,26 @@
       margin-bottom: 20px;
     }
 
+    .meta a {
+      color: var(--gold);
+    }
+
+    .summary-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .pill {
+      border: 1px solid rgba(157, 78, 221, 0.35);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--text);
+      background: rgba(157, 78, 221, 0.14);
+      font-weight: 700;
+    }
+
     .schedule-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -148,6 +168,7 @@
     </header>
 
     <p class="meta" id="meta">Loading schedule...</p>
+    <div class="summary-row" id="summaryRow" aria-live="polite"></div>
     <main class="schedule-list" id="scheduleList"></main>
   </div>
 
@@ -158,6 +179,7 @@
 
     async function loadSchedule() {
       const meta = document.getElementById('meta');
+      const summary = document.getElementById('summaryRow');
       const list = document.getElementById('scheduleList');
 
       try {
@@ -167,11 +189,28 @@
         const events = Array.isArray(schedule.events) ? schedule.events : [];
 
         meta.textContent = `Updated ${schedule.updated_at || 'from the current sheet'}`;
+        if (schedule.source) {
+          const sourceLink = document.createElement('a');
+          sourceLink.href = schedule.source;
+          sourceLink.target = '_blank';
+          sourceLink.rel = 'noreferrer';
+          sourceLink.textContent = 'Source sheet';
+          meta.append(' · ', sourceLink);
+        }
 
         if (!events.length) {
+          summary.textContent = '';
           list.innerHTML = '<p class="empty">No events available.</p>';
           return;
         }
+
+        const cancelledCount = events.filter((event) => event.status === 'cancelled').length;
+        const activeCount = events.length - cancelledCount;
+        summary.innerHTML = `
+          <span class="pill">${activeCount} active</span>
+          <span class="pill">${cancelledCount} cancelled</span>
+          <span class="pill">${events.length} total</span>
+        `;
 
         list.innerHTML = events.map((event) => `
           <article class="event-card ${event.status === 'cancelled' ? 'cancelled' : ''}">
