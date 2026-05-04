@@ -28,6 +28,18 @@ Customer-facing product rows are limited to:
 
 `data/product-catalog.json` also includes internal ids for order stability and audit rows for products that need image or price review.
 
+Downloaded catalog images live here:
+
+```text
+leah-clark-merch/prints/catalog/
+```
+
+The download manifest records which Drive links worked and which returned Google sign-in pages:
+
+```text
+leah-clark-merch/prints/catalog/manifest.json
+```
+
 The source exports currently kept for audit are:
 
 ```text

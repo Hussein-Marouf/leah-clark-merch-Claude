@@ -1,73 +1,73 @@
 quantity,image_type,name,image,size,price,availability
-7,paper print,Asia Clovers,https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000,11x17,25.0,available
-10,paper print,Holiday Toga (seasonal),https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000,11x17,25.0,available
-2,paper print,HS DXD Trio,https://drive.google.com/thumbnail?id=1Lu24Ig8cFeZK0TnHrfQ1tbEcZsp47Iye&sz=w1000,11x17,25.0,available
-10,paper print,Kob_Tohru_Omurice,https://drive.google.com/thumbnail?id=1itj9ZM4euTG0H8C6DXKQKJ2gIB1TZ6V6&sz=w1000,11x17,25.0,available
-2,paper print,Kobayashi Kana Tohru,https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000,11x17,25.0,available
-10,paper print,Mavis and Zeref Close,https://drive.google.com/thumbnail?id=1pS19AplNDYju0Nh4STiT2evAbIxOflX9&sz=w1000,11x17,25.0,available
-2,paper print,One Piece Duo,https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000,11x17,25.0,available
-7,paper print,Toga Ochaco AWK Hug,https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000,11x17,25.0,available
-5,paper print,Toga Ochaco Cover  B/W,https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000,11x17,25.0,available
-3,paper print,Toga Ochaco Point,https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000,11x17,25.0,available
-3,paper print,Toga Red,https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000,11x17,25.0,available
-3,paper print,Toga Split,https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000,11x17,25.0,available
-7,paper print,Toga Trail,https://drive.google.com/thumbnail?id=1rTuV8TOIHmS-kAVSCD7l5V8mbHdpMKL_&sz=w1000,11x17,25.0,available
-3,paper print,Bathtub Blair,https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000,8.5x11,15.0,available
-5,paper print,Holiday Toga (seasonal),https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000,8.5x11,15.0,available
-1,paper print,Spice and Wolf,https://drive.google.com/thumbnail?id=1U2zpSuYct1Y4EdPOJ7LJplAxkgudwFc6&sz=w1000,8.5x11,15.0,available
-10,paper print,Toga Cute (Photo Op Duo),https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000,8.5x11,15.0,available
-3,holographic print,Asia Argento Nun,https://drive.google.com/thumbnail?id=1eGWcXHlQj9EyFay1MbgJbJMa4nQNGc7p&sz=w1000,holographic,,needs price
+7,paper print,Asia Clovers,,11x17,25.0,needs image
+10,paper print,Holiday Toga (seasonal),/prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg,11x17,25.0,available
+2,paper print,HS DXD Trio,,11x17,25.0,needs image
+10,paper print,Kob_Tohru_Omurice,,11x17,25.0,needs image
+2,paper print,Kobayashi Kana Tohru,/prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png,11x17,25.0,available
+10,paper print,Mavis and Zeref Close,,11x17,25.0,needs image
+2,paper print,One Piece Duo,/prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png,11x17,25.0,available
+7,paper print,Toga Ochaco AWK Hug,,11x17,25.0,needs image
+5,paper print,Toga Ochaco Cover  B/W,,11x17,25.0,needs image
+3,paper print,Toga Ochaco Point,,11x17,25.0,needs image
+3,paper print,Toga Red,,11x17,25.0,needs image
+3,paper print,Toga Split,,11x17,25.0,needs image
+7,paper print,Toga Trail,,11x17,25.0,needs image
+3,paper print,Bathtub Blair,/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png,8.5x11,15.0,available
+5,paper print,Holiday Toga (seasonal),/prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg,8.5x11,15.0,available
+1,paper print,Spice and Wolf,/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg,8.5x11,15.0,available
+10,paper print,Toga Cute (Photo Op Duo),,8.5x11,15.0,needs image
+3,holographic print,Asia Argento Nun,/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png,holographic,,needs price
 3,holographic print,Asia Bikini,,holographic,,needs image
-5,holographic print,Asia Clover,https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000,holographic,,needs price
-3,holographic print,Asia Ecchi Shot,https://drive.google.com/thumbnail?id=1uz_w4GOZ0WLA_mSpAPi5YslpbcSRrGSH&sz=w1000,holographic,,needs price
-3,holographic print,Bathtub Blair,https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000,holographic,,needs price
-5,holographic print,Blair Fly Moon,https://drive.google.com/thumbnail?id=1xPi5dPJhHhAJVFlgksnQhJZARbX1-ysy&sz=w1000,holographic,,needs price
-5,holographic print,Blair Orange Kiss,https://drive.google.com/thumbnail?id=1AcJHRBLSpLGQlHDm9xEH-0D3bMo2KGxR&sz=w1000,holographic,,needs price
-3,holographic print,Blood Artisan Asia,https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000,holographic,,needs price
+5,holographic print,Asia Clover,,holographic,,needs image
+3,holographic print,Asia Ecchi Shot,/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png,holographic,,needs price
+3,holographic print,Bathtub Blair,/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png,holographic,,needs price
+5,holographic print,Blair Fly Moon,,holographic,,needs image
+5,holographic print,Blair Orange Kiss,,holographic,,needs image
+3,holographic print,Blood Artisan Asia,,holographic,,needs image
 3,holographic print,Blood Artisan Blair,,holographic,,needs image
 3,holographic print,Blood Artisan Kobayashi,,holographic,,needs image
-5,holographic print,Cute Red Toga,https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000,holographic,,needs price
+5,holographic print,Cute Red Toga,/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png,holographic,,needs price
 3,holographic print,Ecchi Tattoo Toga,,holographic,,needs image
-3,holographic print,Ecchi Toga Flash,https://drive.google.com/thumbnail?id=1mvg_kp_dU7SvOks5t5I23jv8RV51l-Bo&sz=w1000,holographic,,needs price
-3,holographic print,Forest Mavis,https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000,holographic,,needs price
-3,holographic print,Holiday Toga (seasonal),https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000,holographic,,needs price
+3,holographic print,Ecchi Toga Flash,/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg,holographic,,needs price
+3,holographic print,Forest Mavis,/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg,holographic,,needs price
+3,holographic print,Holiday Toga (seasonal),/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg,holographic,,needs price
 3,holographic print,Koabayashi Ecchi,,holographic,,needs image
 3,holographic print,Kob Tohru Holiday (seasonal),,holographic,,needs image
-3,holographic print,Kobayashi Kana Tohru,https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000,holographic,,needs price
+3,holographic print,Kobayashi Kana Tohru,/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png,holographic,,needs price
 5,holographic print,Kobayashi Tohru Gift,,holographic,,needs image
 3,holographic print,Kobayashi Tohru Nap,,holographic,,needs image
 3,holographic print,Koby Mopping,,holographic,,needs image
-10,holographic print,Mavis Zeref SCENE,https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000,holographic,,needs price
-3,holographic print,One Piece Duo,https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000,holographic,,needs price
-3,holographic print,Orange Pumpkin Blair,https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000,holographic,,needs price
+10,holographic print,Mavis Zeref SCENE,,holographic,,needs image
+3,holographic print,One Piece Duo,/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png,holographic,,needs price
+3,holographic print,Orange Pumpkin Blair,/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg,holographic,,needs price
 3,holographic print,Pink Manga Cover,,holographic,,needs image
-3,holographic print,Purple Paws Blair,https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000,holographic,,needs price
+3,holographic print,Purple Paws Blair,/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png,holographic,,needs price
 3,holographic print,Red Black White Toga,,holographic,,needs image
-3,holographic print,Red Stab Toga,https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000,holographic,,needs price
+3,holographic print,Red Stab Toga,/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png,holographic,,needs price
 2,holographic print,Ruby Blood Artisan,,holographic,,needs image
-3,holographic print,Toga Black Mask,https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000,holographic,,needs price
-3,holographic print,Toga Dabi Black White,https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000,holographic,,needs price
-3,holographic print,Toga Dabi City,https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000,holographic,,needs price
+3,holographic print,Toga Black Mask,/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png,holographic,,needs price
+3,holographic print,Toga Dabi Black White,/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png,holographic,,needs price
+3,holographic print,Toga Dabi City,,holographic,,needs image
 5,holographic print,Toga Neon Red,,holographic,,needs image
 3,holographic print,Toga Ochaco Cover,,holographic,,needs image
-3,holographic print,Toga Ochaco Point,https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000,holographic,,needs price
+3,holographic print,Toga Ochaco Point,,holographic,,needs image
 3,holographic print,Toga Ochaco Pride (seasonal),,holographic,,needs image
 3,holographic print,Toga Ochaco Purple,,holographic,,needs image
-10,holographic print,Toga Pink Aimee Ny Poster,https://drive.google.com/thumbnail?id=1n1eHjJi4I6BW_35UJ9npBXBGVMJvoNJO&sz=w1000,holographic,,needs price
-5,holographic print,Toga Pink Hearts,https://drive.google.com/thumbnail?id=15MFGXiF4wPzcQr3enaVjsV1VQFd4d1kP&sz=w1000,holographic,,needs price
-5,holographic print,Toga Sparkle,https://drive.google.com/thumbnail?id=1fAqUdP7q9Jkx1eW3pfB9MgxPslSpXIe4&sz=w1000,holographic,,needs price
-5,holographic print,Toga Sparkle Purple,https://drive.google.com/thumbnail?id=1ssjamR1iDi90_uPSJUyFEOtJRn8DPPOx&sz=w1000,holographic,,needs price
-5,holographic print,Toga split,https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000,holographic,,needs price
-5,holographic print,Toga Tsu Grayscale,https://drive.google.com/thumbnail?id=12SKltQxFCGd6HFE5FjzcWxqQtXdarvrQ&sz=w1000,holographic,,needs price
+10,holographic print,Toga Pink Aimee Ny Poster,,holographic,,needs image
+5,holographic print,Toga Pink Hearts,/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png,holographic,,needs price
+5,holographic print,Toga Sparkle,,holographic,,needs image
+5,holographic print,Toga Sparkle Purple,,holographic,,needs image
+5,holographic print,Toga split,,holographic,,needs image
+5,holographic print,Toga Tsu Grayscale,,holographic,,needs image
 3,holographic print,Toga Twice Dance,,holographic,,needs image
 4,metal print,Asia Card J,,6x9,,needs image
-2,metal print,Asia Clover,https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000,6x9,,needs price
+2,metal print,Asia Clover,,6x9,,needs image
 2,metal print,Asia Kimono,,6x9,,needs image
 2,metal print,Asia Ready to Play,,6x9,,needs image
 2,metal print,Asia Xenovia Leash,,6x9,,needs image
 4,metal print,Asia Xenovia Sparkly,,6x9,,needs image
 5,metal print,Blair_Maka_MangaPanel,,6x9,,needs image
-1,metal print,Blood Artisan Asia,https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000,6x9,,needs price
+1,metal print,Blood Artisan Asia,,6x9,,needs image
 3,metal print,Blood Artisan Kobayashi,,6x9,,needs image
 3,metal print,Blood Artisan Ruby,,6x9,,needs image
 1,metal print,Blood Artisan Toga,,6x9,,needs image
@@ -76,7 +76,7 @@ quantity,image_type,name,image,size,price,availability
 3,metal print,Dragon Maid Nap,,6x9,,needs image
 5,metal print,DXD Card Art,,6x9,,needs image
 5,metal print,FairyTail Cast,,6x9,,needs image
-3,metal print,Holiday Toga (seasonal),https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000,6x9,,needs price
+3,metal print,Holiday Toga (seasonal),/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg,6x9,,needs price
 2,metal print,Lovely Smile,,6x9,,needs image
 1,metal print,Lovers Toga,,6x9,,needs image
 2,metal print,Magician Blair,,6x9,,needs image
@@ -93,78 +93,78 @@ quantity,image_type,name,image,size,price,availability
 1,metal print,Toga #6 Coat Card Art,,6x9,,needs image
 2,metal print,Toga Boyfriend,,6x9,,needs image
 2,metal print,Toga Coat Walk,,6x9,,needs image
-4,metal print,Toga Ochaco Awk Hug,https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000,6x9,,needs price
+4,metal print,Toga Ochaco Awk Hug,,6x9,,needs image
 3,metal print,Toga Rare Stab,,6x9,,needs image
 3,metal print,Toga Thank You- End Scene,,6x9,,needs image
 1,metal print,Uraka V Toga Cover red bg,,6x9,,needs image
 2,metal print,Venom Toga,,6x9,,needs image
-2,metal print,Bathtub Blair,https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000,large metal,,needs price
+2,metal print,Bathtub Blair,/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png,large metal,,needs price
 2,metal print,Blair Pumpkin Kiss,,large metal,,needs image
 5,metal print,Blood Artisan Toga,,large metal,,needs image
-2,metal print,Cute Red Toga,https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000,large metal,,needs price
+2,metal print,Cute Red Toga,/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png,large metal,,needs price
 5,metal print,FairyTail Cast,,large metal,,needs image
 5,metal print,Lisa Frank Toga,,large metal,,needs image
 2,metal print,MVA Cover,,large metal,,needs image
-2,metal print,Orange Pumpkin Blair,https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000,large metal,,needs price
+2,metal print,Orange Pumpkin Blair,/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg,large metal,,needs price
 2,metal print,Pink Manga Cover Toga,,large metal,,needs image
-2,metal print,Purple Paws Blair,https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000,large metal,,needs price
+2,metal print,Purple Paws Blair,/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png,large metal,,needs price
 2,metal print,Red Black White Toga,,large metal,,needs image
-2,metal print,Red Stab Toga,https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000,large metal,,needs price
-2,metal print,Toga Black Mask,https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000,large metal,,needs price
-2,metal print,Toga Dabi Black White,https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000,large metal,,needs price
-2,metal print,Toga Dabi City,https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000,large metal,,needs price
+2,metal print,Red Stab Toga,/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png,large metal,,needs price
+2,metal print,Toga Black Mask,/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png,large metal,,needs price
+2,metal print,Toga Dabi Black White,/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png,large metal,,needs price
+2,metal print,Toga Dabi City,,large metal,,needs image
 2,metal print,Toga Neon Red,,large metal,,needs image
-2,metal print,Toga Ochaco Cover  WBG,https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000,large metal,,needs price
-2,metal print,Toga Ochaco Point,https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000,large metal,,needs price
+2,metal print,Toga Ochaco Cover  WBG,,large metal,,needs image
+2,metal print,Toga Ochaco Point,,large metal,,needs image
 5,metal print,Toga Ochaco Purple,,large metal,,needs image
-2,metal print,Toga Pink Hearts,https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000,large metal,,needs price
+2,metal print,Toga Pink Hearts,,large metal,,needs image
 2,metal print,Toga Twice Dance,,large metal,,needs image
 3,metal print,Asia Bikini,,medium metal,,needs image
 2,metal print,Blair Moon Fly,,medium metal,,needs image
-3,metal print,Blood Artisan Asia,https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000,medium metal,,needs price
+3,metal print,Blood Artisan Asia,,medium metal,,needs image
 1,metal print,Blood Artisan Blair,,medium metal,,needs image
 3,metal print,Blood Artisan Toga,,medium metal,,needs image
-2,metal print,Cute Red Toga,https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000,medium metal,,needs price
+2,metal print,Cute Red Toga,/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png,medium metal,,needs price
 5,metal print,DXD Card Art,,medium metal,,needs image
 3,metal print,DXD Hug,,medium metal,,needs image
-5,metal print,Forest Mavis,https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000,medium metal,,needs price
-5,metal print,Holiday Toga (seasonal),https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000,medium metal,,needs price
-3,metal print,Kobayashi Kabob,https://drive.google.com/thumbnail?id=1s6EqeMpseuVycH_cfMRv9EozTLU54Rd3&sz=w1000,medium metal,,needs price
+5,metal print,Forest Mavis,/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg,medium metal,,needs price
+5,metal print,Holiday Toga (seasonal),/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg,medium metal,,needs price
+3,metal print,Kobayashi Kabob,,medium metal,,needs image
 3,metal print,Kobayashi Tohru Nap,,medium metal,,needs image
 3,metal print,Kobayashi Tohru White,,medium metal,,needs image
 2,metal print,Koby Tribute Card,,medium metal,,needs image
-10,metal print,Mavis Zeref Scene,https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000,medium metal,,needs price
+10,metal print,Mavis Zeref Scene,,medium metal,,needs image
 5,metal print,Mavis Zeref Touch,,medium metal,,needs image
 3,metal print,New Blair Pumpkin Wink,,medium metal,,needs image
 2,metal print,NYE Blair (seasonal),,medium metal,,needs image
-2,metal print,One Piece Duo,https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000,medium metal,,needs price
+2,metal print,One Piece Duo,/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png,medium metal,,needs price
 5,metal print,Pink Manga Cover Toga,,medium metal,,needs image
 3,metal print,Pink Mavis,,medium metal,,needs image
 2,metal print,Pink Shadows Mavis,,medium metal,,needs image
 3,metal print,Red Black White Toga,,medium metal,,needs image
-2,metal print,Red Stab Toga,https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000,medium metal,,needs price
-3,metal print,Toga Black Mask,https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000,medium metal,,needs price
-5,metal print,Toga Dabi Black White,https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000,medium metal,,needs price
-3,metal print,Toga Dabi City,https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000,medium metal,,needs price
+2,metal print,Red Stab Toga,/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png,medium metal,,needs price
+3,metal print,Toga Black Mask,/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png,medium metal,,needs price
+5,metal print,Toga Dabi Black White,/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png,medium metal,,needs price
+3,metal print,Toga Dabi City,,medium metal,,needs image
 2,metal print,Toga Grinch (seasonal),,medium metal,,needs image
 3,metal print,Toga Neon Red,,medium metal,,needs image
-3,metal print,Toga Ochaco AWK Hug,https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000,medium metal,,needs price
+3,metal print,Toga Ochaco AWK Hug,,medium metal,,needs image
 2,metal print,Toga Ochaco Cover -white bg,,medium metal,,needs image
-3,metal print,Toga Ochaco Point,https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000,medium metal,,needs price
+3,metal print,Toga Ochaco Point,,medium metal,,needs image
 4,metal print,Toga Ochaco Pride (seasonal),,medium metal,,needs image
 3,metal print,Toga Ochaco Purple,,medium metal,,needs image
-5,metal print,Toga Pink Hearts,https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000,medium metal,,needs price
-3,metal print,Toga Split,https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000,medium metal,,needs price
+5,metal print,Toga Pink Hearts,,medium metal,,needs image
+3,metal print,Toga Split,,medium metal,,needs image
 3,metal print,Toga Stab -Gray,,medium metal,,needs image
 3,metal print,Toga Twice Dance,,medium metal,,needs image
 2,metal print,tt toga,,medium metal,,needs image
 2,metal trading card,Aerith,,trading card,,needs image
 4,metal trading card,Asia Card J,,trading card,,needs image
 1,metal trading card,Asia Closeup Card Art,,trading card,,needs image
-4,metal trading card,Asia Clover,https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000,trading card,,needs price
+4,metal trading card,Asia Clover,,trading card,,needs image
 2,metal trading card,Asia Kimono,,trading card,,needs image
 2,metal trading card,Asia Konako Card Art,,trading card,,needs image
-4,metal trading card,Asia lvl 4 card,https://drive.google.com/thumbnail?id=1eL_UnlUeifUcvXO-u0fiLygIQl1M8UkV&sz=w1000,trading card,,needs price
+4,metal trading card,Asia lvl 4 card,,trading card,,needs image
 2,metal trading card,Asia Ready To Play,,trading card,,needs image
 2,metal trading card,Asia Sporty Card,,trading card,,needs image
 1,metal trading card,Asia Temperance,,trading card,,needs image
@@ -208,7 +208,7 @@ quantity,image_type,name,image,size,price,availability
 1,metal trading card,Suzuka Strength,,trading card,,needs image
 1,metal trading card,Toga 6 Coat,,trading card,,needs image
 4,metal trading card,Toga Aimee Nix Poster,,trading card,,needs image
-2,metal trading card,Toga Black Mask,https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000,trading card,,needs price
+2,metal trading card,Toga Black Mask,/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png,trading card,,needs price
 5,metal trading card,Toga Bunny,,trading card,,needs image
 5,metal trading card,Toga Crouch,,trading card,,needs image
 2,metal trading card,Toga Cute Cos,,trading card,,needs image
@@ -216,7 +216,7 @@ quantity,image_type,name,image,size,price,availability
 1,metal trading card,Toga Gucci,,trading card,,needs image
 2,metal trading card,Toga Hip,,trading card,,needs image
 2,metal trading card,Toga in the Way,,trading card,,needs image
-4,metal trading card,Toga Ochaco Fight Knife,https://drive.google.com/thumbnail?id=1yxxH2McVXEYklbMvqktdF-6WV_MXL2Sj&sz=w1000,trading card,,needs price
+4,metal trading card,Toga Ochaco Fight Knife,,trading card,,needs image
 5,metal trading card,Toga Smile,,trading card,,needs image
 1,metal trading card,Toga-Lovers,,trading card,,needs image
 5,metal trading card,TogaOchaco_Awk_Hug,,trading card,,needs image

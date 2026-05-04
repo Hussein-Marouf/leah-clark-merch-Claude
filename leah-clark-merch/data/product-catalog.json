@@ -17,9 +17,9 @@
   },
   "counts": {
     "products": 271,
-    "available": 17,
-    "needs_image": 193,
-    "needs_price": 61
+    "available": 6,
+    "needs_image": 234,
+    "needs_price": 31
   },
   "products": [
     {
@@ -27,180 +27,198 @@
       "quantity": 7,
       "image_type": "paper print",
       "name": "Asia Clovers",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2046891904,
       "quantity": 10,
       "image_type": "paper print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg",
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg"
     },
     {
       "id": 1715141045,
       "quantity": 2,
       "image_type": "paper print",
       "name": "HS DXD Trio",
-      "image": "https://drive.google.com/thumbnail?id=1Lu24Ig8cFeZK0TnHrfQ1tbEcZsp47Iye&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 911610235,
       "quantity": 10,
       "image_type": "paper print",
       "name": "Kob_Tohru_Omurice",
-      "image": "https://drive.google.com/thumbnail?id=1itj9ZM4euTG0H8C6DXKQKJ2gIB1TZ6V6&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3327379026,
       "quantity": 2,
       "image_type": "paper print",
       "name": "Kobayashi Kana Tohru",
-      "image": "https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000",
+      "image": "/prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png",
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png"
     },
     {
       "id": 1821636232,
       "quantity": 10,
       "image_type": "paper print",
       "name": "Mavis and Zeref Close",
-      "image": "https://drive.google.com/thumbnail?id=1pS19AplNDYju0Nh4STiT2evAbIxOflX9&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2012455711,
       "quantity": 2,
       "image_type": "paper print",
       "name": "One Piece Duo",
-      "image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "image": "/prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png",
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png"
     },
     {
       "id": 866392212,
       "quantity": 7,
       "image_type": "paper print",
       "name": "Toga Ochaco AWK Hug",
-      "image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3687351926,
       "quantity": 5,
       "image_type": "paper print",
       "name": "Toga Ochaco Cover  B/W",
-      "image": "https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 251671987,
       "quantity": 3,
       "image_type": "paper print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3859068240,
       "quantity": 3,
       "image_type": "paper print",
       "name": "Toga Red",
-      "image": "https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 766917444,
       "quantity": 3,
       "image_type": "paper print",
       "name": "Toga Split",
-      "image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1972159124,
       "quantity": 7,
       "image_type": "paper print",
       "name": "Toga Trail",
-      "image": "https://drive.google.com/thumbnail?id=1rTuV8TOIHmS-kAVSCD7l5V8mbHdpMKL_&sz=w1000",
+      "image": null,
       "size": "11x17",
       "price": 25.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 400650485,
       "quantity": 3,
       "image_type": "paper print",
       "name": "Bathtub Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
       "size": "8.5x11",
       "price": 15.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png"
     },
     {
       "id": 2380061358,
       "quantity": 5,
       "image_type": "paper print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg",
       "size": "8.5x11",
       "price": 15.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg"
     },
     {
       "id": 876468564,
       "quantity": 1,
       "image_type": "paper print",
       "name": "Spice and Wolf",
-      "image": "https://drive.google.com/thumbnail?id=1U2zpSuYct1Y4EdPOJ7LJplAxkgudwFc6&sz=w1000",
+      "image": "/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg",
       "size": "8.5x11",
       "price": 15.0,
-      "availability": "available"
+      "availability": "available",
+      "image_url": "/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg"
     },
     {
       "id": 1389496232,
       "quantity": 10,
       "image_type": "paper print",
       "name": "Toga Cute (Photo Op Duo)",
-      "image": "https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000",
+      "image": null,
       "size": "8.5x11",
       "price": 15.0,
-      "availability": "available"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3096612490,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Asia Argento Nun",
-      "image": "https://drive.google.com/thumbnail?id=1eGWcXHlQj9EyFay1MbgJbJMa4nQNGc7p&sz=w1000",
+      "image": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png"
     },
     {
       "id": 3579867042,
@@ -217,60 +235,66 @@
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2677251691,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Asia Ecchi Shot",
-      "image": "https://drive.google.com/thumbnail?id=1uz_w4GOZ0WLA_mSpAPi5YslpbcSRrGSH&sz=w1000",
+      "image": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png"
     },
     {
       "id": 3418059080,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Bathtub Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png"
     },
     {
       "id": 2157177971,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Blair Fly Moon",
-      "image": "https://drive.google.com/thumbnail?id=1xPi5dPJhHhAJVFlgksnQhJZARbX1-ysy&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2785903609,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Blair Orange Kiss",
-      "image": "https://drive.google.com/thumbnail?id=1AcJHRBLSpLGQlHDm9xEH-0D3bMo2KGxR&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3016916812,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2888218593,
@@ -297,10 +321,11 @@
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png"
     },
     {
       "id": 231049842,
@@ -317,30 +342,33 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Ecchi Toga Flash",
-      "image": "https://drive.google.com/thumbnail?id=1mvg_kp_dU7SvOks5t5I23jv8RV51l-Bo&sz=w1000",
+      "image": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg"
     },
     {
       "id": 1148734571,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Forest Mavis",
-      "image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "image": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg"
     },
     {
       "id": 1852856735,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg"
     },
     {
       "id": 2437747888,
@@ -367,10 +395,11 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Kobayashi Kana Tohru",
-      "image": "https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000",
+      "image": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png"
     },
     {
       "id": 1700754559,
@@ -407,30 +436,33 @@
       "quantity": 10,
       "image_type": "holographic print",
       "name": "Mavis Zeref SCENE",
-      "image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2397589825,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "One Piece Duo",
-      "image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "image": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png"
     },
     {
       "id": 47427669,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Orange Pumpkin Blair",
-      "image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "image": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg"
     },
     {
       "id": 919955643,
@@ -447,10 +479,11 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Purple Paws Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png"
     },
     {
       "id": 495560720,
@@ -467,10 +500,11 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png"
     },
     {
       "id": 366143175,
@@ -487,30 +521,33 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png"
     },
     {
       "id": 1260659485,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png"
     },
     {
       "id": 830229440,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1970450511,
@@ -537,10 +574,11 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2663276705,
@@ -567,60 +605,66 @@
       "quantity": 10,
       "image_type": "holographic print",
       "name": "Toga Pink Aimee Ny Poster",
-      "image": "https://drive.google.com/thumbnail?id=1n1eHjJi4I6BW_35UJ9npBXBGVMJvoNJO&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2719216881,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=15MFGXiF4wPzcQr3enaVjsV1VQFd4d1kP&sz=w1000",
+      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png"
     },
     {
       "id": 936712116,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Sparkle",
-      "image": "https://drive.google.com/thumbnail?id=1fAqUdP7q9Jkx1eW3pfB9MgxPslSpXIe4&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1307047040,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Sparkle Purple",
-      "image": "https://drive.google.com/thumbnail?id=1ssjamR1iDi90_uPSJUyFEOtJRn8DPPOx&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 4257852273,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga split",
-      "image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 307824305,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Tsu Grayscale",
-      "image": "https://drive.google.com/thumbnail?id=12SKltQxFCGd6HFE5FjzcWxqQtXdarvrQ&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 295210562,
@@ -647,10 +691,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2600211248,
@@ -707,10 +752,11 @@
       "quantity": 1,
       "image_type": "metal print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1720209893,
@@ -797,10 +843,11 @@
       "quantity": 3,
       "image_type": "metal print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg",
       "size": "6x9",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg"
     },
     {
       "id": 1193059090,
@@ -967,10 +1014,11 @@
       "quantity": 4,
       "image_type": "metal print",
       "name": "Toga Ochaco Awk Hug",
-      "image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 478291106,
@@ -1017,10 +1065,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Bathtub Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png"
     },
     {
       "id": 3537320363,
@@ -1047,10 +1096,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png"
     },
     {
       "id": 1479740782,
@@ -1087,10 +1137,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Orange Pumpkin Blair",
-      "image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "image": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg"
     },
     {
       "id": 1632665600,
@@ -1107,10 +1158,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Purple Paws Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png"
     },
     {
       "id": 3000520931,
@@ -1127,40 +1179,44 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png"
     },
     {
       "id": 2138589493,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png"
     },
     {
       "id": 876140974,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png",
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png"
     },
     {
       "id": 2994070547,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3658287085,
@@ -1177,20 +1233,22 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Ochaco Cover  WBG",
-      "image": "https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3527104665,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1325024983,
@@ -1207,10 +1265,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2088655950,
@@ -1247,10 +1306,11 @@
       "quantity": 3,
       "image_type": "metal print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1711094541,
@@ -1277,10 +1337,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png"
     },
     {
       "id": 1251500033,
@@ -1307,30 +1368,33 @@
       "quantity": 5,
       "image_type": "metal print",
       "name": "Forest Mavis",
-      "image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "image": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg"
     },
     {
       "id": 315172154,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg"
     },
     {
       "id": 3355981552,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Kobayashi Kabob",
-      "image": "https://drive.google.com/thumbnail?id=1s6EqeMpseuVycH_cfMRv9EozTLU54Rd3&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3902848165,
@@ -1367,10 +1431,11 @@
       "quantity": 10,
       "image_type": "metal print",
       "name": "Mavis Zeref Scene",
-      "image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3967739795,
@@ -1407,10 +1472,11 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "One Piece Duo",
-      "image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "image": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png"
     },
     {
       "id": 3270365191,
@@ -1457,40 +1523,44 @@
       "quantity": 2,
       "image_type": "metal print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png"
     },
     {
       "id": 2796269162,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png"
     },
     {
       "id": 1778017536,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png",
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png"
     },
     {
       "id": 1592250808,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3579442310,
@@ -1517,10 +1587,11 @@
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Ochaco AWK Hug",
-      "image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3171618631,
@@ -1537,10 +1608,11 @@
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3991961819,
@@ -1567,20 +1639,22 @@
       "quantity": 5,
       "image_type": "metal print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1343736623,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Split",
-      "image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 2407172898,
@@ -1647,10 +1721,11 @@
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 1946617477,
@@ -1677,10 +1752,11 @@
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Asia lvl 4 card",
-      "image": "https://drive.google.com/thumbnail?id=1eL_UnlUeifUcvXO-u0fiLygIQl1M8UkV&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 3322129966,
@@ -2117,10 +2193,11 @@
       "quantity": 2,
       "image_type": "metal trading card",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
       "size": "trading card",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs price",
+      "image_url": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png"
     },
     {
       "id": 119756306,
@@ -2197,10 +2274,11 @@
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Toga Ochaco Fight Knife",
-      "image": "https://drive.google.com/thumbnail?id=1yxxH2McVXEYklbMvqktdF-6WV_MXL2Sj&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price"
+      "availability": "needs image",
+      "image_url": ""
     },
     {
       "id": 291181338,
@@ -5248,793 +5326,854 @@
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Asia Argento Nun",
-      "image": "https://drive.google.com/thumbnail?id=1eGWcXHlQj9EyFay1MbgJbJMa4nQNGc7p&sz=w1000",
+      "image": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 24,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png"
     },
     {
       "id": 683359971,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 51,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2677251691,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Asia Ecchi Shot",
-      "image": "https://drive.google.com/thumbnail?id=1uz_w4GOZ0WLA_mSpAPi5YslpbcSRrGSH&sz=w1000",
+      "image": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 26,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png"
     },
     {
       "id": 3418059080,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Bathtub Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 33,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png"
     },
     {
       "id": 2157177971,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Blair Fly Moon",
-      "image": "https://drive.google.com/thumbnail?id=1xPi5dPJhHhAJVFlgksnQhJZARbX1-ysy&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 36,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2785903609,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Blair Orange Kiss",
-      "image": "https://drive.google.com/thumbnail?id=1AcJHRBLSpLGQlHDm9xEH-0D3bMo2KGxR&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 48,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 3016916812,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 46,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2022812551,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 14,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png"
     },
     {
       "id": 1157682858,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Ecchi Toga Flash",
-      "image": "https://drive.google.com/thumbnail?id=1mvg_kp_dU7SvOks5t5I23jv8RV51l-Bo&sz=w1000",
+      "image": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 17,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg"
     },
     {
       "id": 1148734571,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Forest Mavis",
-      "image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "image": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 38,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg"
     },
     {
       "id": 1852856735,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 20,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg"
     },
     {
       "id": 3565205650,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Kobayashi Kana Tohru",
-      "image": "https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000",
+      "image": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 27,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png"
     },
     {
       "id": 1022789361,
       "quantity": 10,
       "image_type": "holographic print",
       "name": "Mavis Zeref SCENE",
-      "image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 40,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2397589825,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "One Piece Duo",
-      "image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "image": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 22,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png"
     },
     {
       "id": 47427669,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Orange Pumpkin Blair",
-      "image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "image": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 34,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg"
     },
     {
       "id": 1900587432,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Purple Paws Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 35,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png"
     },
     {
       "id": 844536475,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 15,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png"
     },
     {
       "id": 1278163348,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 5,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png"
     },
     {
       "id": 1260659485,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 4,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png"
     },
     {
       "id": 830229440,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 3,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2562582475,
       "quantity": 3,
       "image_type": "holographic print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 13,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 3243172525,
       "quantity": 10,
       "image_type": "holographic print",
       "name": "Toga Pink Aimee Ny Poster",
-      "image": "https://drive.google.com/thumbnail?id=1n1eHjJi4I6BW_35UJ9npBXBGVMJvoNJO&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 6,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2719216881,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=15MFGXiF4wPzcQr3enaVjsV1VQFd4d1kP&sz=w1000",
+      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
       "size": "holographic",
       "price": null,
       "availability": "needs price",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 8,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png"
     },
     {
       "id": 936712116,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Sparkle",
-      "image": "https://drive.google.com/thumbnail?id=1fAqUdP7q9Jkx1eW3pfB9MgxPslSpXIe4&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 50,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 1307047040,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Sparkle Purple",
-      "image": "https://drive.google.com/thumbnail?id=1ssjamR1iDi90_uPSJUyFEOtJRn8DPPOx&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 32,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 4257852273,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga split",
-      "image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 11,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 307824305,
       "quantity": 5,
       "image_type": "holographic print",
       "name": "Toga Tsu Grayscale",
-      "image": "https://drive.google.com/thumbnail?id=12SKltQxFCGd6HFE5FjzcWxqQtXdarvrQ&sz=w1000",
+      "image": null,
       "size": "holographic",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Holographic Prints_Chris",
       "source_row": 9,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 3254946963,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "6x9 Metals",
       "source_row": 42,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 179859541,
       "quantity": 1,
       "image_type": "metal print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "6x9 Metals",
       "source_row": 14,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 2490635634,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg",
       "size": "6x9",
       "price": null,
       "availability": "needs price",
       "source_tab": "6x9 Metals",
       "source_row": 38,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg"
     },
     {
       "id": 436549187,
       "quantity": 4,
       "image_type": "metal print",
       "name": "Toga Ochaco Awk Hug",
-      "image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "image": null,
       "size": "6x9",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "6x9 Metals",
       "source_row": 34,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 2699172219,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Bathtub Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 23,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png"
     },
     {
       "id": 2777997840,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 13,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png"
     },
     {
       "id": 418646798,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Orange Pumpkin Blair",
-      "image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "image": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 24,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg"
     },
     {
       "id": 220698729,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Purple Paws Blair",
-      "image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "image": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 25,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png"
     },
     {
       "id": 1832348371,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 14,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png"
     },
     {
       "id": 2138589493,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 5,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png"
     },
     {
       "id": 876140974,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png",
       "size": "large metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Large Metals",
       "source_row": 4,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png"
     },
     {
       "id": 2994070547,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Large Metals",
       "source_row": 3,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 2509380995,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Ochaco Cover  WBG",
-      "image": "https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Large Metals",
       "source_row": 9,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 3527104665,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Large Metals",
       "source_row": 12,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 501366313,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "large metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Large Metals",
       "source_row": 7,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 1463901849,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Blood Artisan Asia",
-      "image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 41,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 1466162656,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Cute Red Toga",
-      "image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "image": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 13,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png"
     },
     {
       "id": 2167659035,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Forest Mavis",
-      "image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "image": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 33,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg"
     },
     {
       "id": 315172154,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Holiday Toga (seasonal)",
-      "image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "image": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 19,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg"
     },
     {
       "id": 3355981552,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Kobayashi Kabob",
-      "image": "https://drive.google.com/thumbnail?id=1s6EqeMpseuVycH_cfMRv9EozTLU54Rd3&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 23,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 4061942368,
       "quantity": 10,
       "image_type": "metal print",
       "name": "Mavis Zeref Scene",
-      "image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 26,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 611022824,
       "quantity": 2,
       "image_type": "metal print",
       "name": "One Piece Duo",
-      "image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "image": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 20,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png"
     },
     {
       "id": 1627159953,
       "quantity": 2,
       "image_type": "metal print",
       "name": "Red Stab Toga",
-      "image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "image": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 14,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png"
     },
     {
       "id": 2796269162,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 5,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png"
     },
     {
       "id": 1778017536,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Toga Dabi Black White",
-      "image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "image": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png",
       "size": "medium metal",
       "price": null,
       "availability": "needs price",
       "source_tab": "Medium Metals",
       "source_row": 4,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png"
     },
     {
       "id": 1592250808,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Dabi City",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 3,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 1440852713,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Ochaco AWK Hug",
-      "image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 45,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 4076266051,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Ochaco Point",
-      "image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 12,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 397626850,
       "quantity": 5,
       "image_type": "metal print",
       "name": "Toga Pink Hearts",
-      "image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 7,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 1343736623,
       "quantity": 3,
       "image_type": "metal print",
       "name": "Toga Split",
-      "image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "image": null,
       "size": "medium metal",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Medium Metals",
       "source_row": 10,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 3466976466,
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Asia Clover",
-      "image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Metal Trading Cards",
       "source_row": 74,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": ""
     },
     {
       "id": 3496582114,
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Asia lvl 4 card",
-      "image": "https://drive.google.com/thumbnail?id=1eL_UnlUeifUcvXO-u0fiLygIQl1M8UkV&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Metal Trading Cards",
       "source_row": 72,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     },
     {
       "id": 2838209485,
       "quantity": 2,
       "image_type": "metal trading card",
       "name": "Toga Black Mask",
-      "image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "image": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
       "size": "trading card",
       "price": null,
       "availability": "needs price",
       "source_tab": "Metal Trading Cards",
       "source_row": 24,
-      "image_resolution": "same-name"
+      "image_resolution": "same-name",
+      "image_url": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png"
     },
     {
       "id": 2267492506,
       "quantity": 4,
       "image_type": "metal trading card",
       "name": "Toga Ochaco Fight Knife",
-      "image": "https://drive.google.com/thumbnail?id=1yxxH2McVXEYklbMvqktdF-6WV_MXL2Sj&sz=w1000",
+      "image": null,
       "size": "trading card",
       "price": null,
-      "availability": "needs price",
+      "availability": "needs image",
       "source_tab": "Metal Trading Cards",
       "source_row": 54,
-      "image_resolution": "direct"
+      "image_resolution": "direct",
+      "image_url": ""
     }
   ]
 }

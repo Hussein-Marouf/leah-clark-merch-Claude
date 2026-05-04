@@ -196,9 +196,10 @@ Update the shared Google Sheet first. Then download/export the current workbook 
 
 ```bash
 python3 scripts/build_catalog_snapshot.py /path/to/convention_inventory_2026.xlsx --output data/product-catalog.json --csv-output documents/leah-product-catalog-snapshot.csv
+python3 scripts/download_catalog_images.py --catalog data/product-catalog.json --out-dir prints/catalog --manifest prints/catalog/manifest.json --rewrite-catalog --local-only-availability --csv-output documents/leah-product-catalog-snapshot.csv
 ```
 
-Rows become orderable only when the snapshot has a positive quantity, a resolved image, and a known price. Rows missing a safe image or price stay in `data/product-catalog.json` as `needs image` or `needs price` so they can be reviewed without appearing to customers.
+Rows become orderable only when the snapshot has a positive quantity, a downloaded local image, and a known price. Rows missing a local image or price stay in `data/product-catalog.json` as `needs image` or `needs price` so they can be reviewed without appearing to customers.
 
 ### Changing Prices
 
@@ -226,7 +227,8 @@ Delete the `db.json` file and restart the server.
 
 **Images not showing**
 - Check that each catalog row has a non-empty `image` value in `data/product-catalog.json`
-- Google Drive thumbnail links must be viewable by public QR users or replaced with local app images
+- Check `prints/catalog/manifest.json` for Drive links that redirected to Google sign-in
+- Google Drive thumbnail links must be downloadable or replaced with local app images
 
 **QR code shows wrong URL**
 - Enter your full live URL in the QR page input

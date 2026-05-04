@@ -1,0 +1,784 @@
+{
+  "catalog": "data/product-catalog.json",
+  "attempted": 78,
+  "downloaded": 37,
+  "failed": 41,
+  "images": [
+    {
+      "id": 1936047403,
+      "name": "Asia Clovers",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2046891904,
+      "name": "Holiday Toga (seasonal)",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg",
+      "local_url": "/prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg",
+      "bytes": 271674
+    },
+    {
+      "id": 1715141045,
+      "name": "HS DXD Trio",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1Lu24Ig8cFeZK0TnHrfQ1tbEcZsp47Iye&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 911610235,
+      "name": "Kob_Tohru_Omurice",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1itj9ZM4euTG0H8C6DXKQKJ2gIB1TZ6V6&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3327379026,
+      "name": "Kobayashi Kana Tohru",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png",
+      "local_url": "/prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png",
+      "bytes": 1018742
+    },
+    {
+      "id": 1821636232,
+      "name": "Mavis and Zeref Close",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pS19AplNDYju0Nh4STiT2evAbIxOflX9&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2012455711,
+      "name": "One Piece Duo",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png",
+      "local_url": "/prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png",
+      "bytes": 160805
+    },
+    {
+      "id": 866392212,
+      "name": "Toga Ochaco AWK Hug",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3687351926,
+      "name": "Toga Ochaco Cover  B/W",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 251671987,
+      "name": "Toga Ochaco Point",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3859068240,
+      "name": "Toga Red",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 766917444,
+      "name": "Toga Split",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1972159124,
+      "name": "Toga Trail",
+      "image_type": "paper print",
+      "size": "11x17",
+      "remote_image": "https://drive.google.com/thumbnail?id=1rTuV8TOIHmS-kAVSCD7l5V8mbHdpMKL_&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 400650485,
+      "name": "Bathtub Blair",
+      "image_type": "paper print",
+      "size": "8.5x11",
+      "remote_image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
+      "local_url": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
+      "bytes": 354881
+    },
+    {
+      "id": 2380061358,
+      "name": "Holiday Toga (seasonal)",
+      "image_type": "paper print",
+      "size": "8.5x11",
+      "remote_image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg",
+      "local_url": "/prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg",
+      "bytes": 271674
+    },
+    {
+      "id": 876468564,
+      "name": "Spice and Wolf",
+      "image_type": "paper print",
+      "size": "8.5x11",
+      "remote_image": "https://drive.google.com/thumbnail?id=1U2zpSuYct1Y4EdPOJ7LJplAxkgudwFc6&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg",
+      "local_url": "/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg",
+      "bytes": 167210
+    },
+    {
+      "id": 1389496232,
+      "name": "Toga Cute (Photo Op Duo)",
+      "image_type": "paper print",
+      "size": "8.5x11",
+      "remote_image": "https://drive.google.com/thumbnail?id=1bVlmtfljsd4VK9yMQlhBTXpOtNKQvffZ&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3096612490,
+      "name": "Asia Argento Nun",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1eGWcXHlQj9EyFay1MbgJbJMa4nQNGc7p&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
+      "local_url": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
+      "bytes": 1441343
+    },
+    {
+      "id": 683359971,
+      "name": "Asia Clover",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2677251691,
+      "name": "Asia Ecchi Shot",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1uz_w4GOZ0WLA_mSpAPi5YslpbcSRrGSH&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png",
+      "local_url": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png",
+      "bytes": 1037445
+    },
+    {
+      "id": 3418059080,
+      "name": "Bathtub Blair",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png",
+      "local_url": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png",
+      "bytes": 354881
+    },
+    {
+      "id": 2157177971,
+      "name": "Blair Fly Moon",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1xPi5dPJhHhAJVFlgksnQhJZARbX1-ysy&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2785903609,
+      "name": "Blair Orange Kiss",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1AcJHRBLSpLGQlHDm9xEH-0D3bMo2KGxR&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3016916812,
+      "name": "Blood Artisan Asia",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2022812551,
+      "name": "Cute Red Toga",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png",
+      "local_url": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png",
+      "bytes": 1742332
+    },
+    {
+      "id": 1157682858,
+      "name": "Ecchi Toga Flash",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1mvg_kp_dU7SvOks5t5I23jv8RV51l-Bo&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
+      "local_url": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
+      "bytes": 265511
+    },
+    {
+      "id": 1148734571,
+      "name": "Forest Mavis",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
+      "local_url": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
+      "bytes": 143853
+    },
+    {
+      "id": 1852856735,
+      "name": "Holiday Toga (seasonal)",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg",
+      "local_url": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg",
+      "bytes": 271674
+    },
+    {
+      "id": 3565205650,
+      "name": "Kobayashi Kana Tohru",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vLcIIk0AIRGesqVwjemd-gvMFp9QgWW7&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png",
+      "local_url": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png",
+      "bytes": 1018742
+    },
+    {
+      "id": 1022789361,
+      "name": "Mavis Zeref SCENE",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2397589825,
+      "name": "One Piece Duo",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png",
+      "local_url": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png",
+      "bytes": 160805
+    },
+    {
+      "id": 47427669,
+      "name": "Orange Pumpkin Blair",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg",
+      "local_url": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg",
+      "bytes": 303153
+    },
+    {
+      "id": 1900587432,
+      "name": "Purple Paws Blair",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png",
+      "local_url": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png",
+      "bytes": 354881
+    },
+    {
+      "id": 844536475,
+      "name": "Red Stab Toga",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png",
+      "local_url": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png",
+      "bytes": 1564334
+    },
+    {
+      "id": 1278163348,
+      "name": "Toga Black Mask",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
+      "local_url": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
+      "bytes": 592185
+    },
+    {
+      "id": 1260659485,
+      "name": "Toga Dabi Black White",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
+      "local_url": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
+      "bytes": 326581
+    },
+    {
+      "id": 830229440,
+      "name": "Toga Dabi City",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2562582475,
+      "name": "Toga Ochaco Point",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3243172525,
+      "name": "Toga Pink Aimee Ny Poster",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1n1eHjJi4I6BW_35UJ9npBXBGVMJvoNJO&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2719216881,
+      "name": "Toga Pink Hearts",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=15MFGXiF4wPzcQr3enaVjsV1VQFd4d1kP&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
+      "local_url": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
+      "bytes": 733714
+    },
+    {
+      "id": 936712116,
+      "name": "Toga Sparkle",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1fAqUdP7q9Jkx1eW3pfB9MgxPslSpXIe4&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1307047040,
+      "name": "Toga Sparkle Purple",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1ssjamR1iDi90_uPSJUyFEOtJRn8DPPOx&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 4257852273,
+      "name": "Toga split",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 307824305,
+      "name": "Toga Tsu Grayscale",
+      "image_type": "holographic print",
+      "size": "holographic",
+      "remote_image": "https://drive.google.com/thumbnail?id=12SKltQxFCGd6HFE5FjzcWxqQtXdarvrQ&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3254946963,
+      "name": "Asia Clover",
+      "image_type": "metal print",
+      "size": "6x9",
+      "remote_image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 179859541,
+      "name": "Blood Artisan Asia",
+      "image_type": "metal print",
+      "size": "6x9",
+      "remote_image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2490635634,
+      "name": "Holiday Toga (seasonal)",
+      "image_type": "metal print",
+      "size": "6x9",
+      "remote_image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg",
+      "local_url": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg",
+      "bytes": 271674
+    },
+    {
+      "id": 436549187,
+      "name": "Toga Ochaco Awk Hug",
+      "image_type": "metal print",
+      "size": "6x9",
+      "remote_image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2699172219,
+      "name": "Bathtub Blair",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png",
+      "local_url": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png",
+      "bytes": 354881
+    },
+    {
+      "id": 2777997840,
+      "name": "Cute Red Toga",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png",
+      "local_url": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png",
+      "bytes": 1742332
+    },
+    {
+      "id": 418646798,
+      "name": "Orange Pumpkin Blair",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1wMRizGkPs9j06od3o2UzyvcI6RldTzil&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
+      "local_url": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
+      "bytes": 303153
+    },
+    {
+      "id": 220698729,
+      "name": "Purple Paws Blair",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1lxHPDiv88IBS-cd7Dx7Qw-P4mBVk3LWR&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
+      "local_url": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
+      "bytes": 354881
+    },
+    {
+      "id": 1832348371,
+      "name": "Red Stab Toga",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png",
+      "local_url": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png",
+      "bytes": 1564334
+    },
+    {
+      "id": 2138589493,
+      "name": "Toga Black Mask",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png",
+      "local_url": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png",
+      "bytes": 592185
+    },
+    {
+      "id": 876140974,
+      "name": "Toga Dabi Black White",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png",
+      "local_url": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png",
+      "bytes": 326581
+    },
+    {
+      "id": 2994070547,
+      "name": "Toga Dabi City",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2509380995,
+      "name": "Toga Ochaco Cover  WBG",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1tOIybVfQa0mGgPzdtDTXN08cAp8B96_i&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3527104665,
+      "name": "Toga Ochaco Point",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 501366313,
+      "name": "Toga Pink Hearts",
+      "image_type": "metal print",
+      "size": "large metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1463901849,
+      "name": "Blood Artisan Asia",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1qwBkWXdREgeyFAhfJPy_cDMoEQbdXPC0&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1466162656,
+      "name": "Cute Red Toga",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1v7lVXbfZmLH2hlZYHbK9aPk4w6738hb9&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png",
+      "local_url": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png",
+      "bytes": 1742332
+    },
+    {
+      "id": 2167659035,
+      "name": "Forest Mavis",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1KA0LPPZEbYFwNAOPedn7QExxh0EL_7sF&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
+      "local_url": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
+      "bytes": 143853
+    },
+    {
+      "id": 315172154,
+      "name": "Holiday Toga (seasonal)",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1iv9IvddDoMYGHmY5UX3q-HpEyRqBJ0WC&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg",
+      "local_url": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg",
+      "bytes": 271674
+    },
+    {
+      "id": 3355981552,
+      "name": "Kobayashi Kabob",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1s6EqeMpseuVycH_cfMRv9EozTLU54Rd3&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 4061942368,
+      "name": "Mavis Zeref Scene",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1aX6u7pZzHBnv-178ufuFqTAgdXGGSVjH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 611022824,
+      "name": "One Piece Duo",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1EWqiDh-EjkmEyXFCMIBl1_W4fqBszJH5&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png",
+      "local_url": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png",
+      "bytes": 160805
+    },
+    {
+      "id": 1627159953,
+      "name": "Red Stab Toga",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1PeasUF9chOT4fNILyEHYXSkeiL3jOrAY&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png",
+      "local_url": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png",
+      "bytes": 1564334
+    },
+    {
+      "id": 2796269162,
+      "name": "Toga Black Mask",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png",
+      "local_url": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png",
+      "bytes": 592185
+    },
+    {
+      "id": 1778017536,
+      "name": "Toga Dabi Black White",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1BJNIuFmtkPsIQjl7jPIods5xFTYorcW3&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png",
+      "local_url": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png",
+      "bytes": 326581
+    },
+    {
+      "id": 1592250808,
+      "name": "Toga Dabi City",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1440852713,
+      "name": "Toga Ochaco AWK Hug",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1SoYX2bBvuJJKsaFMBbMXf2KZ5zfnil4c&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 4076266051,
+      "name": "Toga Ochaco Point",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1ecDmamWIIv54z1JbE4esPOBoCF6V_v-W&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 397626850,
+      "name": "Toga Pink Hearts",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1pFSsOCT9jKWBySi1QvRSv37RDhS0MhIH&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 1343736623,
+      "name": "Toga Split",
+      "image_type": "metal print",
+      "size": "medium metal",
+      "remote_image": "https://drive.google.com/thumbnail?id=1n476QqWwFurSJd3QgyJ4LV4WIpjTZxsN&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3466976466,
+      "name": "Asia Clover",
+      "image_type": "metal trading card",
+      "size": "trading card",
+      "remote_image": "https://drive.google.com/thumbnail?id=1FTL60NeFunkDUby6kgfj_paL2rvblsmI&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 3496582114,
+      "name": "Asia lvl 4 card",
+      "image_type": "metal trading card",
+      "size": "trading card",
+      "remote_image": "https://drive.google.com/thumbnail?id=1eL_UnlUeifUcvXO-u0fiLygIQl1M8UkV&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    },
+    {
+      "id": 2838209485,
+      "name": "Toga Black Mask",
+      "image_type": "metal trading card",
+      "size": "trading card",
+      "remote_image": "https://drive.google.com/thumbnail?id=1vUKjZjoelVMr-5fQxaXwZTjjX8aKNXvK&sz=w1000",
+      "status": "downloaded",
+      "local_path": "prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
+      "local_url": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
+      "bytes": 592185
+    },
+    {
+      "id": 2267492506,
+      "name": "Toga Ochaco Fight Knife",
+      "image_type": "metal trading card",
+      "size": "trading card",
+      "remote_image": "https://drive.google.com/thumbnail?id=1yxxH2McVXEYklbMvqktdF-6WV_MXL2Sj&sz=w1000",
+      "status": "failed",
+      "error": "download returned HTML, likely Google sign-in or permission page"
+    }
+  ]
+}

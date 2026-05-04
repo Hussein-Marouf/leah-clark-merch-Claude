@@ -22,6 +22,7 @@ Reviewed the full Leah Clark merch app:
 - Replaced the hard-coded local placeholder catalog with a sanitized product snapshot in `data/product-catalog.json`.
 - Added a repeatable snapshot builder that exports only quantity, image type, name, image, size, price, and availability.
 - Marked snapshot rows without dependable images or prices as review-only so they do not appear to customers as orderable items.
+- Downloaded accessible Drive images into `prints/catalog/` and updated the catalog to use local image paths where available.
 - Updated startup normalization so stale Render `db.json` print records are replaced by the current sheet-driven catalog.
 - Hardened order validation on the server, including valid email checks, valid active print IDs, item caps, duplicate item merging, and safe quantity limits.
 - Added order totals to customer/admin responses for consistent UI math.
