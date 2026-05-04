@@ -13,47 +13,64 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'db.json');
-const CATALOG_PATH = path.join(__dirname, 'data', 'print-catalog.json');
+const CATALOG_PATH = path.join(__dirname, 'data', 'product-catalog.json');
 const SCHEDULE_PATH = path.join(__dirname, 'data', 'current-schedule.json');
 
 // Initialize lowdb
 const adapter = new JSONFile(DB_PATH);
-const normalizeCatalogPrint = (print, index) => ({
-  id: Number.isInteger(Number(print.id)) ? Number(print.id) : index + 1,
-  name: String(print.name || '').trim(),
-  label: String(print.label || `PRINT-${index + 1}`).trim(),
-  size: String(print.size || '').trim(),
-  price: Number(print.price) || 0,
-  image_url: String(print.image_url || '').trim(),
-  source_url: String(print.source_url || '').trim(),
-  source_tab: String(print.source_tab || '').trim(),
-  current_stock: Number(print.current_stock) || 0,
-  bring_to_next_con: Number(print.bring_to_next_con) || 0,
-  active: print.active !== false
-});
+const slugifyCatalogValue = (value) => String(value || '')
+  .trim()
+  .toUpperCase()
+  .replace(/[^A-Z0-9]+/g, '-')
+  .replace(/^-|-$/g, '');
 
-const loadPrintCatalog = async () => {
+const normalizeCatalogProduct = (product, index) => {
+  const price = product.price === null || product.price === undefined ? null : Number(product.price);
+  const quantity = Math.max(0, Number.parseInt(product.quantity, 10) || 0);
+  const image = String(product.image || product.image_url || '').trim();
+  const availability = String(product.availability || '').trim().toLowerCase();
+  const imageType = String(product.image_type || product.product_type || 'paper print').trim();
+  const name = String(product.name || '').trim();
+  const size = String(product.size || '').trim();
+  const isOrderable = availability === 'available' && image && quantity > 0 && Number.isFinite(price) && price > 0;
+
+  return {
+    id: Number.isInteger(Number(product.id)) ? Number(product.id) : index + 1,
+    quantity,
+    image_type: imageType,
+    name,
+    image,
+    image_url: image,
+    size,
+    price: Number.isFinite(price) ? price : null,
+    availability: availability || (isOrderable ? 'available' : 'unavailable'),
+    label: String(product.label || `${slugifyCatalogValue(imageType)}-${slugifyCatalogValue(size)}-${slugifyCatalogValue(name) || index + 1}`).trim(),
+    active: product.active !== false && isOrderable
+  };
+};
+
+const loadProductCatalog = async () => {
   try {
     const catalog = JSON.parse(await fs.readFile(CATALOG_PATH, 'utf8'));
-    const prints = Array.isArray(catalog.prints)
-      ? catalog.prints
-        .map(normalizeCatalogPrint)
-        .filter((print) => print.name && print.label && print.image_url && print.price > 0)
+    const products = Array.isArray(catalog.products)
+      ? catalog.products
+        .map(normalizeCatalogProduct)
+        .filter((product) => product.name && product.image_type && product.size)
       : [];
 
-    if (!prints.length) {
-      console.warn('Sheet print catalog is empty or missing valid print rows.');
+    if (!products.length) {
+      console.warn('Snapshot product catalog is empty or missing valid product rows.');
     }
 
-    return prints;
+    return products;
   } catch (err) {
-    console.error('Print catalog could not be loaded:', err.message);
+    console.error('Product catalog could not be loaded:', err.message);
     return [];
   }
 };
 
 const defaultData = {
-  prints: await loadPrintCatalog(),
+  prints: await loadProductCatalog(),
   orders: [],
   nextOrderId: 1
 };
@@ -95,7 +112,7 @@ db.data.prints = defaultData.prints.map((print) => {
   const sameCatalogPrint = existingPrint?.label === print.label && existingPrint?.name === print.name;
   return {
     ...print,
-    active: sameCatalogPrint && typeof existingPrint.active === 'boolean' ? existingPrint.active : print.active
+    active: print.active && sameCatalogPrint && typeof existingPrint.active === 'boolean' ? existingPrint.active : print.active
   };
 });
 db.data.orders = Array.isArray(db.data.orders)
@@ -139,8 +156,11 @@ const buildOrderItems = (items) => {
       name: print.name,
       label: print.label,
       size: print.size,
+      image_type: print.image_type,
       price: print.price,
-      image_url: print.image_url
+      image: print.image,
+      image_url: print.image_url,
+      availability: print.availability
     };
   }).filter(Boolean);
 };
@@ -178,7 +198,7 @@ app.use('/documents', express.static(path.join(__dirname, 'documents'), { maxAge
 
 // API Routes
 
-// Get all active prints
+// Get all orderable products from the frozen snapshot
 app.get('/api/prints', (req, res) => {
   const prints = db.data.prints.filter(p => p.active);
   res.json(prints);

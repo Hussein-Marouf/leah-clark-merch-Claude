@@ -8,34 +8,35 @@ Use this folder as the GitHub project:
 leah-clark-merch/
 ```
 
-## Print Uploads
+## Catalog Uploads
 
-The live catalog is driven by the shared Google Sheet export, not hard-coded placeholder images.
+The live catalog is driven by a frozen shared Google Sheet snapshot, not live Google Drive edits or hard-coded placeholder images.
 
 ```text
-leah-clark-merch/data/print-catalog.json
+leah-clark-merch/data/product-catalog.json
 ```
 
-Each catalog item should include:
+Customer-facing product rows are limited to:
 
-- unique `id`
-- display `name`
-- inventory `label`
+- `quantity`
+- `image_type`
+- `name`
+- `image`
 - `size`
 - `price`
-- `image_url` using a shared Google Drive thumbnail URL
-- `source_url`
-- `source_tab`
-- `active`
+- `availability`
+
+`data/product-catalog.json` also includes internal ids for order stability and audit rows for products that need image or price review.
 
 The source exports currently kept for audit are:
 
 ```text
+leah-clark-merch/documents/leah-product-catalog-snapshot.csv
 leah-clark-merch/documents/leah-standard-prints-8_5x11.csv
 leah-clark-merch/documents/leah-large-prints-11x17.csv
 ```
 
-Before committing sheet exports, remove private shipping addresses, customer data, payment details, or API keys. The public app only needs the Drive file links and inventory fields required to build the catalog.
+Before committing sheet exports, remove private shipping addresses, customer data, payment details, or API keys. Do not commit the raw workbook unless it has been reviewed and sanitized.
 
 ## Document Uploads
 
@@ -49,7 +50,7 @@ The current Google Sheet schedule is stored as:
 
 - `documents/leah-current-schedule.csv`
 - `data/current-schedule.json`
-- `data/print-catalog.json`
+- `data/product-catalog.json`
 
 Before pushing public documents, check for:
 
@@ -67,6 +68,6 @@ From `/Users/husseinmarouf/Documents/New project`:
 ```bash
 git status
 git add .gitignore leah-clark-merch
-git commit -m "Use shared Leah print catalog"
+git commit -m "Use sanitized Leah product snapshot"
 git push origin main
 ```

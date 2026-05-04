@@ -389,15 +389,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
       margin-bottom: 15px;
     }
     
-    .print-size {
+    .print-size,
+    .print-type {
       font-size: 0.9rem;
       color: var(--text-muted);
       background: rgba(157, 78, 221, 0.2);
       padding: 4px 12px;
       border-radius: 20px;
+    }
+
+    .print-type {
+      color: var(--text);
+      text-transform: capitalize;
     }
     
     .print-price {
@@ -406,11 +414,10 @@
       color: var(--gold);
     }
     
-    .print-label {
-      font-size: 0.75rem;
+    .print-availability {
+      font-size: 0.86rem;
       color: var(--text-muted);
-      font-family: monospace;
-      opacity: 0.7;
+      margin: -4px 0 14px;
     }
     
     .add-btn {
@@ -655,7 +662,7 @@
   <div class="container">
     <header>
       <h1 class="logo">Leah Clark</h1>
-      <p class="subtitle">Voice Actor • Convention Prints</p>
+      <p class="subtitle">Voice Actor • Convention Catalog</p>
       <nav class="header-links" aria-label="Primary">
         <a class="header-link" href="/schedule">Current Schedule</a>
       </nav>
@@ -665,7 +672,7 @@
     <section class="email-section" id="emailSection">
       <h2>Start Your Order</h2>
       <p class="helper-text" id="emailHelp">
-        Browse prints first, then enter your email when you are ready to save. If you already saved an order, this will pull it back up.
+        Browse available convention items first, then enter your email when you are ready to save. If you already saved an order, this will pull it back up.
       </p>
       <label class="field-label" for="emailInput">Email address</label>
       <div class="email-form">
@@ -685,9 +692,9 @@
     
     <!-- Prints Selection -->
     <section class="prints-section active" id="printsSection">
-      <h2 class="section-title">Select Your Prints</h2>
+      <h2 class="section-title">Select Available Items</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
-        Tap a print to add it to your order. You can save once your selection looks right.
+        Tap an item to add it to your order. Only snapshot rows with quantity, image, and price are shown here.
       </p>
 
       <div class="catalog-toolbar" aria-label="Print catalog tools">
@@ -696,7 +703,7 @@
           class="catalog-search"
           id="printSearch"
           type="search"
-          placeholder="Search by print name or label..."
+          placeholder="Search by name, type, or size..."
           oninput="applySearch(this.value)"
         >
         <div class="filter-group" aria-label="Filter by size">
@@ -711,7 +718,7 @@
       <div class="prints-grid" id="printsGrid">
         <div class="loading">
           <div class="spinner"></div>
-          <p>Loading prints...</p>
+          <p>Loading catalog...</p>
         </div>
       </div>
       
@@ -771,6 +778,7 @@
       print_id: Number(item.print_id ?? item.id),
       name: item.name ?? fallbackName,
       size: item.size ?? fallbackSize,
+      image_type: item.image_type ?? '',
       price: num(item.price),
       quantity: Math.max(1, Math.trunc(num(item.quantity)) || 1)
     });
@@ -827,14 +835,16 @@
         const data = await response.json();
         prints = (Array.isArray(data) ? data : []).map((print) => ({
           ...print,
-          price: num(print.price)
+          price: num(print.price),
+          quantity: Math.max(0, Math.trunc(num(print.quantity)) || 0),
+          image: print.image || print.image_url || ''
         }));
         renderPrints();
         return true;
       } catch (err) {
         console.error('Error loading prints:', err);
         document.getElementById('printsGrid').innerHTML = 
-          '<p style="color: var(--accent); text-align: center;">Error loading prints. Please refresh or ask booth staff for help.</p>';
+          '<p style="color: var(--accent); text-align: center;">Error loading the catalog. Please refresh or ask booth staff for help.</p>';
         document.getElementById('resultCount').textContent = '';
         return false;
       }
@@ -888,7 +898,7 @@
       const resultCount = document.getElementById('resultCount');
 
       if (!prints.length) {
-        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No prints available right now.</p>';
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No catalog items are available right now.</p>';
         resultCount.textContent = '';
         updateCart();
         return;
@@ -896,37 +906,41 @@
 
       const filteredPrints = prints.filter((print) => {
         const matchesSize = activeSize === 'all' || print.size === activeSize;
-        const haystack = `${print.name || ''} ${print.label || ''} ${print.size || ''}`.toLowerCase();
+        const haystack = `${print.name || ''} ${print.image_type || ''} ${print.size || ''} ${print.availability || ''}`.toLowerCase();
         return matchesSize && (!searchTerm || haystack.includes(searchTerm));
       });
 
-      resultCount.textContent = `${filteredPrints.length} of ${prints.length} prints shown`;
+      resultCount.textContent = `${filteredPrints.length} of ${prints.length} items shown`;
 
       if (!filteredPrints.length) {
-        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No prints match that search.</p>';
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No items match that search.</p>';
         updateCart();
         return;
       }
       
       grid.innerHTML = filteredPrints.map((print) => {
         const isSelected = selectedPrints.has(print.id);
+        const image = print.image || print.image_url || '';
+        const typeLabel = print.image_type || 'Item';
+        const availability = print.availability || 'available';
         return `
         <div class="print-card ${isSelected ? 'selected' : ''}"
              data-id="${print.id}"
              role="button"
              tabindex="0"
              aria-pressed="${isSelected}"
-             aria-label="${esc(print.name)}, ${esc(print.size)}, ${fmt(print.price)}"
+             aria-label="${esc(print.name)}, ${esc(typeLabel)}, ${esc(print.size)}, ${fmt(print.price)}, ${esc(availability)}"
              onclick="togglePrint(${print.id})"
              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePrint(${print.id});}">
-          <img src="${esc(print.image_url)}" alt="${esc(print.name)}" class="print-image" loading="lazy" decoding="async">
+          <img src="${esc(image)}" alt="${esc(print.name)}" class="print-image" loading="lazy" decoding="async">
           <div class="print-info">
             <h3 class="print-name">${esc(print.name)}</h3>
             <div class="print-details">
+              <span class="print-type">${esc(typeLabel)}</span>
               <span class="print-size">${esc(print.size)}</span>
               <span class="print-price">${fmt(print.price)}</span>
             </div>
-            <div class="print-label">${esc(print.label)}</div>
+            <div class="print-availability">Qty ${num(print.quantity)} · ${esc(availability)}</div>
             <span class="add-btn" aria-hidden="true">
               ${isSelected ? '✓ Selected' : 'Add to Order'}
             </span>
@@ -949,6 +963,7 @@
           print_id: printId,
           name: print.name,
           size: print.size,
+          image_type: print.image_type,
           price: print.price,
           quantity: 1
         }));
@@ -982,7 +997,7 @@
         total += lineTotal;
         itemsHtml += `
           <div class="cart-item">
-            <span class="cart-item-name">${esc(item.name)} (${esc(item.size)})</span>
+            <span class="cart-item-name">${esc(item.name)} (${esc(item.image_type || 'item')}, ${esc(item.size)})</span>
             <span class="cart-item-price">${fmt(lineTotal)}</span>
           </div>
         `;
@@ -1061,7 +1076,7 @@
         total += lineTotal;
         summaryHtml += `
           <div class="cart-item">
-            <span class="cart-item-name">${esc(item.name)} (${esc(item.size)})</span>
+            <span class="cart-item-name">${esc(item.name)} (${esc(item.image_type || 'item')}, ${esc(item.size)})</span>
             <span class="cart-item-price">${fmt(lineTotal)}</span>
           </div>
         `;

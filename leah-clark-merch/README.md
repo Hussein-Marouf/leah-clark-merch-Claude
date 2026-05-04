@@ -1,10 +1,10 @@
 # 🎨 Leah Clark Merch Order System
 
-A convention booth ordering system that lets fans pre-select prints while in line, saving time at point of sale.
+A convention booth ordering system that lets fans pre-select available catalog items while in line, saving time at point of sale.
 
 ## Features
 
-- **QR Code Scanning**: Customers scan a code to browse available prints
+- **QR Code Scanning**: Customers scan a code to browse available convention items
 - **Pre-Order Selection**: Customers select items while waiting in line
 - **Email-Based Orders**: Orders tied to email for easy lookup
 - **Real-Time Admin Dashboard**: Sales staff see orders instantly
@@ -153,7 +153,9 @@ leah-clark-merch/
 ├── db.json            # Database (auto-created)
 ├── data/
 │   ├── current-schedule.json
-│   └── print-catalog.json
+│   └── product-catalog.json
+├── scripts/
+│   └── build_catalog_snapshot.py
 ├── docs/              # UI/UX audit and upload notes
 ├── documents/         # Booth/project documents and sheet exports
 ├── public/
@@ -177,39 +179,30 @@ The current event schedule is sourced from the shared Google Sheet and saved in 
 - `documents/leah-current-schedule.csv` keeps the raw sheet export.
 - `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
-The print catalog is also sourced from the shared Google Sheet:
+The product catalog is sourced from a read-only snapshot of the shared Google Sheet:
 
 - `documents/leah-standard-prints-8_5x11.csv` keeps a sanitized source export.
 - `documents/leah-large-prints-11x17.csv` keeps a sanitized source export.
-- `data/print-catalog.json` powers `/api/prints` with Google Drive thumbnail URLs.
+- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot with only quantity, image type, name, image, size, price, and availability.
+- `data/product-catalog.json` powers `/api/prints` with the same sanitized snapshot plus internal ids for ordering.
 
 ---
 
 ## 🔧 Customization
 
-### Adding New Prints
+### Updating The Catalog Snapshot
 
-Update the shared Google Sheet first. For a print to appear in the customer catalog, the row needs a name, size/print tab, price convention, and a shared Google Drive file link. Then update `data/print-catalog.json` with entries shaped like:
+Update the shared Google Sheet first. Then download/export the current workbook snapshot and run:
 
-```javascript
-{ 
-  id: 9,                              // Unique ID
-  name: 'Character Name',             // Display name
-  label: 'CHAR-NAME',                 // Label code
-  size: '8.5x11',                     // Size
-  price: 15.00,                       // Price
-  image_url: 'https://drive.google.com/thumbnail?id=FILE_ID&sz=w1000',
-  source_url: 'https://drive.google.com/file/d/FILE_ID/view',
-  source_tab: 'Standard Prints 8.5x11',
-  active: true 
-}
+```bash
+python3 scripts/build_catalog_snapshot.py /path/to/convention_inventory_2026.xlsx --output data/product-catalog.json --csv-output documents/leah-product-catalog-snapshot.csv
 ```
 
-The app no longer uses hard-coded placeholder art from `server.js`; the deployed catalog is rebuilt from `data/print-catalog.json` on startup so stale Render database entries are replaced.
+Rows become orderable only when the snapshot has a positive quantity, a resolved image, and a known price. Rows missing a safe image or price stay in `data/product-catalog.json` as `needs image` or `needs price` so they can be reviewed without appearing to customers.
 
 ### Changing Prices
 
-Edit the `price` field in `data/print-catalog.json` after confirming the price convention for that sheet tab.
+Edit the price map in `scripts/build_catalog_snapshot.py` after confirming the price convention for that sheet tab, then regenerate `data/product-catalog.json`.
 
 ### Resetting Orders
 
@@ -232,8 +225,8 @@ Delete the `db.json` file and restart the server.
 - Run `npm install` before starting
 
 **Images not showing**
-- Check that image files are in the `prints/` folder
-- Verify filenames match exactly (case-sensitive)
+- Check that each catalog row has a non-empty `image` value in `data/product-catalog.json`
+- Google Drive thumbnail links must be viewable by public QR users or replaced with local app images
 
 **QR code shows wrong URL**
 - Enter your full live URL in the QR page input

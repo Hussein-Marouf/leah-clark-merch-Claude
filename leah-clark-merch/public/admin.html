@@ -721,12 +721,14 @@
         itemsContainer.innerHTML = order.items.map(item => {
           const quantity = Math.max(1, num(item.quantity) || 1);
           const lineTotal = num(item.price) * quantity;
+          const image = item.image || item.image_url || '';
+          const typeLabel = item.image_type || 'item';
           return `
           <div class="order-item">
-            <img src="${esc(item.image_url)}" alt="${esc(item.name)}" class="order-item-image">
+            <img src="${esc(image)}" alt="${esc(item.name)}" class="order-item-image">
             <div class="order-item-info">
               <div class="order-item-name">${esc(item.name)}</div>
-              <div class="order-item-size">${esc(item.size)} · Qty ${quantity}</div>
+              <div class="order-item-size">${esc(typeLabel)} · ${esc(item.size)} · Qty ${quantity}</div>
               <div class="order-item-label">${esc(item.label)}</div>
             </div>
             <div class="order-item-price">${fmt(lineTotal)}</div>

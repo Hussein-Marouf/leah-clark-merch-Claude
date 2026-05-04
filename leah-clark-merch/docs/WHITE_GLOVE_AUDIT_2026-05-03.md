@@ -19,8 +19,9 @@ Reviewed the full Leah Clark merch app:
 - Customer browsing no longer requires email first; fans can browse immediately and save when ready.
 - Added catalog search and size filters to reduce mobile scrolling.
 - Changed print art rendering from cropped to contained so customers can inspect the actual artwork.
-- Replaced the hard-coded local placeholder catalog with a shared-sheet catalog in `data/print-catalog.json`.
-- Pointed catalog records to shared Google Drive thumbnails from the `Standard Prints 8.5x11` and `Large Prints 11x17` sheet tabs.
+- Replaced the hard-coded local placeholder catalog with a sanitized product snapshot in `data/product-catalog.json`.
+- Added a repeatable snapshot builder that exports only quantity, image type, name, image, size, price, and availability.
+- Marked snapshot rows without dependable images or prices as review-only so they do not appear to customers as orderable items.
 - Updated startup normalization so stale Render `db.json` print records are replaced by the current sheet-driven catalog.
 - Hardened order validation on the server, including valid email checks, valid active print IDs, item caps, duplicate item merging, and safe quantity limits.
 - Added order totals to customer/admin responses for consistent UI math.
