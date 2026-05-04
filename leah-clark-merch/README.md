@@ -152,7 +152,8 @@ leah-clark-merch/
 ├── .gitignore         # Git ignore rules
 ├── db.json            # Database (auto-created)
 ├── data/
-│   └── current-schedule.json
+│   ├── current-schedule.json
+│   └── print-catalog.json
 ├── docs/              # UI/UX audit and upload notes
 ├── documents/         # Booth/project documents and sheet exports
 ├── public/
@@ -160,14 +161,7 @@ leah-clark-merch/
 │   ├── admin.html     # Sales dashboard
 │   └── qr.html        # QR code display
 └── prints/
-    ├── display/                  # Web-optimized catalog images
-    ├── Aria_Chariot.png
-    ├── asia1-85x11.png
-    ├── Cute_Red_Toga_11x17_tall.png
-    ├── Himiko_Toga__Mask_2.jpg
-    ├── Leahs_Art.jpg
-    ├── Through_The_Key_Hole.jpg
-    └── Toga_Chaco_Daylen.jpg
+    └── README.md      # Optional local art storage notes
 ```
 
 ---
@@ -183,13 +177,19 @@ The current event schedule is sourced from the shared Google Sheet and saved in 
 - `documents/leah-current-schedule.csv` keeps the raw sheet export.
 - `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
+The print catalog is also sourced from the shared Google Sheet:
+
+- `documents/leah-standard-prints-8_5x11.csv` keeps a sanitized source export.
+- `documents/leah-large-prints-11x17.csv` keeps a sanitized source export.
+- `data/print-catalog.json` powers `/api/prints` with Google Drive thumbnail URLs.
+
 ---
 
 ## 🔧 Customization
 
 ### Adding New Prints
 
-Edit `server.js` and add entries to the `defaultData.prints` array:
+Update the shared Google Sheet first. For a print to appear in the customer catalog, the row needs a name, size/print tab, price convention, and a shared Google Drive file link. Then update `data/print-catalog.json` with entries shaped like:
 
 ```javascript
 { 
@@ -198,18 +198,18 @@ Edit `server.js` and add entries to the `defaultData.prints` array:
   label: 'CHAR-NAME',                 // Label code
   size: '8.5x11',                     // Size
   price: 15.00,                       // Price
-  image_url: '/prints/filename.png',  // Image path
+  image_url: 'https://drive.google.com/thumbnail?id=FILE_ID&sz=w1000',
+  source_url: 'https://drive.google.com/file/d/FILE_ID/view',
+  source_tab: 'Standard Prints 8.5x11',
   active: true 
 }
 ```
 
-Then add the image to the `prints/` folder.
-
-For best mobile performance, create a display-sized copy in `prints/display/` and point `image_url` at that file. Keep the original high-resolution art file in `prints/` for production/reference.
+The app no longer uses hard-coded placeholder art from `server.js`; the deployed catalog is rebuilt from `data/print-catalog.json` on startup so stale Render database entries are replaced.
 
 ### Changing Prices
 
-Edit the `price` field in the prints array in `server.js`.
+Edit the `price` field in `data/print-catalog.json` after confirming the price convention for that sheet tab.
 
 ### Resetting Orders
 

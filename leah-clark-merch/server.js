@@ -13,27 +13,47 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'db.json');
+const CATALOG_PATH = path.join(__dirname, 'data', 'print-catalog.json');
 const SCHEDULE_PATH = path.join(__dirname, 'data', 'current-schedule.json');
 
 // Initialize lowdb
 const adapter = new JSONFile(DB_PATH);
+const normalizeCatalogPrint = (print, index) => ({
+  id: Number.isInteger(Number(print.id)) ? Number(print.id) : index + 1,
+  name: String(print.name || '').trim(),
+  label: String(print.label || `PRINT-${index + 1}`).trim(),
+  size: String(print.size || '').trim(),
+  price: Number(print.price) || 0,
+  image_url: String(print.image_url || '').trim(),
+  source_url: String(print.source_url || '').trim(),
+  source_tab: String(print.source_tab || '').trim(),
+  current_stock: Number(print.current_stock) || 0,
+  bring_to_next_con: Number(print.bring_to_next_con) || 0,
+  active: print.active !== false
+});
+
+const loadPrintCatalog = async () => {
+  try {
+    const catalog = JSON.parse(await fs.readFile(CATALOG_PATH, 'utf8'));
+    const prints = Array.isArray(catalog.prints)
+      ? catalog.prints
+        .map(normalizeCatalogPrint)
+        .filter((print) => print.name && print.label && print.image_url && print.price > 0)
+      : [];
+
+    if (!prints.length) {
+      console.warn('Sheet print catalog is empty or missing valid print rows.');
+    }
+
+    return prints;
+  } catch (err) {
+    console.error('Print catalog could not be loaded:', err.message);
+    return [];
+  }
+};
+
 const defaultData = {
-  prints: [
-    { id: 1, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT', size: '8.5x11', price: 15.00, image_url: '/prints/display/Aria_Chariot.jpg', active: true },
-    { id: 2, name: 'Aria - The Chariot', label: 'ARIA-CHARIOT-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Aria_Chariot.jpg', active: true },
-    { id: 3, name: 'Asia Argento', label: 'ASIA-ARGENTO', size: '8.5x11', price: 15.00, image_url: '/prints/display/asia1-85x11.jpg', active: true },
-    { id: 4, name: 'Asia Argento', label: 'ASIA-ARGENTO-LG', size: '11x17', price: 25.00, image_url: '/prints/display/asia1-85x11.jpg', active: true },
-    { id: 5, name: 'Himiko Toga - Red', label: 'TOGA-RED', size: '8.5x11', price: 15.00, image_url: '/prints/display/Cute_Red_Toga_11x17_tall.jpg', active: true },
-    { id: 6, name: 'Himiko Toga - Red', label: 'TOGA-RED-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Cute_Red_Toga_11x17_tall.jpg', active: true },
-    { id: 7, name: 'Himiko Toga - Mask', label: 'TOGA-MASK', size: '8.5x11', price: 15.00, image_url: '/prints/display/Himiko_Toga__Mask_2.jpg', active: true },
-    { id: 8, name: 'Himiko Toga - Mask', label: 'TOGA-MASK-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Himiko_Toga__Mask_2.jpg', active: true },
-    { id: 9, name: "Leah's Art", label: 'LEAHS-ART', size: '8.5x11', price: 15.00, image_url: '/prints/display/Leahs_Art.jpg', active: true },
-    { id: 10, name: "Leah's Art", label: 'LEAHS-ART-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Leahs_Art.jpg', active: true },
-    { id: 11, name: 'Through The Key Hole', label: 'KEY-HOLE', size: '8.5x11', price: 15.00, image_url: '/prints/display/Through_The_Key_Hole.jpg', active: true },
-    { id: 12, name: 'Through The Key Hole', label: 'KEY-HOLE-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Through_The_Key_Hole.jpg', active: true },
-    { id: 13, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN', size: '8.5x11', price: 15.00, image_url: '/prints/display/Toga_Chaco_Daylen.jpg', active: true },
-    { id: 14, name: 'Toga Chaco Daylen', label: 'TOGA-CHACO-DAYLEN-LG', size: '11x17', price: 25.00, image_url: '/prints/display/Toga_Chaco_Daylen.jpg', active: true },
-  ],
+  prints: await loadPrintCatalog(),
   orders: [],
   nextOrderId: 1
 };
@@ -70,21 +90,14 @@ if (!db.data) {
 }
 const currentPrints = Array.isArray(db.data.prints) ? db.data.prints : [];
 const currentPrintsById = new Map(currentPrints.map((print) => [print.id, print]));
-const seededPrintIds = new Set(defaultData.prints.map((print) => print.id));
-db.data.prints = [
-  ...defaultData.prints.map((print) => {
-    const existingPrint = currentPrintsById.get(print.id);
-    return {
-      ...(existingPrint || {}),
-      ...print,
-      active: typeof existingPrint?.active === 'boolean' ? existingPrint.active : print.active
-    };
-  }),
-  ...currentPrints.filter((print) => {
-    const id = Number(print?.id);
-    return Number.isInteger(id) && !seededPrintIds.has(id);
-  })
-];
+db.data.prints = defaultData.prints.map((print) => {
+  const existingPrint = currentPrintsById.get(print.id);
+  const sameCatalogPrint = existingPrint?.label === print.label && existingPrint?.name === print.name;
+  return {
+    ...print,
+    active: sameCatalogPrint && typeof existingPrint.active === 'boolean' ? existingPrint.active : print.active
+  };
+});
 db.data.orders = Array.isArray(db.data.orders)
   ? db.data.orders.filter((order) => {
     if (!order || !isValidEmail(normalizeEmail(order.email))) return false;

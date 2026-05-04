@@ -10,29 +10,32 @@ leah-clark-merch/
 
 ## Print Uploads
 
-Add updated print image files here:
+The live catalog is driven by the shared Google Sheet export, not hard-coded placeholder images.
 
 ```text
-leah-clark-merch/prints/
+leah-clark-merch/data/print-catalog.json
 ```
 
-Add web catalog copies here:
-
-```text
-leah-clark-merch/prints/display/
-```
-
-After adding images, update the `defaultData.prints` array in `server.js` with:
+Each catalog item should include:
 
 - unique `id`
 - display `name`
 - inventory `label`
 - `size`
 - `price`
-- `image_url`
+- `image_url` using a shared Google Drive thumbnail URL
+- `source_url`
+- `source_tab`
 - `active`
 
-Use the smaller `prints/display/` file for `image_url` so the mobile catalog stays fast. Keep the original high-resolution image in `prints/`.
+The source exports currently kept for audit are:
+
+```text
+leah-clark-merch/documents/leah-standard-prints-8_5x11.csv
+leah-clark-merch/documents/leah-large-prints-11x17.csv
+```
+
+Before committing sheet exports, remove private shipping addresses, customer data, payment details, or API keys. The public app only needs the Drive file links and inventory fields required to build the catalog.
 
 ## Document Uploads
 
@@ -46,6 +49,7 @@ The current Google Sheet schedule is stored as:
 
 - `documents/leah-current-schedule.csv`
 - `data/current-schedule.json`
+- `data/print-catalog.json`
 
 Before pushing public documents, check for:
 
@@ -63,6 +67,6 @@ From `/Users/husseinmarouf/Documents/New project`:
 ```bash
 git status
 git add .gitignore leah-clark-merch
-git commit -m "Improve Leah merch app and add upload docs"
+git commit -m "Use shared Leah print catalog"
 git push origin main
 ```
