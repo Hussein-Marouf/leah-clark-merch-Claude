@@ -111,74 +111,11 @@
       text-align: center;
     }
 
-    .catalog-toolbar {
-      display: grid;
-      grid-template-columns: minmax(220px, 1fr) auto;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    .catalog-search {
-      width: 100%;
-      padding: 13px 16px;
-      border-radius: 12px;
-      border: 2px solid rgba(157, 78, 221, 0.45);
-      background: rgba(13, 2, 33, 0.75);
-      color: var(--text);
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1rem;
-    }
-
-    .catalog-search:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 18px rgba(255, 107, 157, 0.22);
-    }
-
-    .filter-group {
-      display: inline-flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .filter-btn {
-      border: 1px solid rgba(157, 78, 221, 0.45);
-      background: rgba(157, 78, 221, 0.12);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .filter-btn[aria-pressed="true"],
-    .filter-btn:hover,
-    .filter-btn:focus-visible {
-      background: var(--primary);
-      border-color: var(--accent);
-      outline: none;
-    }
-
     .result-count {
       color: var(--text-muted);
       text-align: center;
-      margin: -10px 0 20px;
+      margin: -10px 0 24px;
       min-height: 1.4em;
-    }
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
     }
     
     .prints-grid {
@@ -272,18 +209,6 @@
         font-size: 1.8rem;
       }
       
-      .catalog-toolbar {
-        grid-template-columns: 1fr;
-      }
-
-      .filter-group {
-        justify-content: stretch;
-      }
-
-      .filter-btn {
-        flex: 1;
-      }
-
       .prints-grid {
         grid-template-columns: 1fr;
       }
@@ -317,20 +242,6 @@
         Browse inventory.
       </p>
 
-      <div class="catalog-toolbar" aria-label="Print catalog tools">
-        <label class="visually-hidden" for="printSearch">Search prints</label>
-        <input
-          class="catalog-search"
-          id="printSearch"
-          type="search"
-          placeholder="Search by print name, material, or size..."
-          oninput="applySearch(this.value)"
-        >
-        <div class="filter-group" id="sizeFilters" aria-label="Filter by size">
-          <button type="button" class="filter-btn" data-size="all" aria-pressed="true">All</button>
-        </div>
-      </div>
-
       <p class="result-count" id="resultCount"></p>
       
       <div class="prints-grid" id="printsGrid">
@@ -344,8 +255,6 @@
   
   <script>
     let prints = [];
-    let activeSize = 'all';
-    let searchTerm = '';
 
     const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -375,7 +284,6 @@
           material: print.material || '',
           image: print.image || print.image_url || ''
         }));
-        renderSizeFilters();
         renderPrints();
         return true;
       } catch (err) {
@@ -385,42 +293,6 @@
         document.getElementById('resultCount').textContent = '';
         return false;
       }
-    }
-
-    function sortSizes(a, b) {
-      const order = ['8.5x11', '11x17', '6x9', '10x12', '12x18', 'trading card'];
-      const ai = order.indexOf(a);
-      const bi = order.indexOf(b);
-      if (ai !== -1 || bi !== -1) {
-        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-      }
-      return a.localeCompare(b);
-    }
-
-    function renderSizeFilters() {
-      const group = document.getElementById('sizeFilters');
-      const sizes = Array.from(new Set(prints.map((print) => print.size).filter(Boolean))).sort(sortSizes);
-      group.innerHTML = ['all', ...sizes].map((size) => `
-        <button type="button" class="filter-btn" data-size="${esc(size)}" aria-pressed="${size === activeSize}">
-          ${esc(size === 'all' ? 'All' : size)}
-        </button>
-      `).join('');
-      group.querySelectorAll('.filter-btn').forEach((button) => {
-        button.addEventListener('click', () => setSizeFilter(button.dataset.size));
-      });
-    }
-
-    function setSizeFilter(size) {
-      activeSize = size;
-      document.querySelectorAll('.filter-btn').forEach((button) => {
-        button.setAttribute('aria-pressed', String(button.dataset.size === size));
-      });
-      renderPrints();
-    }
-
-    function applySearch(value) {
-      searchTerm = String(value || '').trim().toLowerCase();
-      renderPrints();
     }
     
     function renderPrints() {
@@ -433,20 +305,9 @@
         return;
       }
 
-      const filteredPrints = prints.filter((print) => {
-        const matchesSize = activeSize === 'all' || print.size === activeSize;
-        const haystack = `${print.name || ''} ${print.material || ''} ${print.size || ''}`.toLowerCase();
-        return matchesSize && (!searchTerm || haystack.includes(searchTerm));
-      });
-
-      resultCount.textContent = `${filteredPrints.length} of ${prints.length} items shown`;
-
-      if (!filteredPrints.length) {
-        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No items match that search.</p>';
-        return;
-      }
+      resultCount.textContent = `Showing all ${prints.length} available ${prints.length === 1 ? 'print' : 'prints'}`;
       
-      grid.innerHTML = filteredPrints.map((print) => {
+      grid.innerHTML = prints.map((print) => {
         const image = print.image || print.image_url || '';
         const printName = print.name || 'Untitled print';
         return `
