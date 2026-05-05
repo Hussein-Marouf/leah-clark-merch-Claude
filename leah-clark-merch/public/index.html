@@ -148,6 +148,40 @@
       text-align: center;
     }
 
+    .category-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 24px;
+      max-width: 900px;
+    }
+
+    .category-btn {
+      min-height: 42px;
+      border: 1px solid rgba(157, 78, 221, 0.45);
+      background: rgba(157, 78, 221, 0.14);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .category-btn[aria-pressed="true"],
+    .category-btn:hover,
+    .category-btn:focus-visible {
+      background: var(--primary);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .category-btn:hover {
+      transform: translateY(-1px);
+    }
+
     .result-count {
       color: var(--text-muted);
       text-align: center;
@@ -263,6 +297,17 @@
       .prints-grid {
         grid-template-columns: 1fr;
       }
+
+      .category-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category-btn {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -303,8 +348,10 @@
     <section class="prints-section active" id="printsSection">
       <h2 class="section-title">Browse Inventory</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
-        Browse inventory.
+        Indy PopCon selection.
       </p>
+
+      <div class="category-menu" id="categoryMenu" aria-label="Catalog sections"></div>
 
       <p class="result-count" id="resultCount"></p>
       
@@ -319,6 +366,17 @@
   
   <script>
     let prints = [];
+    let activeCategory = 'all';
+
+    const categoryOrder = [
+      'Paper poster|11x17',
+      'Paper print|8.5x11',
+      'Holographic poster|11x17',
+      'Metal print|12x18',
+      'Metal print|10x12',
+      'Metal print|6x9',
+      'Metal trading card|trading card'
+    ];
 
     const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -348,6 +406,7 @@
           material: print.material || '',
           image: print.image || print.image_url || ''
         }));
+        renderCategoryMenu();
         renderPrints();
         return true;
       } catch (err) {
@@ -357,6 +416,59 @@
         document.getElementById('resultCount').textContent = '';
         return false;
       }
+    }
+
+    function categoryKey(print) {
+      return `${print.material || ''}|${print.size || ''}`;
+    }
+
+    function categoryLabel(key) {
+      const [material, size] = key.split('|');
+      if (material === 'Metal trading card') return 'Trading Cards';
+      if (material === 'Metal print') return `Metal ${size}`;
+      if (material === 'Paper poster') return `Paper ${size}`;
+      if (material === 'Paper print') return `Paper ${size}`;
+      if (material === 'Holographic poster') return `Holographic ${size}`;
+      return [material, size].filter(Boolean).join(' ');
+    }
+
+    function renderCategoryMenu() {
+      const menu = document.getElementById('categoryMenu');
+      const availableKeys = Array.from(new Set(prints.map(categoryKey).filter((key) => key !== '|')));
+      const sortedKeys = availableKeys.sort((a, b) => {
+        const ai = categoryOrder.indexOf(a);
+        const bi = categoryOrder.indexOf(b);
+        if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+        return categoryLabel(a).localeCompare(categoryLabel(b));
+      });
+
+      const buttons = [
+        { key: 'all', label: 'All' },
+        ...sortedKeys.map((key) => ({ key, label: categoryLabel(key) }))
+      ];
+
+      menu.innerHTML = buttons.map((button) => `
+        <button
+          type="button"
+          class="category-btn"
+          data-category="${esc(button.key)}"
+          aria-pressed="${button.key === activeCategory}"
+        >
+          ${esc(button.label)}
+        </button>
+      `).join('');
+
+      menu.querySelectorAll('.category-btn').forEach((button) => {
+        button.addEventListener('click', () => setCategory(button.dataset.category || 'all'));
+      });
+    }
+
+    function setCategory(category) {
+      activeCategory = category || 'all';
+      document.querySelectorAll('.category-btn').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.category === activeCategory));
+      });
+      renderPrints();
     }
     
     function renderPrints() {
@@ -369,9 +481,21 @@
         return;
       }
 
-      resultCount.textContent = `Showing all ${prints.length} available ${prints.length === 1 ? 'print' : 'prints'}`;
+      const visiblePrints = activeCategory === 'all'
+        ? prints
+        : prints.filter((print) => categoryKey(print) === activeCategory);
+
+      if (!visiblePrints.length) {
+        grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No catalog items are available in this section right now.</p>';
+        resultCount.textContent = '';
+        return;
+      }
+
+      resultCount.textContent = activeCategory === 'all'
+        ? `Showing all ${prints.length} available ${prints.length === 1 ? 'print' : 'prints'}`
+        : `Showing ${visiblePrints.length} of ${prints.length}: ${categoryLabel(activeCategory)}`;
       
-      grid.innerHTML = prints.map((print) => {
+      grid.innerHTML = visiblePrints.map((print) => {
         const image = print.image || print.image_url || '';
         const printName = print.name || 'Untitled print';
         return `

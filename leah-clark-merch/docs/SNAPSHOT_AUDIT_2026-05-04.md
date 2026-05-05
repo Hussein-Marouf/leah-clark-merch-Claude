@@ -4,7 +4,7 @@ Date: 2026-05-05
 
 ## Source
 
-The customer-facing catalog is built from `documents/leah-product-catalog-snapshot.csv` and local images in `prints/catalog/`. The inventory DOCX match audit is kept separately to review missing or differently named inventory rows.
+The customer-facing catalog is built from `documents/Current_Inventory_Lst with Photos to USe.docx` and the labeled artwork ZIP at `ALL ARTWORK /Merch_Art LeahClark-20260505T183511Z-3-001.zip`. The app serves optimized web images from `prints/current-inventory/`.
 
 ## Exported Product Fields
 
@@ -17,17 +17,15 @@ The customer-facing catalog is built from `documents/leah-product-catalog-snapsh
 
 ## Snapshot Counts
 
-- Snapshot rows read from CSV: 271
-- Local catalog images available: 37
-- Customer-visible image-backed rows: 37
-- Inventory rows read from the DOCX audit: 155
-- Customer-visible DOCX matched rows before the fuller snapshot rebuild: 12
-- Inventory rows missing a matched local image in the DOCX audit: 142
+- Inventory rows read from DOCX: 155
+- Artwork candidates read from ZIP and fallback catalog: 154
+- Customer-visible current-inventory rows: 96
+- Rows needing artwork review: 59
 
 ## Visibility Rules
 
-Rows appear in the QR catalog when the snapshot row has a local image, print name, material, and size. Rows without local images remain in the snapshot/audit files and are not shown to customers.
+Rows appear in the QR catalog when the current inventory row has a safe artwork match, print name, material, and size. Rows without a safe match remain in `documents/leah-current-inventory-artwork-audit.csv` and are not shown to customers.
 
 ## Image Access Note
 
-The downloader saved 37 Google Drive thumbnail images into `prints/catalog/`. The public QR catalog now shows all 37 image-backed rows instead of only the 12 rows that matched the DOCX inventory names exactly.
+The labeled ZIP contains print-resolution artwork, so the builder generates compressed web catalog images in `prints/current-inventory/` instead of serving the original oversized files.

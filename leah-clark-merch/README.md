@@ -172,19 +172,20 @@ The current event schedule is sourced from the shared Google Sheet and saved in 
 - `documents/leah-current-schedule.csv` keeps the raw sheet export.
 - `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
-The QR product catalog is sourced from the current image-backed product snapshot and served from local images in `prints/catalog/`:
+The QR product catalog is sourced from the current inventory document, matched to the labeled artwork ZIP, and served from optimized local images in `prints/current-inventory/`:
 
 - `documents/Current_Inventory_Lst with Photos to USe.docx` is the upcoming-event inventory source.
-- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot exported from the shared sheet.
+- `ALL ARTWORK /Merch_Art LeahClark-20260505T183511Z-3-001.zip` is the labeled artwork source used locally to rebuild images.
 - `documents/leah-indianapolis-popcon-catalog.csv` is the public catalog export with only name, image, material, and size.
-- `documents/leah-inventory-image-match-audit.csv` lists matched, skipped duplicate, and missing-image inventory rows.
+- `documents/leah-current-inventory-artwork-audit.csv` lists matched inventory rows and rows that still need artwork review.
 - `data/product-catalog.json` powers `/api/prints` with the same public catalog plus internal ids.
+- `prints/current-inventory/` contains web-optimized catalog images generated from the ZIP/fallback artwork.
 
 Legacy sheet exports are still kept for audit:
 
 - `documents/leah-standard-prints-8_5x11.csv` keeps a sanitized source export.
 - `documents/leah-large-prints-11x17.csv` keeps a sanitized source export.
-- The inventory DOCX and audit CSV are kept to cross-check event availability.
+- `documents/leah-product-catalog-snapshot.csv` keeps the older sanitized product snapshot.
 
 ---
 
@@ -192,35 +193,25 @@ Legacy sheet exports are still kept for audit:
 
 ### Updating The Catalog Snapshot
 
-For the Indianapolis QR catalog, update the snapshot and image files:
+For the Indianapolis QR catalog, update the inventory document and artwork ZIP:
 
 ```text
-documents/leah-product-catalog-snapshot.csv
-prints/catalog/
+documents/Current_Inventory_Lst with Photos to USe.docx
+ALL ARTWORK /Merch_Art LeahClark-20260505T183511Z-3-001.zip
 ```
 
-Then rebuild the image-backed app catalog:
+Then rebuild the current-inventory app catalog:
 
 ```bash
-python3 scripts/build_catalog_from_csv.py --csv documents/leah-product-catalog-snapshot.csv --output data/product-catalog.json --csv-output documents/leah-indianapolis-popcon-catalog.csv
+python3 scripts/build_catalog_from_artwork_zip.py
 ```
 
 The builder writes:
 
 - `data/product-catalog.json`
 - `documents/leah-indianapolis-popcon-catalog.csv`
-
-To rebuild the inventory matching audit from the DOCX, run:
-
-```bash
-python3 scripts/build_catalog_from_inventory_docx.py
-```
-
-That builder writes the matched-catalog outputs below, so rerun the snapshot command above afterward if the public QR catalog should stay image-backed from the full snapshot:
-
-- `data/product-catalog.json`
-- `documents/leah-indianapolis-popcon-catalog.csv`
-- `documents/leah-inventory-image-match-audit.csv`
+- `documents/leah-current-inventory-artwork-audit.csv`
+- `prints/current-inventory/`
 
 If you manually edit the public CSV instead, rebuild from it with:
 
@@ -235,7 +226,7 @@ python3 scripts/build_catalog_snapshot.py /path/to/convention_inventory_2026.xls
 python3 scripts/download_catalog_images.py --catalog data/product-catalog.json --out-dir prints/catalog --manifest prints/catalog/manifest.json --rewrite-catalog --local-only --csv-output documents/leah-product-catalog-snapshot.csv
 ```
 
-Rows appear in the QR catalog when they have a local image, print name, material, and size. Rows without a local image stay in the snapshot or audit files and do not appear to customers.
+Rows appear in the QR catalog when the current inventory row has a safe artwork match, print name, material, and size. Rows without a safe match stay in the artwork audit and do not appear to customers.
 
 ### Resetting Orders
 

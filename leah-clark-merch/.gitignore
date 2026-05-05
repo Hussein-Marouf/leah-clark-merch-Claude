@@ -7,3 +7,6 @@ db.json
 .env
 .env.local
 npm-debug.log*
+ALL ARTWORK*/
+Convention Logos/
+documents/~$*.docx
