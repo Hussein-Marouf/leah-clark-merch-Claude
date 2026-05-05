@@ -4,7 +4,7 @@ Date: 2026-05-05
 
 ## Source
 
-The catalog was built from `documents/Current_Inventory_Lst with Photos to USe.docx` and correlated with local images in `prints/catalog/`.
+The customer-facing catalog is built from `documents/leah-product-catalog-snapshot.csv` and local images in `prints/catalog/`. The inventory DOCX match audit is kept separately to review missing or differently named inventory rows.
 
 ## Exported Product Fields
 
@@ -17,16 +17,17 @@ The catalog was built from `documents/Current_Inventory_Lst with Photos to USe.d
 
 ## Snapshot Counts
 
-- Inventory rows read from the DOCX: 155
-- Local catalog images read: 37
-- Customer-visible matched rows: 12
-- Duplicate matched rows skipped: 1
-- Inventory rows missing a matched local image: 142
+- Snapshot rows read from CSV: 271
+- Local catalog images available: 37
+- Customer-visible image-backed rows: 37
+- Inventory rows read from the DOCX audit: 155
+- Customer-visible DOCX matched rows before the fuller snapshot rebuild: 12
+- Inventory rows missing a matched local image in the DOCX audit: 142
 
 ## Visibility Rules
 
-Rows appear in the QR catalog only when the inventory print name has an exact normalized-name or same-word match to a local catalog image name. Rows that are missing a local image match remain in `documents/leah-inventory-image-match-audit.csv` but are not shown to customers.
+Rows appear in the QR catalog when the snapshot row has a local image, print name, material, and size. Rows without local images remain in the snapshot/audit files and are not shown to customers.
 
 ## Image Access Note
 
-The previous downloader saved 37 Google Drive thumbnail images into `prints/catalog/`. For this build, only 12 non-duplicate inventory rows matched those local images confidently.
+The downloader saved 37 Google Drive thumbnail images into `prints/catalog/`. The public QR catalog now shows all 37 image-backed rows instead of only the 12 rows that matched the DOCX inventory names exactly.

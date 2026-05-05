@@ -1,6 +1,5 @@
 {
-  "source": "documents/Current_Inventory_Lst with Photos to USe.docx",
-  "image_source": "prints/catalog",
+  "source": "documents/leah-product-catalog-snapshot.csv",
   "snapshot_date": "2026-05-05",
   "product_fields": [
     "name",
@@ -9,65 +8,23 @@
     "size"
   ],
   "counts": {
-    "inventory_items": 155,
-    "local_images": 37,
-    "visible": 12,
-    "missing_image": 142
+    "source_rows": 271,
+    "products": 37,
+    "visible": 37,
+    "needs_image": 0
   },
   "products": [
     {
-      "id": 414103034,
-      "name": "Toga Pink Hearts",
-      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
-      "material": "Holographic poster",
-      "size": "11x17"
-    },
-    {
-      "id": 3873703915,
-      "name": "Toga Pink Hearts",
-      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
-      "material": "Metal print",
-      "size": "10x12"
-    },
-    {
-      "id": 197512314,
-      "name": "Bathtub Blair",
-      "image": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
-      "id": 2176339636,
-      "name": "Blair Purple Paws OG",
-      "image": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
-      "id": 2586075243,
-      "name": "Mavis Forest",
-      "image": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
-      "id": 2479970815,
-      "name": "Toga Black Mask",
-      "image": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
-      "id": 3107789476,
-      "name": "Asia Argento Nun",
-      "image": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
+      "id": 2247056409,
+      "name": "Holiday Toga (seasonal)",
+      "image": "/prints/catalog/2046891904-paper-print-11x17-holiday-toga-seasonal.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
     {
-      "id": 2195673667,
-      "name": "Forest Mavis",
-      "image": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
+      "id": 3654880124,
+      "name": "Kobayashi Kana Tohru",
+      "image": "/prints/catalog/3327379026-paper-print-11x17-kobayashi-kana-tohru.png",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -79,18 +36,18 @@
       "size": "11x17"
     },
     {
-      "id": 57781581,
-      "name": "Toga Black Mask",
-      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
-      "material": "Paper poster",
-      "size": "11x17"
+      "id": 1282912871,
+      "name": "Bathtub Blair",
+      "image": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
+      "material": "Paper print",
+      "size": "8.5x11"
     },
     {
-      "id": 1665010559,
-      "name": "Toga Dabi Black White",
-      "image": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
-      "material": "Paper poster",
-      "size": "11x17"
+      "id": 158890709,
+      "name": "Holiday Toga (seasonal)",
+      "image": "/prints/catalog/2380061358-paper-print-8-5x11-holiday-toga-seasonal.jpg",
+      "material": "Paper print",
+      "size": "8.5x11"
     },
     {
       "id": 1405943486,
@@ -98,1558 +55,224 @@
       "image": "/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg",
       "material": "Paper print",
       "size": "8.5x11"
-    }
-  ],
-  "audit": [
-    {
-      "name": "Toga Pink Hearts",
-      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "Toga Pink Hearts",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; exact format; score 130"
     },
     {
-      "name": "Toga Pink Hearts",
-      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "matched",
-      "matched_image_name": "Toga Pink Hearts",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; score 100"
+      "id": 2414392162,
+      "name": "Asia Argento Nun",
+      "image": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
+      "material": "Holographic print",
+      "size": "11x17"
     },
     {
+      "id": 1210539694,
+      "name": "Asia Ecchi Shot",
+      "image": "/prints/catalog/2677251691-holographic-print-holographic-asia-ecchi-shot.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 1781090876,
       "name": "Bathtub Blair",
-      "image": "/prints/catalog/400650485-paper-print-8-5x11-bathtub-blair.png",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_image_name": "Bathtub Blair",
-      "matched_image_format": "Paper print 8.5x11",
-      "match_note": "exact name; score 100"
+      "image": "/prints/catalog/3418059080-holographic-print-holographic-bathtub-blair.png",
+      "material": "Holographic print",
+      "size": "11x17"
     },
     {
-      "name": "Blair Purple Paws OG",
+      "id": 862283637,
+      "name": "Cute Red Toga",
+      "image": "/prints/catalog/2022812551-holographic-print-holographic-cute-red-toga.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 2303607937,
+      "name": "Ecchi Toga Flash",
+      "image": "/prints/catalog/1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 267130385,
+      "name": "Forest Mavis",
+      "image": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 470702251,
+      "name": "Holiday Toga (seasonal)",
+      "image": "/prints/catalog/1852856735-holographic-print-holographic-holiday-toga-seasonal.jpg",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 1974009691,
+      "name": "Kobayashi Kana Tohru",
+      "image": "/prints/catalog/3565205650-holographic-print-holographic-kobayashi-kana-tohru.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 1775901363,
+      "name": "One Piece Duo",
+      "image": "/prints/catalog/2397589825-holographic-print-holographic-one-piece-duo.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 3255261192,
+      "name": "Orange Pumpkin Blair",
+      "image": "/prints/catalog/47427669-holographic-print-holographic-orange-pumpkin-blair.jpg",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 1006481119,
+      "name": "Purple Paws Blair",
+      "image": "/prints/catalog/1900587432-holographic-print-holographic-purple-paws-blair.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 2390843215,
+      "name": "Red Stab Toga",
+      "image": "/prints/catalog/844536475-holographic-print-holographic-red-stab-toga.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 3238241593,
+      "name": "Toga Black Mask",
+      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 4102197828,
+      "name": "Toga Dabi Black White",
+      "image": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 68014064,
+      "name": "Toga Pink Hearts",
+      "image": "/prints/catalog/2719216881-holographic-print-holographic-toga-pink-hearts.png",
+      "material": "Holographic print",
+      "size": "11x17"
+    },
+    {
+      "id": 4127611595,
+      "name": "Holiday Toga (seasonal)",
+      "image": "/prints/catalog/2490635634-metal-print-6x9-holiday-toga-seasonal.jpg",
+      "material": "Metal print",
+      "size": "6x9"
+    },
+    {
+      "id": 1887446606,
+      "name": "Bathtub Blair",
+      "image": "/prints/catalog/2699172219-metal-print-large-metal-bathtub-blair.png",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 1734653426,
+      "name": "Cute Red Toga",
+      "image": "/prints/catalog/2777997840-metal-print-large-metal-cute-red-toga.png",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 81267167,
+      "name": "Orange Pumpkin Blair",
+      "image": "/prints/catalog/418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 2961796106,
+      "name": "Purple Paws Blair",
       "image": "/prints/catalog/220698729-metal-print-large-metal-purple-paws-blair.png",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_image_name": "Purple Paws Blair",
-      "matched_image_format": "Metal print 12x18",
-      "match_note": "same words; score 95"
+      "material": "Metal print",
+      "size": "12x18"
     },
     {
-      "name": "Mavis Forest",
+      "id": 2461244257,
+      "name": "Red Stab Toga",
+      "image": "/prints/catalog/1832348371-metal-print-large-metal-red-stab-toga.png",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 3760086785,
+      "name": "Toga Black Mask",
+      "image": "/prints/catalog/2138589493-metal-print-large-metal-toga-black-mask.png",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 905420664,
+      "name": "Toga Dabi Black White",
+      "image": "/prints/catalog/876140974-metal-print-large-metal-toga-dabi-black-white.png",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 1335051330,
+      "name": "Cute Red Toga",
+      "image": "/prints/catalog/1466162656-metal-print-medium-metal-cute-red-toga.png",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 1281203532,
+      "name": "Forest Mavis",
       "image": "/prints/catalog/2167659035-metal-print-medium-metal-forest-mavis.jpg",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_image_name": "Forest Mavis",
-      "matched_image_format": "Metal print 10x12",
-      "match_note": "same words; score 95"
+      "material": "Metal print",
+      "size": "10x12"
     },
     {
+      "id": 961087465,
+      "name": "Holiday Toga (seasonal)",
+      "image": "/prints/catalog/315172154-metal-print-medium-metal-holiday-toga-seasonal.jpg",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 3697726380,
+      "name": "One Piece Duo",
+      "image": "/prints/catalog/611022824-metal-print-medium-metal-one-piece-duo.png",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 2003548824,
+      "name": "Red Stab Toga",
+      "image": "/prints/catalog/1627159953-metal-print-medium-metal-red-stab-toga.png",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 2831624623,
+      "name": "Toga Black Mask",
+      "image": "/prints/catalog/2796269162-metal-print-medium-metal-toga-black-mask.png",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 2239022319,
+      "name": "Toga Dabi Black White",
+      "image": "/prints/catalog/1778017536-metal-print-medium-metal-toga-dabi-black-white.png",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 2479970815,
       "name": "Toga Black Mask",
       "image": "/prints/catalog/2838209485-metal-trading-card-trading-card-toga-black-mask.png",
       "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_image_name": "Toga Black Mask",
-      "matched_image_format": "Metal trading card trading card",
-      "match_note": "exact name; exact format; score 130"
-    },
-    {
-      "name": "Asia Argento Nun",
-      "image": "/prints/catalog/3096612490-holographic-print-holographic-asia-argento-nun.png",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "Asia Argento Nun",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; same size; score 110"
-    },
-    {
-      "name": "Forest Mavis",
-      "image": "/prints/catalog/1148734571-holographic-print-holographic-forest-mavis.jpg",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "Forest Mavis",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; same size; score 110"
-    },
-    {
-      "name": "One Piece Duo",
-      "image": "/prints/catalog/2012455711-paper-print-11x17-one-piece-duo.png",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "One Piece Duo",
-      "matched_image_format": "Paper poster 11x17",
-      "match_note": "exact name; exact format; score 130"
-    },
-    {
-      "name": "Toga Black Mask",
-      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "Toga Black Mask",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; same size; score 110"
-    },
-    {
-      "name": "Toga Dabi Black White",
-      "image": "/prints/catalog/1260659485-holographic-print-holographic-toga-dabi-black-white.png",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_image_name": "Toga Dabi Black White",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "exact name; same size; score 110"
-    },
-    {
-      "name": "Spice and Wolf",
-      "image": "/prints/catalog/876468564-paper-print-8-5x11-spice-and-wolf.jpg",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "matched",
-      "matched_image_name": "Spice and Wolf",
-      "matched_image_format": "Paper print 8.5x11",
-      "match_note": "exact name; exact format; score 130"
-    },
-    {
-      "name": "Black Mask Toga",
-      "image": "/prints/catalog/1278163348-holographic-print-holographic-toga-black-mask.png",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "duplicate skipped",
-      "matched_image_name": "Toga Black Mask",
-      "matched_image_format": "Holographic poster 11x17",
-      "match_note": "same words; same size; score 105"
-    },
-    {
-      "name": "Blair Fly Moon",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blair Orange Kiss",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Dabi City",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Pink Aimee Ny Poster",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Sparkle",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Sparkle Purple",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Tsu Grayscale",
-      "material": "Holographic poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "DXD Hug",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Kobayashi Kabob",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Lisa Frank Toga",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mavis Zeref Scene",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "MVA Cover",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Daylon Pink",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Ochaco AWK Hug",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "12x18",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Pink Manga Cover Toga",
-      "material": "Metal print",
-      "size": "12x18",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Daylon Red",
-      "material": "Metal print",
-      "size": "12x18",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Card J",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Closeup Card Art",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Swimsuit",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Temperence",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Xenovia Leash",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Xenovia Sparkly",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blair_Maka_MangaPanel",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Asia",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Blair",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Toga",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Coby At Least I Tried",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Coby Tribute Card",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Dragon Maid Nap",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "DXD Card Art",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Lovely Smile",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Lovers Toga",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Magician Blair",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Maron- Not Bulma",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mavis Zeref Touch",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Miss Doublefinger Card Art",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Nami Vs DoubleFinger",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Purple Ochaco",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Star Mavis",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga #6 Coat Card Art",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Boyfriend",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Goth",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Rare Card",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Sadness Deep Inside",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Thank You- End Scene",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Uraka V Toga Cover red bg",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Aria Chariot",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Card J",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Closeup Card Art",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Clover",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Konako Card Art",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia lvl 4 card",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Swimsuit",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Temperance",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Xenovia DXD",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Xenovia leash",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blair_Color_Card_",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blair_Maka_Panel",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Asia",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Blair",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blood Artisan Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Coby Join The Marines",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Death Minatsuki",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Devil Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "DoubleFinger Nami Card Art",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Elze- The Sun",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Eri Empress",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Frenda- Wheel of Fortune",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "High School Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Homura- Seven of Wands",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Ikuno Hermit",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Justice Kobayashi",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Kobayashi_Omurice",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Kobayashi_Tohru_Gift",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Koby At Least I Tried",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Koby Page Cups",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Koby Tribute Card",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Lisa Frank Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Magician Blair",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Maron Not Bulma",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mavis Adventure",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mavis Zeref Touch",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Minami- Queen of Wands",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mio Fool",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Miss DoubleFinger Card Art",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Murmur- Moon",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "No Use For Heroes",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Nodoka -High Priestess",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Power and Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Ruby High Priestess",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Sadness Deep Inside",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Saki The World",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Spy Family Girls",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Star Mavis",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Suzuka Strength",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga 6 Coat",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Boyfriend",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Food",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Goth",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Gucci",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga in the Middle",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga in the Way",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Lovely Smile",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga MVA Cover",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Ochaco Fight Knife",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga RARE card art",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga RareStab",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Red Neon",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Thank You-End Scene",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga V Ochaco Purple",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga-Lovers",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "TogaOchaco_Awk_Hug",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Asia Clovers",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Blair Magician",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Kob_Tohru_Omurice",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Kobayashi Gift",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Lisa Frank Toga",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Mavis and Zeref Close",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Pink Mavis",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Pink Shadows Mavis",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Red Black White Toga",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Snowy Mavis",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Cammie PINK",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Devil",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Dolls",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Neon",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Ochaco Point",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Trail",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Toga Twice Dance",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "TT Toga",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Baka and Test_Minami",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Ecchi Asia Sitting",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Eden of the East",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Elze- Smartphone",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Future Diary Murmur",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Maron, Not Bulma",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Minatsuki Death",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Ruby moonlight",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
-    },
-    {
-      "name": "Sylvie HNTSDL",
-      "material": "Paper print",
-      "size": "8.5x11",
-      "status": "missing image",
-      "image": "",
-      "matched_image_name": "",
-      "matched_image_format": "",
-      "match_note": "No exact normalized name or same-word image filename match"
+      "size": "trading card"
     }
-  ]
+  ],
+  "audit": []
 }

@@ -10,7 +10,7 @@ leah-clark-merch/
 
 ## Catalog Uploads
 
-The live catalog is driven by the current inventory DOCX matched to local image files, not live Google Drive edits or hard-coded placeholder images.
+The live catalog is driven by the current image-backed product snapshot and local image files, not live Google Drive edits or hard-coded placeholder images.
 
 ```text
 leah-clark-merch/data/product-catalog.json
@@ -23,7 +23,7 @@ Customer-facing product rows are limited to:
 - `material`
 - `size`
 
-`data/product-catalog.json` also includes internal ids for stable app records and audit rows for products that need image review.
+`data/product-catalog.json` also includes internal ids for stable app records. The DOCX match audit is kept separately for products that need image/name review.
 
 Downloaded catalog images live here:
 

@@ -172,9 +172,10 @@ The current event schedule is sourced from the shared Google Sheet and saved in 
 - `documents/leah-current-schedule.csv` keeps the raw sheet export.
 - `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
-The QR product catalog is sourced from the current inventory document and matched against local images in `prints/catalog/`:
+The QR product catalog is sourced from the current image-backed product snapshot and served from local images in `prints/catalog/`:
 
 - `documents/Current_Inventory_Lst with Photos to USe.docx` is the upcoming-event inventory source.
+- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot exported from the shared sheet.
 - `documents/leah-indianapolis-popcon-catalog.csv` is the public catalog export with only name, image, material, and size.
 - `documents/leah-inventory-image-match-audit.csv` lists matched, skipped duplicate, and missing-image inventory rows.
 - `data/product-catalog.json` powers `/api/prints` with the same public catalog plus internal ids.
@@ -183,7 +184,7 @@ Legacy sheet exports are still kept for audit:
 
 - `documents/leah-standard-prints-8_5x11.csv` keeps a sanitized source export.
 - `documents/leah-large-prints-11x17.csv` keeps a sanitized source export.
-- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot.
+- The inventory DOCX and audit CSV are kept to cross-check event availability.
 
 ---
 
@@ -191,20 +192,31 @@ Legacy sheet exports are still kept for audit:
 
 ### Updating The Catalog Snapshot
 
-For the Indianapolis QR catalog, update the inventory document and image files:
+For the Indianapolis QR catalog, update the snapshot and image files:
 
 ```text
-documents/Current_Inventory_Lst with Photos to USe.docx
+documents/leah-product-catalog-snapshot.csv
 prints/catalog/
 ```
 
-Then rebuild the matched app catalog:
+Then rebuild the image-backed app catalog:
+
+```bash
+python3 scripts/build_catalog_from_csv.py --csv documents/leah-product-catalog-snapshot.csv --output data/product-catalog.json --csv-output documents/leah-indianapolis-popcon-catalog.csv
+```
+
+The builder writes:
+
+- `data/product-catalog.json`
+- `documents/leah-indianapolis-popcon-catalog.csv`
+
+To rebuild the inventory matching audit from the DOCX, run:
 
 ```bash
 python3 scripts/build_catalog_from_inventory_docx.py
 ```
 
-The builder writes:
+That builder writes the matched-catalog outputs below, so rerun the snapshot command above afterward if the public QR catalog should stay image-backed from the full snapshot:
 
 - `data/product-catalog.json`
 - `documents/leah-indianapolis-popcon-catalog.csv`
@@ -223,7 +235,7 @@ python3 scripts/build_catalog_snapshot.py /path/to/convention_inventory_2026.xls
 python3 scripts/download_catalog_images.py --catalog data/product-catalog.json --out-dir prints/catalog --manifest prints/catalog/manifest.json --rewrite-catalog --local-only --csv-output documents/leah-product-catalog-snapshot.csv
 ```
 
-Rows appear in the QR catalog only when the inventory name matches a local image name. Rows without a matched image stay in the audit CSV and do not appear to customers.
+Rows appear in the QR catalog when they have a local image, print name, material, and size. Rows without a local image stay in the snapshot or audit files and do not appear to customers.
 
 ### Resetting Orders
 
