@@ -7,6 +7,8 @@ Do not commit private customer/order exports to a public repository.
 Current sanitized sheet exports:
 
 - `leah-current-schedule.csv`
+- `leah-indianapolis-popcon-catalog.csv`
+- `leah-inventory-image-match-audit.csv`
 - `leah-product-catalog-snapshot.csv`
 - `leah-standard-prints-8_5x11.csv`
 - `leah-large-prints-11x17.csv`

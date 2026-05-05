@@ -2,8 +2,8 @@
 """Build a sanitized product catalog from the convention inventory workbook.
 
 The source workbook can contain private logistics columns. This script only
-exports the product fields needed by the app: quantity, image type, name, image,
-size, price, and availability, plus an internal id for order stability.
+exports the product fields needed by the QR catalog: size, image, and image
+name, plus an internal id for stable app records.
 """
 
 from __future__ import annotations
@@ -25,12 +25,6 @@ NS = {
 }
 
 SOURCE_URL = "https://docs.google.com/spreadsheets/d/16zOCNXmvol34Cw0Hgz3YCSbBuFkFN2zakv1mXInQQdw/edit?usp=sharing"
-
-PRICE_BY_TYPE_SIZE = {
-    ("paper print", "8.5x11"): 15.0,
-    ("paper print", "11x17"): 25.0,
-}
-
 
 def normalize_name(value: object) -> str:
     text = str(value or "").lower().strip().replace("&", "and")
@@ -282,35 +276,21 @@ def build_catalog(workbook_path: Path) -> dict:
             match = art_by_name[row["normalized_name"]][0]
             image_resolution = "same-name"
 
-        price = PRICE_BY_TYPE_SIZE.get((row["image_type"], row["size"]))
         image = (
             f"https://drive.google.com/thumbnail?id={match['file_id']}&sz=w1000"
             if match else None
         )
 
-        if not image:
-            availability = "needs image"
-        elif price is None:
-            availability = "needs price"
-        elif row["quantity"] <= 0:
-            availability = "sold out"
-        else:
-            availability = "available"
-
         product = {
             "id": stable_id(row["image_type"], row["size"], row["name"]),
-            "quantity": row["quantity"],
-            "image_type": row["image_type"],
-            "name": row["name"],
-            "image": image,
             "size": row["size"],
-            "price": price,
-            "availability": availability,
+            "image": image,
+            "image_name": row["name"],
         }
 
         products.append(product)
 
-        if availability != "available":
+        if not image:
             audit.append({
                 **product,
                 "source_tab": row["sheet"],
@@ -319,27 +299,20 @@ def build_catalog(workbook_path: Path) -> dict:
             })
 
     products.sort(key=lambda item: (
-        item["availability"] != "available",
-        item["image_type"],
+        not item["image"],
         item["size"],
-        item["name"].lower(),
+        item["image_name"].lower(),
     ))
-    audit.sort(key=lambda item: (item["availability"], item["image_type"], item["size"], item["name"].lower()))
+    audit.sort(key=lambda item: (item["size"], item["image_name"].lower()))
 
     return {
         "source": SOURCE_URL,
         "snapshot_date": date.today().isoformat(),
-        "product_fields": ["quantity", "image_type", "name", "image", "size", "price", "availability"],
-        "price_notes": {
-            "paper print 8.5x11": 15.0,
-            "paper print 11x17": 25.0,
-            "other product types": "needs price in the snapshot before becoming orderable",
-        },
+        "product_fields": ["size", "image", "image_name"],
         "counts": {
             "products": len(products),
-            "available": sum(1 for product in products if product["availability"] == "available"),
-            "needs_image": sum(1 for product in products if product["availability"] == "needs image"),
-            "needs_price": sum(1 for product in products if product["availability"] == "needs price"),
+            "visible": sum(1 for product in products if product["image"]),
+            "needs_image": sum(1 for product in products if not product["image"]),
         },
         "products": products,
         "audit": audit,

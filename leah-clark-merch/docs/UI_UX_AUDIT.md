@@ -28,7 +28,7 @@ The core idea is strong for a booth workflow: customers scan, select prints whil
    - Benefit: less friction for fans scanning from a line or while passing the table.
 
 2. Add print filtering.
-   - Add filters for character, size, price, and availability once inventory grows.
+   - Add filters for character, size, product type, and availability once inventory grows.
    - Benefit: faster selection on mobile and better support for larger catalogs.
 
 3. Improve mobile cart behavior.

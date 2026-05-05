@@ -73,7 +73,8 @@ def main() -> None:
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--sleep", type=float, default=0.2)
     parser.add_argument("--rewrite-catalog", action="store_true")
-    parser.add_argument("--local-only-availability", action="store_true")
+    parser.add_argument("--local-only", action="store_true")
+    parser.add_argument("--local-only-availability", action="store_true", dest="local_only")
     parser.add_argument("--csv-output", type=Path)
     args = parser.parse_args()
 
@@ -94,8 +95,7 @@ def main() -> None:
             local_path = Path(image_url.lstrip("/"))
             entry = {
                 "id": product.get("id"),
-                "name": product.get("name"),
-                "image_type": product.get("image_type"),
+                "image_name": product.get("image_name") or product.get("name"),
                 "size": product.get("size"),
                 "remote_image": image_url,
                 "status": "already local",
@@ -108,25 +108,22 @@ def main() -> None:
                 entry["status"] = "failed"
                 entry["error"] = "local image path does not exist"
                 failure_count += 1
-                if args.rewrite_catalog and args.local_only_availability:
+                if args.rewrite_catalog and args.local_only:
                     product["image"] = None
                     product["image_url"] = ""
-                    product["availability"] = "needs image"
             manifest.append(entry)
             continue
 
         product_id = product.get("id")
         filename_base = "-".join([
             str(product_id),
-            slugify(product.get("image_type"), "item"),
             slugify(product.get("size"), "size"),
-            slugify(product.get("name"), "image"),
+            slugify(product.get("image_name") or product.get("name"), "image"),
         ])
 
         entry = {
             "id": product_id,
-            "name": product.get("name"),
-            "image_type": product.get("image_type"),
+            "image_name": product.get("image_name") or product.get("name"),
             "size": product.get("size"),
             "remote_image": image_url,
             "status": "pending",
@@ -164,10 +161,9 @@ def main() -> None:
             })
             failure_count += 1
 
-            if args.rewrite_catalog and args.local_only_availability:
+            if args.rewrite_catalog and args.local_only:
                 product["image"] = None
                 product["image_url"] = ""
-                product["availability"] = "needs image"
 
         manifest.append(entry)
         time.sleep(args.sleep)
@@ -188,35 +184,29 @@ def main() -> None:
             if not product:
                 continue
             for field in (
-                "quantity",
-                "image_type",
-                "name",
-                "image",
-                "image_url",
                 "size",
-                "price",
-                "availability",
+                "image",
+                "image_name",
             ):
                 if field in product:
                     audit_entry[field] = product[field]
 
+        catalog["audit"] = [
+            entry for entry in catalog.get("audit", [])
+            if not products_by_id.get(entry.get("id"), {}).get("image")
+        ]
         catalog["counts"] = {
             "products": len(products),
-            "available": sum(1 for product in products if product.get("availability") == "available"),
-            "needs_image": sum(1 for product in products if product.get("availability") == "needs image"),
-            "needs_price": sum(1 for product in products if product.get("availability") == "needs price"),
+            "visible": sum(1 for product in products if product.get("image")),
+            "needs_image": sum(1 for product in products if not product.get("image")),
         }
         args.catalog.write_text(json.dumps(catalog, indent=2) + "\n", encoding="utf-8")
 
     if args.csv_output:
         product_fields = catalog.get("product_fields") or [
-            "quantity",
-            "image_type",
-            "name",
-            "image",
             "size",
-            "price",
-            "availability",
+            "image",
+            "image_name",
         ]
         args.csv_output.parent.mkdir(parents=True, exist_ok=True)
         with args.csv_output.open("w", encoding="utf-8", newline="") as file:

@@ -25,27 +25,21 @@ const slugifyCatalogValue = (value) => String(value || '')
   .replace(/^-|-$/g, '');
 
 const normalizeCatalogProduct = (product, index) => {
-  const price = product.price === null || product.price === undefined ? null : Number(product.price);
-  const quantity = Math.max(0, Number.parseInt(product.quantity, 10) || 0);
   const image = String(product.image || product.image_url || '').trim();
-  const availability = String(product.availability || '').trim().toLowerCase();
-  const imageType = String(product.image_type || product.product_type || 'paper print').trim();
-  const name = String(product.name || '').trim();
+  const name = String(product.name || product.image_name || '').trim();
+  const material = String(product.material || '').trim();
   const size = String(product.size || '').trim();
-  const isOrderable = availability === 'available' && image && quantity > 0 && Number.isFinite(price) && price > 0;
+  const isVisible = Boolean(image && name && material && size);
 
   return {
     id: Number.isInteger(Number(product.id)) ? Number(product.id) : index + 1,
-    quantity,
-    image_type: imageType,
     name,
     image,
     image_url: image,
+    material,
     size,
-    price: Number.isFinite(price) ? price : null,
-    availability: availability || (isOrderable ? 'available' : 'unavailable'),
-    label: String(product.label || `${slugifyCatalogValue(imageType)}-${slugifyCatalogValue(size)}-${slugifyCatalogValue(name) || index + 1}`).trim(),
-    active: product.active !== false && isOrderable
+    label: String(product.label || `${slugifyCatalogValue(material)}-${slugifyCatalogValue(size)}-${slugifyCatalogValue(name) || index + 1}`).trim(),
+    active: product.active !== false && isVisible
   };
 };
 
@@ -55,7 +49,7 @@ const loadProductCatalog = async () => {
     const products = Array.isArray(catalog.products)
       ? catalog.products
         .map(normalizeCatalogProduct)
-        .filter((product) => product.name && product.image_type && product.size)
+        .filter((product) => product.name && product.size)
       : [];
 
     if (!products.length) {
@@ -96,8 +90,7 @@ const orderTotals = (order) => {
   const items = Array.isArray(order.items) ? order.items : [];
   return {
     ...order,
-    item_count: items.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0),
-    total: items.reduce((sum, item) => sum + ((Number(item.price) || 0) * (Number(item.quantity) || 0)), 0)
+    item_count: items.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0)
   };
 };
 
@@ -156,11 +149,9 @@ const buildOrderItems = (items) => {
       name: print.name,
       label: print.label,
       size: print.size,
-      image_type: print.image_type,
-      price: print.price,
+      material: print.material,
       image: print.image,
-      image_url: print.image_url,
-      availability: print.availability
+      image_url: print.image_url
     };
   }).filter(Boolean);
 };
@@ -198,7 +189,7 @@ app.use('/documents', express.static(path.join(__dirname, 'documents'), { maxAge
 
 // API Routes
 
-// Get all orderable products from the frozen snapshot
+// Get all visible catalog products from the frozen snapshot
 app.get('/api/prints', (req, res) => {
   const prints = db.data.prints.filter(p => p.active);
   res.json(prints);

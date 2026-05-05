@@ -7,7 +7,7 @@ Date: 2026-05-03
 Reviewed the full Leah Clark merch app:
 
 - Express server and JSON data handling
-- Customer print ordering page
+- Customer print catalog page
 - Admin sales dashboard
 - QR sign generator
 - Current schedule page and Google Sheet export
@@ -16,20 +16,18 @@ Reviewed the full Leah Clark merch app:
 
 ## Issues Fixed
 
-- Customer browsing no longer requires email first; fans can browse immediately and save when ready.
+- Customer catalog no longer requires email, cart, prices, quantities, or availability labels.
 - Added catalog search and size filters to reduce mobile scrolling.
 - Changed print art rendering from cropped to contained so customers can inspect the actual artwork.
 - Replaced the hard-coded local placeholder catalog with a sanitized product snapshot in `data/product-catalog.json`.
-- Added a repeatable snapshot builder that exports only quantity, image type, name, image, size, price, and availability.
-- Marked snapshot rows without dependable images or prices as review-only so they do not appear to customers as orderable items.
+- Added a repeatable inventory builder that exports only name, image, material, and size.
+- Marked snapshot rows without dependable images as review-only so they do not appear to customers as visible catalog items.
 - Downloaded accessible Drive images into `prints/catalog/` and updated the catalog to use local image paths where available.
 - Updated startup normalization so stale Render `db.json` print records are replaced by the current sheet-driven catalog.
-- Hardened order validation on the server, including valid email checks, valid active print IDs, item caps, duplicate item merging, and safe quantity limits.
-- Added order totals to customer/admin responses for consistent UI math.
-- Added proper 404 handling for missing admin orders instead of returning silent success.
+- Kept legacy order/admin endpoints server-side, while the QR page now acts as a simple browse-only catalog.
 - Added QR URL validation on both client and server.
 - Improved admin dashboard search so auto-refresh does not wipe active searches.
-- Added keyboard access and focus states for admin order cards and customer print cards.
+- Added keyboard access and focus states for admin cards and customer print cards.
 - Added admin status messages for refresh/search/action errors.
 - Added schedule summary counts and a source link.
 - Added a health endpoint at `/api/health`.
@@ -49,7 +47,7 @@ Reviewed the full Leah Clark merch app:
 - Validated print catalog JSON shape and required fields
 - Verified all Drive thumbnail URLs return HTTP 200
 - Ran `git diff --check`
-- Ran a headless Chrome smoke test with mocked APIs for customer order flow, admin search/details, QR validation, and schedule rendering
+- Ran a headless Chrome smoke test with mocked APIs for customer catalog flow, admin search/details, QR validation, and schedule rendering
 
 ## Remaining Operational Notes
 

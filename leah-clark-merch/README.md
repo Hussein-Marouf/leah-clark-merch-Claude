@@ -1,14 +1,12 @@
-# 🎨 Leah Clark Merch Order System
+# 🎨 Leah Clark Convention Catalog
 
-A convention booth ordering system that lets fans pre-select available catalog items while in line, saving time at point of sale.
+A lightweight convention catalog that lets fans scan a QR code and browse the items planned for sale.
 
 ## Features
 
-- **QR Code Scanning**: Customers scan a code to browse available convention items
-- **Pre-Order Selection**: Customers select items while waiting in line
-- **Email-Based Orders**: Orders tied to email for easy lookup
-- **Real-Time Admin Dashboard**: Sales staff see orders instantly
-- **Auto-Refresh**: Dashboard updates every 5 seconds with sound notification for new orders
+- **QR Code Scanning**: Customers scan a code to browse convention items
+- **Simple Catalog Cards**: Each item shows only the image, print name, material, and size
+- **Local Image Cache**: Catalog images can be served from `prints/catalog/`
 - **Mobile-Friendly**: Works on any phone
 
 ---
@@ -127,19 +125,14 @@ git push -u origin main
 ### At the Booth
 
 1. **Display** the QR code sign prominently
-2. **Open** `your-url.com/admin` on your tablet/laptop
-3. Keep the admin page open - it auto-refreshes
+2. Customers scan the code with their phone
+3. The catalog opens with image, print name, material, and size only
 
 ### Customer Flow
 
 1. Customer scans QR code with their phone
-2. Enters their email address
-3. Browses and selects prints they want
-4. Taps "Save My Order"
-5. When they reach the booth, gives their email
-6. You search their email in the admin panel
-7. Their order appears with all items listed
-8. Complete the sale, click "Complete Sale"
+2. Browses the available convention items
+3. Checks the print name, material, and size before visiting the booth
 
 ---
 
@@ -159,7 +152,7 @@ leah-clark-merch/
 ├── docs/              # UI/UX audit and upload notes
 ├── documents/         # Booth/project documents and sheet exports
 ├── public/
-│   ├── index.html     # Customer ordering page
+│   ├── index.html     # Customer catalog page
 │   ├── admin.html     # Sales dashboard
 │   └── qr.html        # QR code display
 └── prints/
@@ -179,12 +172,18 @@ The current event schedule is sourced from the shared Google Sheet and saved in 
 - `documents/leah-current-schedule.csv` keeps the raw sheet export.
 - `data/current-schedule.json` powers `/api/schedule` and `/schedule`.
 
-The product catalog is sourced from a read-only snapshot of the shared Google Sheet:
+The QR product catalog is sourced from the current inventory document and matched against local images in `prints/catalog/`:
+
+- `documents/Current_Inventory_Lst with Photos to USe.docx` is the upcoming-event inventory source.
+- `documents/leah-indianapolis-popcon-catalog.csv` is the public catalog export with only name, image, material, and size.
+- `documents/leah-inventory-image-match-audit.csv` lists matched, skipped duplicate, and missing-image inventory rows.
+- `data/product-catalog.json` powers `/api/prints` with the same public catalog plus internal ids.
+
+Legacy sheet exports are still kept for audit:
 
 - `documents/leah-standard-prints-8_5x11.csv` keeps a sanitized source export.
 - `documents/leah-large-prints-11x17.csv` keeps a sanitized source export.
-- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot with only quantity, image type, name, image, size, price, and availability.
-- `data/product-catalog.json` powers `/api/prints` with the same sanitized snapshot plus internal ids for ordering.
+- `documents/leah-product-catalog-snapshot.csv` keeps the sanitized product snapshot.
 
 ---
 
@@ -192,18 +191,39 @@ The product catalog is sourced from a read-only snapshot of the shared Google Sh
 
 ### Updating The Catalog Snapshot
 
-Update the shared Google Sheet first. Then download/export the current workbook snapshot and run:
+For the Indianapolis QR catalog, update the inventory document and image files:
+
+```text
+documents/Current_Inventory_Lst with Photos to USe.docx
+prints/catalog/
+```
+
+Then rebuild the matched app catalog:
+
+```bash
+python3 scripts/build_catalog_from_inventory_docx.py
+```
+
+The builder writes:
+
+- `data/product-catalog.json`
+- `documents/leah-indianapolis-popcon-catalog.csv`
+- `documents/leah-inventory-image-match-audit.csv`
+
+If you manually edit the public CSV instead, rebuild from it with:
+
+```bash
+python3 scripts/build_catalog_from_csv.py
+```
+
+If you need a fresh legacy workbook export later, download/export the current workbook snapshot and run:
 
 ```bash
 python3 scripts/build_catalog_snapshot.py /path/to/convention_inventory_2026.xlsx --output data/product-catalog.json --csv-output documents/leah-product-catalog-snapshot.csv
-python3 scripts/download_catalog_images.py --catalog data/product-catalog.json --out-dir prints/catalog --manifest prints/catalog/manifest.json --rewrite-catalog --local-only-availability --csv-output documents/leah-product-catalog-snapshot.csv
+python3 scripts/download_catalog_images.py --catalog data/product-catalog.json --out-dir prints/catalog --manifest prints/catalog/manifest.json --rewrite-catalog --local-only --csv-output documents/leah-product-catalog-snapshot.csv
 ```
 
-Rows become orderable only when the snapshot has a positive quantity, a downloaded local image, and a known price. Rows missing a local image or price stay in `data/product-catalog.json` as `needs image` or `needs price` so they can be reviewed without appearing to customers.
-
-### Changing Prices
-
-Edit the price map in `scripts/build_catalog_snapshot.py` after confirming the price convention for that sheet tab, then regenerate `data/product-catalog.json`.
+Rows appear in the QR catalog only when the inventory name matches a local image name. Rows without a matched image stay in the audit CSV and do not appear to customers.
 
 ### Resetting Orders
 
@@ -234,8 +254,8 @@ Delete the `db.json` file and restart the server.
 - Enter your full live URL in the QR page input
 - Include `https://` at the beginning
 
-**Orders not appearing**
-- Refresh the admin page
+**Catalog not appearing**
+- Refresh the page
 - Check that the server is running
 - On Render free tier, the server may sleep - first request wakes it up
 
@@ -244,11 +264,11 @@ Delete the `db.json` file and restart the server.
 ## 💡 Tips for Convention Success
 
 1. **Test everything** before the convention
-2. **Have a backup** - screenshot orders periodically
+2. **Have a backup** - keep a printed or saved copy of the catalog
 3. **Bring a charger** for your display device
 4. **Print multiple QR signs** for different line positions
-5. **Train staff** on searching by email
-6. **Keep the admin page visible** to catch orders immediately
+5. **Check images on mobile** before the doors open
+6. **Keep the CSV updated** when items are added or removed
 
 ---
 

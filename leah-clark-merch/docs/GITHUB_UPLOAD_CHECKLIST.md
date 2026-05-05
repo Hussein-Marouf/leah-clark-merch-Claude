@@ -10,7 +10,7 @@ leah-clark-merch/
 
 ## Catalog Uploads
 
-The live catalog is driven by a frozen shared Google Sheet snapshot, not live Google Drive edits or hard-coded placeholder images.
+The live catalog is driven by the current inventory DOCX matched to local image files, not live Google Drive edits or hard-coded placeholder images.
 
 ```text
 leah-clark-merch/data/product-catalog.json
@@ -18,15 +18,12 @@ leah-clark-merch/data/product-catalog.json
 
 Customer-facing product rows are limited to:
 
-- `quantity`
-- `image_type`
 - `name`
 - `image`
+- `material`
 - `size`
-- `price`
-- `availability`
 
-`data/product-catalog.json` also includes internal ids for order stability and audit rows for products that need image or price review.
+`data/product-catalog.json` also includes internal ids for stable app records and audit rows for products that need image review.
 
 Downloaded catalog images live here:
 
@@ -44,6 +41,8 @@ The source exports currently kept for audit are:
 
 ```text
 leah-clark-merch/documents/leah-product-catalog-snapshot.csv
+leah-clark-merch/documents/leah-indianapolis-popcon-catalog.csv
+leah-clark-merch/documents/leah-inventory-image-match-audit.csv
 leah-clark-merch/documents/leah-standard-prints-8_5x11.csv
 leah-clark-merch/documents/leah-large-prints-11x17.csv
 ```

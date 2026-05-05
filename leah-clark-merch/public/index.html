@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leah Clark - Convention Prints</title>
+  <title>Browse Inventory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
@@ -94,130 +94,6 @@
       text-transform: uppercase;
     }
 
-    .header-links {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .header-link {
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid rgba(157, 78, 221, 0.45);
-      border-radius: 10px;
-      padding: 9px 13px;
-      font-weight: 600;
-    }
-
-    .header-link:hover,
-    .header-link:focus-visible {
-      border-color: var(--accent);
-      outline: none;
-    }
-    
-    /* Email Entry Section */
-    .email-section {
-      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(157, 78, 221, 0.3);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .email-section.hidden { display: none; }
-
-    .helper-text {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    
-    .email-section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      color: var(--gold);
-    }
-    
-    .email-form {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    
-    .email-input {
-      flex: 1;
-      min-width: 250px;
-      padding: 15px 20px;
-      border-radius: 12px;
-      border: 2px solid rgba(157, 78, 221, 0.5);
-      background: rgba(13, 2, 33, 0.8);
-      color: var(--text);
-      font-size: 1rem;
-      font-family: 'Quicksand', sans-serif;
-      transition: all 0.3s ease;
-    }
-    
-    .email-input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
-    }
-    
-    .email-input::placeholder {
-      color: var(--text-muted);
-    }
-
-    .field-label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-      font-weight: 600;
-    }
-    
-    .btn {
-      padding: 15px 30px;
-      border-radius: 12px;
-      border: none;
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: wait;
-      transform: none !important;
-      box-shadow: none !important;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      color: white;
-    }
-    
-    .btn-primary:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
-    }
-    
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold) 0%, #ffeb7a 100%);
-      color: var(--bg-dark);
-    }
-    
-    .btn-gold:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-    }
-    
     /* Prints Grid */
     .prints-section {
       display: none;
@@ -227,10 +103,6 @@
       display: block;
     }
 
-    body.cart-open .prints-section.active {
-      padding-bottom: 240px;
-    }
-    
     .section-title {
       font-family: 'Cinzel', serif;
       font-size: 1.5rem;
@@ -323,7 +195,6 @@
       border: 1px solid rgba(157, 78, 221, 0.2);
       transition: all 0.4s ease;
       position: relative;
-      cursor: pointer;
     }
 
     .print-card:focus-visible {
@@ -335,35 +206,6 @@
       transform: translateY(-5px);
       border-color: var(--accent);
       box-shadow: 0 15px 40px rgba(157, 78, 221, 0.3);
-    }
-    
-    .print-card.selected {
-      border-color: var(--gold);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
-    }
-    
-    .print-card.selected::before {
-      content: '✓';
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 30px;
-      height: 30px;
-      background: var(--gold);
-      color: var(--bg-dark);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      z-index: 10;
-      animation: pop 0.3s ease;
-    }
-    
-    @keyframes pop {
-      0% { transform: scale(0); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
     }
     
     .print-image {
@@ -395,175 +237,12 @@
     }
     
     .print-size,
-    .print-type {
+    .print-material {
       font-size: 0.9rem;
       color: var(--text-muted);
       background: rgba(157, 78, 221, 0.2);
       padding: 4px 12px;
       border-radius: 20px;
-    }
-
-    .print-type {
-      color: var(--text);
-      text-transform: capitalize;
-    }
-    
-    .print-price {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--gold);
-    }
-    
-    .print-availability {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin: -4px 0 14px;
-    }
-    
-    .add-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: rgba(157, 78, 221, 0.3);
-      color: var(--text);
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .add-btn:hover {
-      background: var(--primary);
-    }
-    
-    .print-card.selected .add-btn {
-      background: var(--gold);
-      color: var(--bg-dark);
-    }
-    
-    /* Cart Summary */
-    .cart-summary {
-      position: sticky;
-      bottom: 20px;
-      background: linear-gradient(135deg, var(--bg-card) 0%, #2d1b4e 100%);
-      border-radius: 20px;
-      padding: 25px;
-      border: 2px solid var(--primary);
-      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-      display: none;
-    }
-    
-    .cart-summary.active {
-      display: block;
-    }
-    
-    .cart-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin-bottom: 15px;
-    }
-    
-    .cart-items {
-      max-height: 200px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-    }
-    
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(157, 78, 221, 0.2);
-    }
-    
-    .cart-item:last-child {
-      border-bottom: none;
-    }
-    
-    .cart-item-name {
-      font-size: 0.95rem;
-    }
-    
-    .cart-item-price {
-      color: var(--gold);
-      font-weight: 600;
-    }
-    
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 15px;
-      border-top: 2px solid var(--primary);
-      margin-bottom: 20px;
-    }
-    
-    .cart-total-label {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .cart-total-amount {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-    
-    /* Confirmation Screen */
-    .confirmation {
-      display: none;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    
-    .confirmation.active {
-      display: block;
-    }
-    
-    .confirmation-icon {
-      font-size: 80px;
-      margin-bottom: 30px;
-      animation: bounce 0.6s ease;
-    }
-    
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-    
-    .confirmation h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    
-    .confirmation p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-    
-    .order-summary {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 30px auto;
-      max-width: 500px;
-      text-align: left;
-      border: 1px solid rgba(157, 78, 221, 0.3);
-    }
-    
-    .order-summary h3 {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      margin-bottom: 15px;
     }
     
     /* Loading state */
@@ -605,21 +284,8 @@
         flex: 1;
       }
 
-      .email-form {
-        flex-direction: column;
-      }
-      
       .prints-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .cart-summary {
-        border-radius: 20px 20px 0 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: fixed;
-        margin: 0;
       }
     }
 
@@ -634,26 +300,6 @@
       }
     }
 
-    /* Toast notifications */
-    .toast {
-      position: fixed;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--primary);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 12px;
-      font-weight: 600;
-      opacity: 0;
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-    
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -662,39 +308,13 @@
   <div class="container">
     <header>
       <h1 class="logo">Leah Clark</h1>
-      <p class="subtitle">Voice Actor • Convention Catalog</p>
-      <nav class="header-links" aria-label="Primary">
-        <a class="header-link" href="/schedule">Current Schedule</a>
-      </nav>
+      <p class="subtitle">Browse Inventory</p>
     </header>
-    
-    <!-- Email Entry -->
-    <section class="email-section" id="emailSection">
-      <h2>Start Your Order</h2>
-      <p class="helper-text" id="emailHelp">
-        Browse available convention items first, then enter your email when you are ready to save. If you already saved an order, this will pull it back up.
-      </p>
-      <label class="field-label" for="emailInput">Email address</label>
-      <div class="email-form">
-        <input 
-          type="email" 
-          class="email-input" 
-          id="emailInput" 
-          placeholder="your@email.com"
-          autocomplete="email"
-          aria-describedby="emailHelp"
-        >
-        <button class="btn btn-primary" id="startBtn" onclick="startOrder()">
-          Use Email
-        </button>
-      </div>
-    </section>
-    
-    <!-- Prints Selection -->
+
     <section class="prints-section active" id="printsSection">
-      <h2 class="section-title">Select Available Items</h2>
+      <h2 class="section-title">Browse Inventory</h2>
       <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">
-        Tap an item to add it to your order. Only snapshot rows with quantity, image, and price are shown here.
+        Browse inventory.
       </p>
 
       <div class="catalog-toolbar" aria-label="Print catalog tools">
@@ -703,13 +323,11 @@
           class="catalog-search"
           id="printSearch"
           type="search"
-          placeholder="Search by name, type, or size..."
+          placeholder="Search by print name, material, or size..."
           oninput="applySearch(this.value)"
         >
-        <div class="filter-group" aria-label="Filter by size">
-          <button type="button" class="filter-btn" data-size="all" aria-pressed="true" onclick="setSizeFilter('all')">All</button>
-          <button type="button" class="filter-btn" data-size="8.5x11" aria-pressed="false" onclick="setSizeFilter('8.5x11')">8.5x11</button>
-          <button type="button" class="filter-btn" data-size="11x17" aria-pressed="false" onclick="setSizeFilter('11x17')">11x17</button>
+        <div class="filter-group" id="sizeFilters" aria-label="Filter by size">
+          <button type="button" class="filter-btn" data-size="all" aria-pressed="true">All</button>
         </div>
       </div>
 
@@ -721,104 +339,22 @@
           <p>Loading catalog...</p>
         </div>
       </div>
-      
-      <!-- Cart Summary -->
-      <div class="cart-summary" id="cartSummary">
-        <h3 class="cart-title" id="cartTitle">Your Selection</h3>
-        <div class="cart-items" id="cartItems"></div>
-        <div class="cart-total">
-          <span class="cart-total-label">Estimated Total:</span>
-          <span class="cart-total-amount" id="cartTotal">$0.00</span>
-        </div>
-        <button class="btn btn-gold" id="saveBtn" style="width: 100%;" onclick="submitOrder()">
-          Save My Order
-        </button>
-      </div>
-    </section>
-    
-    <!-- Confirmation -->
-    <section class="confirmation" id="confirmation">
-      <div class="confirmation-icon">🎉</div>
-      <h2>Order Saved!</h2>
-      <p>
-        Your selection has been saved. When you reach the booth, 
-        just give us your email and we'll have your order ready!
-      </p>
-      <div class="order-summary" id="orderSummary"></div>
-      <button class="btn btn-primary" onclick="modifyOrder()">
-        Modify Order
-      </button>
     </section>
   </div>
   
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
   <script>
     let prints = [];
-    let selectedPrints = new Map();
-    let userEmail = '';
-    let submitting = false;
     let activeSize = 'all';
     let searchTerm = '';
-
-    const EMAIL_RE = /^\S+@\S+\.\S+$/;
-
-    const num = (value) => {
-      const n = Number(value);
-      return Number.isFinite(n) ? n : 0;
-    };
 
     const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[char]));
 
-    const fmt = (value) => `$${num(value).toFixed(2)}`;
-
-    const normalizeItem = (item, fallbackName = '', fallbackSize = '') => ({
-      print_id: Number(item.print_id ?? item.id),
-      name: item.name ?? fallbackName,
-      size: item.size ?? fallbackSize,
-      image_type: item.image_type ?? '',
-      price: num(item.price),
-      quantity: Math.max(1, Math.trunc(num(item.quantity)) || 1)
-    });
-    
-    // Initialize
     document.addEventListener('DOMContentLoaded', async () => {
-      const savedEmail = sessionStorage.getItem('orderEmail');
-      if (savedEmail) {
-        document.getElementById('emailInput').value = savedEmail;
-        userEmail = savedEmail;
-      }
-
       await loadPrints();
-
-      if (savedEmail) {
-        await restoreExistingOrder(savedEmail, { silent: true });
-      }
     });
-    
-    async function startOrder() {
-      const email = document.getElementById('emailInput').value.trim();
-      
-      if (!EMAIL_RE.test(email)) {
-        showToast('Please enter a valid email address');
-        return;
-      }
-      
-      userEmail = email;
-      sessionStorage.setItem('orderEmail', email);
 
-      const startBtn = document.getElementById('startBtn');
-      startBtn.disabled = true;
-
-      try {
-        await restoreExistingOrder(email);
-      } finally {
-        startBtn.disabled = false;
-      }
-    }
-    
     async function loadPrints() {
       try {
         document.getElementById('printsGrid').innerHTML = `
@@ -835,10 +371,11 @@
         const data = await response.json();
         prints = (Array.isArray(data) ? data : []).map((print) => ({
           ...print,
-          price: num(print.price),
-          quantity: Math.max(0, Math.trunc(num(print.quantity)) || 0),
+          name: print.name || print.image_name || '',
+          material: print.material || '',
           image: print.image || print.image_url || ''
         }));
+        renderSizeFilters();
         renderPrints();
         return true;
       } catch (err) {
@@ -850,34 +387,27 @@
       }
     }
 
-    async function restoreExistingOrder(email, options = {}) {
-      try {
-        const response = await fetch(`/api/orders/email/${encodeURIComponent(email)}`);
-        if (!response.ok) {
-          throw new Error(`Order lookup failed: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.order && Array.isArray(data.order.items)) {
-          selectedPrints.clear();
-          data.order.items.forEach((item) => {
-            const normalized = normalizeItem(item);
-            if (Number.isInteger(normalized.print_id)) {
-              selectedPrints.set(normalized.print_id, normalized);
-            }
-          });
-          renderPrints();
-          if (!options.silent) showToast('Existing order loaded');
-          return;
-        }
-
-        renderPrints();
-        if (!options.silent) showToast('Email saved. Pick your prints below.');
-      } catch (err) {
-        console.error('Error checking existing order:', err);
-        if (!options.silent) showToast('Could not check existing orders. You can still save a new order.');
+    function sortSizes(a, b) {
+      const order = ['8.5x11', '11x17', '6x9', '10x12', '12x18', 'trading card'];
+      const ai = order.indexOf(a);
+      const bi = order.indexOf(b);
+      if (ai !== -1 || bi !== -1) {
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
       }
+      return a.localeCompare(b);
+    }
+
+    function renderSizeFilters() {
+      const group = document.getElementById('sizeFilters');
+      const sizes = Array.from(new Set(prints.map((print) => print.size).filter(Boolean))).sort(sortSizes);
+      group.innerHTML = ['all', ...sizes].map((size) => `
+        <button type="button" class="filter-btn" data-size="${esc(size)}" aria-pressed="${size === activeSize}">
+          ${esc(size === 'all' ? 'All' : size)}
+        </button>
+      `).join('');
+      group.querySelectorAll('.filter-btn').forEach((button) => {
+        button.addEventListener('click', () => setSizeFilter(button.dataset.size));
+      });
     }
 
     function setSizeFilter(size) {
@@ -900,13 +430,12 @@
       if (!prints.length) {
         grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No catalog items are available right now.</p>';
         resultCount.textContent = '';
-        updateCart();
         return;
       }
 
       const filteredPrints = prints.filter((print) => {
         const matchesSize = activeSize === 'all' || print.size === activeSize;
-        const haystack = `${print.name || ''} ${print.image_type || ''} ${print.size || ''} ${print.availability || ''}`.toLowerCase();
+        const haystack = `${print.name || ''} ${print.material || ''} ${print.size || ''}`.toLowerCase();
         return matchesSize && (!searchTerm || haystack.includes(searchTerm));
       });
 
@@ -914,201 +443,25 @@
 
       if (!filteredPrints.length) {
         grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No items match that search.</p>';
-        updateCart();
         return;
       }
       
       grid.innerHTML = filteredPrints.map((print) => {
-        const isSelected = selectedPrints.has(print.id);
         const image = print.image || print.image_url || '';
-        const typeLabel = print.image_type || 'Item';
-        const availability = print.availability || 'available';
+        const printName = print.name || 'Untitled print';
         return `
-        <div class="print-card ${isSelected ? 'selected' : ''}"
-             data-id="${print.id}"
-             role="button"
-             tabindex="0"
-             aria-pressed="${isSelected}"
-             aria-label="${esc(print.name)}, ${esc(typeLabel)}, ${esc(print.size)}, ${fmt(print.price)}, ${esc(availability)}"
-             onclick="togglePrint(${print.id})"
-             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePrint(${print.id});}">
-          <img src="${esc(image)}" alt="${esc(print.name)}" class="print-image" loading="lazy" decoding="async">
+        <article class="print-card" data-id="${print.id}">
+          <img src="${esc(image)}" alt="${esc(printName)}" class="print-image" loading="lazy" decoding="async">
           <div class="print-info">
-            <h3 class="print-name">${esc(print.name)}</h3>
+            <h3 class="print-name">${esc(printName)}</h3>
             <div class="print-details">
-              <span class="print-type">${esc(typeLabel)}</span>
+              <span class="print-material">${esc(print.material)}</span>
               <span class="print-size">${esc(print.size)}</span>
-              <span class="print-price">${fmt(print.price)}</span>
             </div>
-            <div class="print-availability">Qty ${num(print.quantity)} · ${esc(availability)}</div>
-            <span class="add-btn" aria-hidden="true">
-              ${isSelected ? '✓ Selected' : 'Add to Order'}
-            </span>
           </div>
-        </div>
+        </article>
         `;
       }).join('');
-      
-      updateCart();
-    }
-    
-    function togglePrint(printId) {
-      const print = prints.find((p) => p.id === printId);
-      if (!print) return;
-      
-      if (selectedPrints.has(printId)) {
-        selectedPrints.delete(printId);
-      } else {
-        selectedPrints.set(printId, normalizeItem({
-          print_id: printId,
-          name: print.name,
-          size: print.size,
-          image_type: print.image_type,
-          price: print.price,
-          quantity: 1
-        }));
-      }
-      
-      renderPrints();
-      document.querySelector(`[data-id="${printId}"]`)?.focus();
-    }
-    
-    function updateCart() {
-      const cartSummary = document.getElementById('cartSummary');
-      const cartItems = document.getElementById('cartItems');
-      const cartTotal = document.getElementById('cartTotal');
-      const cartTitle = document.getElementById('cartTitle');
-      
-      if (selectedPrints.size === 0) {
-        cartSummary.classList.remove('active');
-        document.body.classList.remove('cart-open');
-        return;
-      }
-      
-      cartSummary.classList.add('active');
-      document.body.classList.add('cart-open');
-      cartTitle.textContent = `Your Selection (${selectedPrints.size})`;
-      
-      let total = 0;
-      let itemsHtml = '';
-      
-      selectedPrints.forEach((item) => {
-        const lineTotal = num(item.price) * num(item.quantity);
-        total += lineTotal;
-        itemsHtml += `
-          <div class="cart-item">
-            <span class="cart-item-name">${esc(item.name)} (${esc(item.image_type || 'item')}, ${esc(item.size)})</span>
-            <span class="cart-item-price">${fmt(lineTotal)}</span>
-          </div>
-        `;
-      });
-      
-      cartItems.innerHTML = itemsHtml;
-      cartTotal.textContent = fmt(total);
-    }
-    
-    async function submitOrder() {
-      if (submitting) return;
-
-      if (selectedPrints.size === 0) {
-        showToast('Please select at least one print');
-        return;
-      }
-
-      const emailInput = document.getElementById('emailInput');
-      const email = emailInput.value.trim();
-
-      if (!EMAIL_RE.test(email)) {
-        showToast('Enter a valid email to save your order');
-        document.getElementById('emailSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        emailInput.focus();
-        return;
-      }
-
-      userEmail = email;
-      sessionStorage.setItem('orderEmail', email);
-      
-      const items = Array.from(selectedPrints.values()).map((item) => ({
-        print_id: item.print_id,
-        quantity: num(item.quantity) || 1
-      }));
-
-      const saveBtn = document.getElementById('saveBtn');
-      submitting = true;
-      const originalLabel = saveBtn.textContent;
-      saveBtn.disabled = true;
-      saveBtn.textContent = 'Saving...';
-      
-      try {
-        const response = await fetch('/api/orders', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: userEmail, items })
-        });
-        
-        const result = await response.json();
-        
-        if (response.ok && result.success) {
-          showConfirmation();
-        } else {
-          showToast('Error saving order. Please try again.');
-        }
-      } catch (err) {
-        console.error('Error submitting order:', err);
-        showToast('Error saving order. Please try again.');
-      } finally {
-        submitting = false;
-        saveBtn.disabled = false;
-        saveBtn.textContent = originalLabel;
-      }
-    }
-    
-    function showConfirmation() {
-      document.getElementById('printsSection').classList.remove('active');
-      document.getElementById('confirmation').classList.add('active');
-      document.body.classList.remove('cart-open');
-      
-      let total = 0;
-      let summaryHtml = '<h3>Your Order</h3><div class="cart-items">';
-      
-      selectedPrints.forEach((item) => {
-        const lineTotal = num(item.price) * num(item.quantity);
-        total += lineTotal;
-        summaryHtml += `
-          <div class="cart-item">
-            <span class="cart-item-name">${esc(item.name)} (${esc(item.image_type || 'item')}, ${esc(item.size)})</span>
-            <span class="cart-item-price">${fmt(lineTotal)}</span>
-          </div>
-        `;
-      });
-      
-      summaryHtml += `</div>
-        <div class="cart-total">
-          <span class="cart-total-label">Total:</span>
-          <span class="cart-total-amount">${fmt(total)}</span>
-        </div>
-        <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.9rem;">
-          Order saved for: <strong>${esc(userEmail)}</strong>
-        </p>
-      `;
-      
-      document.getElementById('orderSummary').innerHTML = summaryHtml;
-    }
-    
-    function modifyOrder() {
-      document.getElementById('confirmation').classList.remove('active');
-      document.getElementById('printsSection').classList.add('active');
-      document.getElementById('printsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
     }
   </script>
 </body>

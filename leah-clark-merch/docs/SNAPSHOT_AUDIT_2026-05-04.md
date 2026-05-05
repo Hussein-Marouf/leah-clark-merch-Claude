@@ -1,48 +1,32 @@
 # Snapshot Catalog Audit
 
-Date: 2026-05-04
+Date: 2026-05-05
 
 ## Source
 
-The catalog was built from a read-only export of the shared `Convention Inventory 2026` Google Sheet. The raw workbook was not committed because it contains logistics columns.
+The catalog was built from `documents/Current_Inventory_Lst with Photos to USe.docx` and correlated with local images in `prints/catalog/`.
 
 ## Exported Product Fields
 
-- `quantity`
-- `image_type`
 - `name`
 - `image`
+- `material`
 - `size`
-- `price`
-- `availability`
 
-`data/product-catalog.json` also includes internal ids for order handling. `documents/leah-product-catalog-snapshot.csv` contains only the exported product fields above.
+`data/product-catalog.json` also includes internal ids for stable app records. `documents/leah-indianapolis-popcon-catalog.csv` contains only the exported product fields above.
 
 ## Snapshot Counts
 
-- Total quantity-bearing snapshot rows: 271
-- Customer-orderable rows with local images: 6
-- Downloaded local image files: 37
-- Drive image links that redirected to sign-in or failed download: 41
-- Rows needing image mapping or accessible image export: 234
-- Rows with local image mapping but missing price: 31
+- Inventory rows read from the DOCX: 155
+- Local catalog images read: 37
+- Customer-visible matched rows: 12
+- Duplicate matched rows skipped: 1
+- Inventory rows missing a matched local image: 142
 
-## Availability Rules
+## Visibility Rules
 
-A product is marked `available` only when it has:
-
-- quantity greater than zero
-- a local downloaded image
-- a known price
-
-Rows that are missing either a local image or price remain in the snapshot audit but are not shown to customers.
-
-## Price Rules Applied
-
-- Paper print `8.5x11`: `$15`
-- Paper print `11x17`: `$25`
-- Metal prints, metal trading cards, and holographic prints: `needs price`
+Rows appear in the QR catalog only when the inventory print name has an exact normalized-name or same-word match to a local catalog image name. Rows that are missing a local image match remain in `documents/leah-inventory-image-match-audit.csv` but are not shown to customers.
 
 ## Image Access Note
 
-The downloader saved 37 Google Drive thumbnail images into `prints/catalog/`. The 41 failed Drive image links returned Google sign-in or permission pages, so those rows were changed to `needs image` and are not customer-orderable.
+The previous downloader saved 37 Google Drive thumbnail images into `prints/catalog/`. For this build, only 12 non-duplicate inventory rows matched those local images confidently.
