@@ -73,6 +73,43 @@
       padding: 40px 20px;
       margin-bottom: 30px;
     }
+
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.22);
+      border-radius: 12px;
+      background: rgba(13, 2, 33, 0.62);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .event-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+
+    .event-copy {
+      text-align: left;
+      line-height: 1.25;
+    }
+
+    .event-name {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .event-date {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      margin-top: 2px;
+    }
     
     .logo {
       font-family: 'Cinzel', serif;
@@ -205,6 +242,20 @@
     
     /* Responsive */
     @media (max-width: 600px) {
+      header {
+        padding-top: 28px;
+      }
+
+      .event-badge {
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .event-logo {
+        width: 42px;
+        height: 42px;
+      }
+
       .logo {
         font-size: 1.8rem;
       }
@@ -232,6 +283,19 @@
   
   <div class="container">
     <header>
+      <div class="event-badge" aria-label="Indy PopCon event dates">
+        <img
+          src="/assets/conventions/indy-popcon-logo.png"
+          alt="Indy PopCon"
+          class="event-logo"
+          width="48"
+          height="48"
+        >
+        <div class="event-copy">
+          <div class="event-name">Indy PopCon</div>
+          <div class="event-date">May 8-10, 2026</div>
+        </div>
+      </div>
       <h1 class="logo">Leah Clark</h1>
       <p class="subtitle">Browse Inventory</p>
     </header>
