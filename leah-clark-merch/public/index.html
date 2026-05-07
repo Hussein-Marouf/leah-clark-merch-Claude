@@ -189,6 +189,37 @@
       min-height: 1.4em;
     }
     
+    .catalog-results {
+      display: block;
+    }
+
+    .catalog-section {
+      margin-bottom: 42px;
+    }
+
+    .catalog-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      text-align: center;
+      margin: 0 0 18px;
+    }
+
+    .character-group {
+      margin-bottom: 28px;
+    }
+
+    .character-title {
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(157, 78, 221, 0.35);
+    }
+
     .prints-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -225,23 +256,15 @@
     }
     
     .print-info {
-      padding: 20px;
-    }
-    
-    .print-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--text);
+      padding: 14px 16px 16px;
     }
     
     .print-details {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 15px;
     }
     
     .print-size,
@@ -355,7 +378,7 @@
 
       <p class="result-count" id="resultCount"></p>
       
-      <div class="prints-grid" id="printsGrid">
+      <div class="catalog-results" id="printsGrid">
         <div class="loading">
           <div class="spinner"></div>
           <p>Loading catalog...</p>
@@ -376,6 +399,31 @@
       'Metal print|10x12',
       'Metal print|6x9',
       'Metal trading card|trading card'
+    ];
+
+    const characterRules = [
+      { label: 'Asia', terms: ['asia', 'dxd'] },
+      { label: 'Baka and Test', terms: ['baka'] },
+      { label: 'Blair', terms: ['blair'] },
+      { label: 'Elze', terms: ['elze'] },
+      { label: 'Homura', terms: ['homura'] },
+      { label: 'Kobayashi', terms: ['kobayashi', 'kob', 'tohru', 'dragon maid'] },
+      { label: 'Koby', terms: ['koby', 'coby'] },
+      { label: 'Maron', terms: ['maron'] },
+      { label: 'Mavis', terms: ['mavis', 'zeref', 'fairytail', 'fairy tail'] },
+      { label: 'Minami', terms: ['minami'] },
+      { label: 'Minatsuki', terms: ['minatsuki'] },
+      { label: 'Miss DoubleFinger', terms: ['doublefinger', 'double finger'] },
+      { label: 'Nami', terms: ['nami'] },
+      { label: 'Ochaco', terms: ['ochaco', 'uraka', 'uraraka'] },
+      { label: 'One Piece', terms: ['one piece'] },
+      { label: 'Power', terms: ['power'] },
+      { label: 'Ruby', terms: ['ruby'] },
+      { label: 'Saki', terms: ['saki'] },
+      { label: 'Spice and Wolf', terms: ['spice', 'wolf'] },
+      { label: 'Spy Family', terms: ['spy family'] },
+      { label: 'Sylvie', terms: ['sylvie'] },
+      { label: 'Toga', terms: ['toga', 'himiko'] }
     ];
 
     const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
@@ -442,13 +490,105 @@
       return categoryLabel(key);
     }
 
+    function normalizedName(value) {
+      return String(value || '').toLowerCase().replace(/[_-]+/g, ' ');
+    }
+
+    function characterLabel(print) {
+      const name = normalizedName(print.name);
+      let best = null;
+
+      characterRules.forEach((rule, ruleIndex) => {
+        rule.terms.forEach((term) => {
+          const index = name.indexOf(term);
+          if (index === -1) return;
+          if (!best || index < best.index || (index === best.index && ruleIndex < best.ruleIndex)) {
+            best = { label: rule.label, index, ruleIndex };
+          }
+        });
+      });
+
+      if (best) return best.label;
+      return 'Assorted';
+    }
+
+    function sortPrintsForDisplay(items) {
+      return [...items].sort((a, b) => {
+        const categoryDelta = categorySortIndex(categoryKey(a)) - categorySortIndex(categoryKey(b));
+        if (categoryDelta !== 0) return categoryDelta;
+        const characterDelta = characterLabel(a).localeCompare(characterLabel(b));
+        if (characterDelta !== 0) return characterDelta;
+        return String(a.name || '').localeCompare(String(b.name || ''));
+      });
+    }
+
+    function categorySortIndex(key) {
+      const index = categoryOrder.indexOf(key);
+      return index === -1 ? 999 : index;
+    }
+
+    function groupBy(items, keyFn) {
+      return items.reduce((groups, item) => {
+        const key = keyFn(item);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(item);
+        return groups;
+      }, new Map());
+    }
+
+    function renderPrintCard(print) {
+      const image = print.image || print.image_url || '';
+      const printName = print.name || 'Untitled print';
+      return `
+        <article class="print-card" data-id="${print.id}" aria-label="${esc(printName)}">
+          <img src="${esc(image)}" alt="${esc(printName)}" class="print-image" loading="lazy" decoding="async">
+          <div class="print-info">
+            <div class="print-details">
+              <span class="print-material">${esc(printDetailLabel(print))}</span>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCharacterGroups(items) {
+      const sortedItems = sortPrintsForDisplay(items);
+      const groups = Array.from(groupBy(sortedItems, characterLabel).entries())
+        .sort(([a], [b]) => a.localeCompare(b));
+
+      return groups.map(([character, characterPrints]) => `
+        <div class="character-group">
+          <h4 class="character-title">${esc(character)}</h4>
+          <div class="prints-grid">
+            ${characterPrints.map(renderPrintCard).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderCatalogSections(items) {
+      const grouped = Array.from(groupBy(items, categoryKey).entries())
+        .sort(([a], [b]) => {
+          const categoryDelta = categorySortIndex(a) - categorySortIndex(b);
+          if (categoryDelta !== 0) return categoryDelta;
+          return categoryLabel(a).localeCompare(categoryLabel(b));
+        });
+
+      return grouped.map(([key, categoryPrints]) => `
+        <section class="catalog-section">
+          <h3 class="catalog-section-title">${esc(categoryLabel(key))}</h3>
+          ${renderCharacterGroups(categoryPrints)}
+        </section>
+      `).join('');
+    }
+
     function renderCategoryMenu() {
       const menu = document.getElementById('categoryMenu');
       const availableKeys = Array.from(new Set(prints.map(categoryKey).filter((key) => key !== '|')));
       const sortedKeys = availableKeys.sort((a, b) => {
-        const ai = categoryOrder.indexOf(a);
-        const bi = categoryOrder.indexOf(b);
-        if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+        const ai = categorySortIndex(a);
+        const bi = categorySortIndex(b);
+        if (ai !== bi) return ai - bi;
         return categoryLabel(a).localeCompare(categoryLabel(b));
       });
 
@@ -502,24 +642,10 @@
       }
 
       resultCount.textContent = activeCategory === 'all'
-        ? `Showing all ${prints.length} available ${prints.length === 1 ? 'print' : 'prints'}`
+        ? `Showing all ${prints.length} available ${prints.length === 1 ? 'item' : 'items'} by size and character`
         : `Showing ${visiblePrints.length} of ${prints.length}: ${categoryLabel(activeCategory)}`;
-      
-      grid.innerHTML = visiblePrints.map((print) => {
-        const image = print.image || print.image_url || '';
-        const printName = print.name || 'Untitled print';
-        return `
-        <article class="print-card" data-id="${print.id}">
-          <img src="${esc(image)}" alt="${esc(printName)}" class="print-image" loading="lazy" decoding="async">
-          <div class="print-info">
-            <h3 class="print-name">${esc(printName)}</h3>
-            <div class="print-details">
-              <span class="print-material">${esc(printDetailLabel(print))}</span>
-            </div>
-          </div>
-        </article>
-        `;
-      }).join('');
+
+      grid.innerHTML = renderCatalogSections(visiblePrints);
     }
   </script>
 </body>
