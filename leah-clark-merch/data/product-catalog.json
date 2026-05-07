@@ -12,9 +12,9 @@
   "counts": {
     "inventory_items": 155,
     "artwork_candidates": 164,
-    "visible": 111,
+    "visible": 107,
     "needs_artwork_review": 44,
-    "excluded_from_catalog": 7
+    "excluded_from_catalog": 11
   },
   "products": [
     {
@@ -368,13 +368,6 @@
       "size": "6x9"
     },
     {
-      "id": 1233509092,
-      "name": "Asia Swimsuit",
-      "image": "/prints/current-inventory/1233509092-metal-print-6x9-asia-swimsuit.jpg",
-      "material": "Metal print",
-      "size": "6x9"
-    },
-    {
       "id": 3951056286,
       "name": "Asia Xenovia Leash",
       "image": "/prints/current-inventory/3951056286-metal-print-6x9-asia-xenovia-leash.jpg",
@@ -427,13 +420,6 @@
       "id": 1194598503,
       "name": "DXD Card Art",
       "image": "/prints/current-inventory/1194598503-metal-print-6x9-dxd-card-art.jpg",
-      "material": "Metal print",
-      "size": "6x9"
-    },
-    {
-      "id": 3586057916,
-      "name": "FairyTail Cast",
-      "image": "/prints/current-inventory/3586057916-metal-print-6x9-fairytail-cast.jpg",
       "material": "Metal print",
       "size": "6x9"
     },
@@ -536,13 +522,6 @@
       "size": "trading card"
     },
     {
-      "id": 2384325203,
-      "name": "Asia Swimsuit",
-      "image": "/prints/current-inventory/2384325203-metal-trading-card-trading-card-asia-swimsuit.jpg",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
       "id": 3104933290,
       "name": "Asia Xenovia DXD",
       "image": "/prints/current-inventory/3104933290-metal-trading-card-trading-card-asia-xenovia-dxd.jpg",
@@ -560,13 +539,6 @@
       "id": 197512314,
       "name": "Bathtub Blair",
       "image": "/prints/current-inventory/197512314-metal-trading-card-trading-card-bathtub-blair.jpg",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
-      "id": 2176339636,
-      "name": "Blair Purple Paws OG",
-      "image": "/prints/current-inventory/2176339636-metal-trading-card-trading-card-blair-purple-paws-og.jpg",
       "material": "Metal trading card",
       "size": "trading card"
     },
@@ -1397,18 +1369,6 @@
       "match_note": "override match: AsiaCLOSEUP_card"
     },
     {
-      "id": 1233509092,
-      "name": "Asia Swimsuit",
-      "image": "/prints/current-inventory/1233509092-metal-print-6x9-asia-swimsuit.jpg",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "matched",
-      "matched_artwork": "Asia_BloodArtisan.jpg",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: Asia_BloodArtisan"
-    },
-    {
       "id": 3951056286,
       "name": "Asia Xenovia Leash",
       "image": "/prints/current-inventory/3951056286-metal-print-6x9-asia-xenovia-leash.jpg",
@@ -1503,18 +1463,6 @@
       "source": "artwork zip",
       "score": "100.0",
       "match_note": "tokens 1/1; sequence 1.00"
-    },
-    {
-      "id": 3586057916,
-      "name": "FairyTail Cast",
-      "image": "/prints/current-inventory/3586057916-metal-print-6x9-fairytail-cast.jpg",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "matched",
-      "matched_artwork": "mavisposter.jpg",
-      "source": "corrections zip: Large Metal Prints.zip",
-      "score": "160.0",
-      "match_note": "override match: mavisposter"
     },
     {
       "id": 2746585973,
@@ -1685,18 +1633,6 @@
       "match_note": "override match: Asia_Lvl4-Card"
     },
     {
-      "id": 2384325203,
-      "name": "Asia Swimsuit",
-      "image": "/prints/current-inventory/2384325203-metal-trading-card-trading-card-asia-swimsuit.jpg",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_artwork": "Asia_BloodArtisan.jpg",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: Asia_BloodArtisan"
-    },
-    {
       "id": 3104933290,
       "name": "Asia Xenovia DXD",
       "image": "/prints/current-inventory/3104933290-metal-trading-card-trading-card-asia-xenovia-dxd.jpg",
@@ -1731,18 +1667,6 @@
       "source": "existing catalog image",
       "score": "96.0",
       "match_note": "tokens 2/2; sequence 0.51"
-    },
-    {
-      "id": 2176339636,
-      "name": "Blair Purple Paws OG",
-      "image": "/prints/current-inventory/2176339636-metal-trading-card-trading-card-blair-purple-paws-og.jpg",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_artwork": "220698729-metal-print-large-metal-purple-paws-blair.png",
-      "source": "existing catalog image",
-      "score": "160.0",
-      "match_note": "override match: purple-paws-blair"
     },
     {
       "id": 1040043661,
@@ -2272,6 +2196,17 @@
       "match_note": "tokens 1/2; sequence 0.74"
     },
     {
+      "name": "Asia Swimsuit",
+      "material": "Metal print",
+      "size": "6x9",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed duplicate Blood Artisan Asia artwork; needs distinct Asia Swimsuit art."
+    },
+    {
       "name": "Asia Temperence",
       "material": "Metal print",
       "size": "6x9",
@@ -2303,6 +2238,17 @@
       "source": "nested zip: koby_tribute_print_files.zip",
       "score": "32.6",
       "match_note": "tokens 1/5; sequence 0.46"
+    },
+    {
+      "name": "FairyTail Cast",
+      "material": "Metal print",
+      "size": "6x9",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed duplicate of the 12x18 FairyTail Cast large metal print."
     },
     {
       "name": "Lovely Smile",
@@ -2393,6 +2339,17 @@
       "match_note": "No candidate artwork"
     },
     {
+      "name": "Asia Swimsuit",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed duplicate Blood Artisan Asia artwork; needs distinct Asia Swimsuit card art."
+    },
+    {
       "name": "Asia Temperance",
       "material": "Metal trading card",
       "size": "trading card",
@@ -2402,6 +2359,17 @@
       "source": "artwork zip",
       "score": "37.6",
       "match_note": "tokens 1/2; sequence 0.52"
+    },
+    {
+      "name": "Blair Purple Paws OG",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed duplicate Bathtub Blair artwork; needs correct Purple Paws art."
     },
     {
       "name": "Blair_Color_Card_",

@@ -27,9 +27,13 @@ from build_catalog_from_inventory_docx import CATALOG_FIELDS, extract_inventory,
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 PUBLIC_CATALOG_EXCLUSIONS = {
+    ("asia swimsuit", "Metal print", "6x9"): "Removed duplicate Blood Artisan Asia artwork; needs distinct Asia Swimsuit art.",
+    ("asia swimsuit", "Metal trading card", "trading card"): "Removed duplicate Blood Artisan Asia artwork; needs distinct Asia Swimsuit card art.",
     ("black mask toga", "Paper poster", "11x17"): "Duplicate of Toga Black Mask standard poster.",
+    ("blair purple paws og", "Metal trading card", "trading card"): "Removed duplicate Bathtub Blair artwork; needs correct Purple Paws art.",
     ("devil toga", "Metal trading card", "trading card"): "Removed wrong blue playing-card artwork; needs actual Devil trading card art.",
     ("fairytail cast", "Metal print", "10x12"): "Removed from 10x12 metal prints per catalog correction.",
+    ("fairytail cast", "Metal print", "6x9"): "Removed duplicate of the 12x18 FairyTail Cast large metal print.",
     ("kobayashi gift", "Paper poster", "11x17"): "Removed yellow-background Kobayashi standard poster.",
     ("lisa frank toga", "Paper poster", "11x17"): "Lisa Frank should only show as the 10x12 metal print.",
     ("toga devil", "Paper poster", "11x17"): "Removed trading-card artwork from standard posters.",
