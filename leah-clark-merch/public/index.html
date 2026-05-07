@@ -425,11 +425,21 @@
     function categoryLabel(key) {
       const [material, size] = key.split('|');
       if (material === 'Metal trading card') return 'Trading Cards';
-      if (material === 'Metal print') return `Metal ${size}`;
-      if (material === 'Paper poster') return `Paper ${size}`;
-      if (material === 'Paper print') return `Paper ${size}`;
-      if (material === 'Holographic poster') return `Holographic ${size}`;
+      if (material === 'Metal print') return `Metal Print ${formatSize(size)}`;
+      if (material === 'Paper poster') return `Standard Poster ${formatSize(size)}`;
+      if (material === 'Paper print') return `Standard ${formatSize(size)} Print`;
+      if (material === 'Holographic poster') return `Holographic Poster ${formatSize(size)}`;
       return [material, size].filter(Boolean).join(' ');
+    }
+
+    function formatSize(size) {
+      return String(size || '').replace('x', ' X ');
+    }
+
+    function printDetailLabel(print) {
+      const key = categoryKey(print);
+      if (key === 'Metal trading card|trading card') return 'Metal Trading Card';
+      return categoryLabel(key);
     }
 
     function renderCategoryMenu() {
@@ -504,8 +514,7 @@
           <div class="print-info">
             <h3 class="print-name">${esc(printName)}</h3>
             <div class="print-details">
-              <span class="print-material">${esc(print.material)}</span>
-              <span class="print-size">${esc(print.size)}</span>
+              <span class="print-material">${esc(printDetailLabel(print))}</span>
             </div>
           </div>
         </article>
