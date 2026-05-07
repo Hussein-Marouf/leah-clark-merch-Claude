@@ -1,11 +1,8 @@
 name,material,size,status,image,matched_artwork,source,score,match_note
 Asia Argento Nun,Paper poster,11x17,matched,/prints/current-inventory/3107789476-paper-poster-11x17-asia-argento-nun.jpg,asiaNUN-85x11.png,artwork zip,160.0,override match: asiaNUN-85x11
 Asia Clovers,Paper poster,11x17,matched,/prints/current-inventory/1401390015-paper-poster-11x17-asia-clovers.jpg,Asia_Clovers.png,artwork zip,160.0,override match: Asia_Clovers
-Black Mask Toga,Paper poster,11x17,matched,/prints/current-inventory/3034021010-paper-poster-11x17-black-mask-toga.jpg,1278163348-holographic-print-holographic-toga-black-mask.png,existing catalog image,106.0,tokens 3/3; sequence 0.31
 Forest Mavis,Paper poster,11x17,matched,/prints/current-inventory/2195673667-paper-poster-11x17-forest-mavis.jpg,Mavis_Forest.jpeg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: Mavis_Forest
 Kob_Tohru_Omurice,Paper poster,11x17,matched,/prints/current-inventory/3042366591-paper-poster-11x17-kob-tohru-omurice.jpg,Kob_Tohru_Omurice.png,artwork zip,160.0,override match: Kob_Tohru_Omurice
-Kobayashi Gift,Paper poster,11x17,matched,/prints/current-inventory/691670768-paper-poster-11x17-kobayashi-gift.jpg,Kobayashi_w_dragons.png,artwork zip,160.0,override match: Kobayashi_w_dragons
-Lisa Frank Toga,Paper poster,11x17,matched,/prints/current-inventory/2188702550-paper-poster-11x17-lisa-frank-toga.jpg,Toga_LisaFrank.png,artwork zip,160.0,override match: Toga_LisaFrank
 Mavis and Zeref Close,Paper poster,11x17,matched,/prints/current-inventory/2528009197-paper-poster-11x17-mavis-and-zeref-close.jpg,Mavis_Zeref_Close.jpg,artwork zip,160.0,override match: Mavis_Zeref_Close
 One Piece Duo,Paper poster,11x17,matched,/prints/current-inventory/1503566632-paper-poster-11x17-one-piece-duo.jpg,2012455711-paper-print-11x17-one-piece-duo.png,existing catalog image,204.0,override match: one-piece-duo
 Pink Shadows Mavis,Paper poster,11x17,matched,/prints/current-inventory/3631937049-paper-poster-11x17-pink-shadows-mavis.jpg,1148734571-holographic-print-holographic-forest-mavis.jpg,existing catalog image,170.0,override match: forest-mavis
@@ -110,7 +107,10 @@ Toga RareStab,Metal trading card,trading card,matched,/prints/current-inventory/
 Toga Red Neon,Metal trading card,trading card,matched,/prints/current-inventory/1729945876-metal-trading-card-trading-card-toga-red-neon.jpg,Toga_Neon_11x17_fullbleed.jpg,artwork zip,160.0,override match: Toga_Neon
 Toga V Ochaco Purple,Metal trading card,trading card,matched,/prints/current-inventory/1200994633-metal-trading-card-trading-card-toga-v-ochaco-purple.jpg,TogaOchaco_bi_85x11.png,artwork zip,160.0,override match: TogaOchaco_bi_85x11
 TogaOchaco_Awk_Hug,Metal trading card,trading card,matched,/prints/current-inventory/4245556048-metal-trading-card-trading-card-togaochaco-awk-hug.jpg,Toga_Ocha_AwkHug.png,artwork zip,85.6,tokens 2/4; sequence 0.97
+Black Mask Toga,Paper poster,11x17,excluded from public catalog,,,,,Duplicate of Toga Black Mask standard poster.
 Blair Magician,Paper poster,11x17,needs artwork review,,Blair_Pumpkin_Fly.png,artwork zip,21.1,tokens 1/2; sequence 0.58
+Kobayashi Gift,Paper poster,11x17,excluded from public catalog,,,,,Removed yellow-background Kobayashi standard poster.
+Lisa Frank Toga,Paper poster,11x17,excluded from public catalog,,,,,Lisa Frank should only show as the 10x12 metal print.
 Pink Mavis,Paper poster,11x17,needs artwork review,,Mavis_Star_2.png,artwork zip,10.0,tokens 1/2; sequence 0.45
 Snowy Mavis,Paper poster,11x17,needs artwork review,,Mavis_Star_2.png,artwork zip,8.3,tokens 1/2; sequence 0.43
 Eden of the East,Paper print,8.5x11,needs artwork review,,,,,No candidate artwork

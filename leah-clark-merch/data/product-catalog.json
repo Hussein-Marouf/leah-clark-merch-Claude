@@ -12,8 +12,9 @@
   "counts": {
     "inventory_items": 155,
     "artwork_candidates": 164,
-    "visible": 111,
-    "needs_artwork_review": 44
+    "visible": 108,
+    "needs_artwork_review": 44,
+    "excluded_from_catalog": 3
   },
   "products": [
     {
@@ -31,13 +32,6 @@
       "size": "11x17"
     },
     {
-      "id": 3034021010,
-      "name": "Black Mask Toga",
-      "image": "/prints/current-inventory/3034021010-paper-poster-11x17-black-mask-toga.jpg",
-      "material": "Paper poster",
-      "size": "11x17"
-    },
-    {
       "id": 2195673667,
       "name": "Forest Mavis",
       "image": "/prints/current-inventory/2195673667-paper-poster-11x17-forest-mavis.jpg",
@@ -48,20 +42,6 @@
       "id": 3042366591,
       "name": "Kob_Tohru_Omurice",
       "image": "/prints/current-inventory/3042366591-paper-poster-11x17-kob-tohru-omurice.jpg",
-      "material": "Paper poster",
-      "size": "11x17"
-    },
-    {
-      "id": 691670768,
-      "name": "Kobayashi Gift",
-      "image": "/prints/current-inventory/691670768-paper-poster-11x17-kobayashi-gift.jpg",
-      "material": "Paper poster",
-      "size": "11x17"
-    },
-    {
-      "id": 2188702550,
-      "name": "Lisa Frank Toga",
-      "image": "/prints/current-inventory/2188702550-paper-poster-11x17-lisa-frank-toga.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -820,18 +800,6 @@
       "match_note": "override match: Asia_Clovers"
     },
     {
-      "id": 3034021010,
-      "name": "Black Mask Toga",
-      "image": "/prints/current-inventory/3034021010-paper-poster-11x17-black-mask-toga.jpg",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_artwork": "1278163348-holographic-print-holographic-toga-black-mask.png",
-      "source": "existing catalog image",
-      "score": "106.0",
-      "match_note": "tokens 3/3; sequence 0.31"
-    },
-    {
       "id": 2195673667,
       "name": "Forest Mavis",
       "image": "/prints/current-inventory/2195673667-paper-poster-11x17-forest-mavis.jpg",
@@ -854,30 +822,6 @@
       "source": "artwork zip",
       "score": "160.0",
       "match_note": "override match: Kob_Tohru_Omurice"
-    },
-    {
-      "id": 691670768,
-      "name": "Kobayashi Gift",
-      "image": "/prints/current-inventory/691670768-paper-poster-11x17-kobayashi-gift.jpg",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_artwork": "Kobayashi_w_dragons.png",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: Kobayashi_w_dragons"
-    },
-    {
-      "id": 2188702550,
-      "name": "Lisa Frank Toga",
-      "image": "/prints/current-inventory/2188702550-paper-poster-11x17-lisa-frank-toga.jpg",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_artwork": "Toga_LisaFrank.png",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: Toga_LisaFrank"
     },
     {
       "id": 2528009197,
@@ -2128,6 +2072,17 @@
       "match_note": "tokens 2/4; sequence 0.97"
     },
     {
+      "name": "Black Mask Toga",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Duplicate of Toga Black Mask standard poster."
+    },
+    {
       "name": "Blair Magician",
       "material": "Paper poster",
       "size": "11x17",
@@ -2137,6 +2092,28 @@
       "source": "artwork zip",
       "score": "21.1",
       "match_note": "tokens 1/2; sequence 0.58"
+    },
+    {
+      "name": "Kobayashi Gift",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed yellow-background Kobayashi standard poster."
+    },
+    {
+      "name": "Lisa Frank Toga",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Lisa Frank should only show as the 10x12 metal print."
     },
     {
       "name": "Pink Mavis",

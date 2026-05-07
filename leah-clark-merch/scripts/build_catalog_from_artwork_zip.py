@@ -26,6 +26,11 @@ from build_catalog_from_inventory_docx import CATALOG_FIELDS, extract_inventory,
 
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
+PUBLIC_CATALOG_EXCLUSIONS = {
+    ("black mask toga", "Paper poster", "11x17"): "Duplicate of Toga Black Mask standard poster.",
+    ("kobayashi gift", "Paper poster", "11x17"): "Removed yellow-background Kobayashi standard poster.",
+    ("lisa frank toga", "Paper poster", "11x17"): "Lisa Frank should only show as the 10x12 metal print.",
+}
 AUDIT_FIELDS = [
     "name",
     "material",
@@ -294,6 +299,10 @@ def item_key(name: str) -> str:
     return normalize(name)
 
 
+def public_catalog_exclusion_reason(item: dict) -> str | None:
+    return PUBLIC_CATALOG_EXCLUSIONS.get((item_key(item["name"]), item["material"], item["size"]))
+
+
 def override_fragment(name: str, size: str) -> str | None:
     global _NORMALIZED_OVERRIDES
     if _NORMALIZED_OVERRIDES is None:
@@ -532,6 +541,21 @@ def correlate(inventory: list[dict], artworks: list[Artwork], output_dir: Path, 
         stale_image.unlink()
 
     for item in inventory:
+        exclusion_reason = public_catalog_exclusion_reason(item)
+        if exclusion_reason:
+            audit.append({
+                "name": item["name"],
+                "material": item["material"],
+                "size": item["size"],
+                "status": "excluded from public catalog",
+                "image": "",
+                "matched_artwork": "",
+                "source": "",
+                "score": "",
+                "match_note": exclusion_reason,
+            })
+            continue
+
         scored = [(score_match(item, artwork), artwork) for artwork in artworks]
         scored = [entry for entry in scored if entry[0][0] > 0]
         scored.sort(key=lambda entry: (entry[0][0], format_bonus(item, entry[1]), entry[1].filename), reverse=True)
@@ -629,7 +653,8 @@ def main() -> None:
             "inventory_items": len(inventory),
             "artwork_candidates": len(artworks),
             "visible": len(products),
-            "needs_artwork_review": sum(1 for row in audit if row["status"] != "matched"),
+            "needs_artwork_review": sum(1 for row in audit if row["status"] == "needs artwork review"),
+            "excluded_from_catalog": sum(1 for row in audit if row["status"] == "excluded from public catalog"),
         },
         "products": products,
         "audit": audit,
