@@ -424,7 +424,7 @@
 
     function categoryLabel(key) {
       const [material, size] = key.split('|');
-      if (material === 'Metal trading card') return 'Trading Cards';
+      if (material === 'Metal trading card') return 'Metal Trading Cards';
       if (material === 'Metal print') return `Metal Print ${formatSize(size)}`;
       if (material === 'Paper poster') return `Standard Poster ${formatSize(size)}`;
       if (material === 'Paper print') return `Standard ${formatSize(size)} Print`;
@@ -438,7 +438,7 @@
 
     function printDetailLabel(print) {
       const key = categoryKey(print);
-      if (key === 'Metal trading card|trading card') return 'Metal Trading Card';
+      if (key === 'Metal trading card|trading card') return 'Metal Trading Cards';
       return categoryLabel(key);
     }
 
