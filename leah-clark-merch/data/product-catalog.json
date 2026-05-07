@@ -12,9 +12,9 @@
   "counts": {
     "inventory_items": 155,
     "artwork_candidates": 164,
-    "visible": 108,
+    "visible": 111,
     "needs_artwork_review": 44,
-    "excluded_from_catalog": 3
+    "excluded_from_catalog": 7
   },
   "products": [
     {
@@ -42,6 +42,13 @@
       "id": 3042366591,
       "name": "Kob_Tohru_Omurice",
       "image": "/prints/current-inventory/3042366591-paper-poster-11x17-kob-tohru-omurice.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
+      "id": 2741746094,
+      "name": "Koby Mop",
+      "image": "/prints/current-inventory/2741746094-paper-poster-11x17-koby-mop.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -74,6 +81,13 @@
       "size": "11x17"
     },
     {
+      "id": 604118008,
+      "name": "Red Toga",
+      "image": "/prints/current-inventory/604118008-paper-poster-11x17-red-toga.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
       "id": 57781581,
       "name": "Toga Black Mask",
       "image": "/prints/current-inventory/57781581-paper-poster-11x17-toga-black-mask.jpg",
@@ -95,13 +109,6 @@
       "size": "11x17"
     },
     {
-      "id": 3482750316,
-      "name": "Toga Devil",
-      "image": "/prints/current-inventory/3482750316-paper-poster-11x17-toga-devil.jpg",
-      "material": "Paper poster",
-      "size": "11x17"
-    },
-    {
       "id": 698950019,
       "name": "Toga Dolls",
       "image": "/prints/current-inventory/698950019-paper-poster-11x17-toga-dolls.jpg",
@@ -116,9 +123,16 @@
       "size": "11x17"
     },
     {
-      "id": 3050601870,
-      "name": "Toga Ochaco Point",
-      "image": "/prints/current-inventory/3050601870-paper-poster-11x17-toga-ochaco-point.jpg",
+      "id": 2710468241,
+      "name": "Toga Ochaco Cover",
+      "image": "/prints/current-inventory/2710468241-paper-poster-11x17-toga-ochaco-cover.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
+      "id": 249738949,
+      "name": "Toga Split",
+      "image": "/prints/current-inventory/249738949-paper-poster-11x17-toga-split.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -270,16 +284,16 @@
       "size": "12x18"
     },
     {
-      "id": 602992647,
-      "name": "DXD Hug",
-      "image": "/prints/current-inventory/602992647-metal-print-10x12-dxd-hug.jpg",
+      "id": 148849801,
+      "name": "Bathtub Blair",
+      "image": "/prints/current-inventory/148849801-metal-print-10x12-bathtub-blair.jpg",
       "material": "Metal print",
       "size": "10x12"
     },
     {
-      "id": 531936563,
-      "name": "FairyTail Cast",
-      "image": "/prints/current-inventory/531936563-metal-print-10x12-fairytail-cast.jpg",
+      "id": 602992647,
+      "name": "DXD Hug",
+      "image": "/prints/current-inventory/602992647-metal-print-10x12-dxd-hug.jpg",
       "material": "Metal print",
       "size": "10x12"
     },
@@ -301,6 +315,20 @@
       "id": 1536708543,
       "name": "Mavis Zeref Scene",
       "image": "/prints/current-inventory/1536708543-metal-print-10x12-mavis-zeref-scene.jpg",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 362255905,
+      "name": "Orange Pumpkin Blair",
+      "image": "/prints/current-inventory/362255905-metal-print-10x12-orange-pumpkin-blair.jpg",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 1310446421,
+      "name": "Toga Dabi City",
+      "image": "/prints/current-inventory/1310446421-metal-print-10x12-toga-dabi-city.jpg",
       "material": "Metal print",
       "size": "10x12"
     },
@@ -571,13 +599,6 @@
       "size": "trading card"
     },
     {
-      "id": 34238197,
-      "name": "Devil Toga",
-      "image": "/prints/current-inventory/34238197-metal-trading-card-trading-card-devil-toga.jpg",
-      "material": "Metal trading card",
-      "size": "trading card"
-    },
-    {
       "id": 729782330,
       "name": "DoubleFinger Nami Card Art",
       "image": "/prints/current-inventory/729782330-metal-trading-card-trading-card-doublefinger-nami-card-art.jpg",
@@ -824,6 +845,18 @@
       "match_note": "override match: Kob_Tohru_Omurice"
     },
     {
+      "id": 2741746094,
+      "name": "Koby Mop",
+      "image": "/prints/current-inventory/2741746094-paper-poster-11x17-koby-mop.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "KobyMOP_11x17.png",
+      "source": "artwork zip",
+      "score": "manual",
+      "match_note": "Added missing Koby Mop standard poster."
+    },
+    {
       "id": 2528009197,
       "name": "Mavis and Zeref Close",
       "image": "/prints/current-inventory/2528009197-paper-poster-11x17-mavis-and-zeref-close.jpg",
@@ -872,6 +905,18 @@
       "match_note": "override match: Himiko Toga  Mask 2"
     },
     {
+      "id": 604118008,
+      "name": "Red Toga",
+      "image": "/prints/current-inventory/604118008-paper-poster-11x17-red-toga.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "Red Toga 11x17.png",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "manual",
+      "match_note": "Added missing Red Toga standard poster."
+    },
+    {
       "id": 57781581,
       "name": "Toga Black Mask",
       "image": "/prints/current-inventory/57781581-paper-poster-11x17-toga-black-mask.jpg",
@@ -908,18 +953,6 @@
       "match_note": "override match: toga-dabi-black-white"
     },
     {
-      "id": 3482750316,
-      "name": "Toga Devil",
-      "image": "/prints/current-inventory/3482750316-paper-poster-11x17-toga-devil.jpg",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "matched",
-      "matched_artwork": "Toga_TC_6Power.jpg",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: Toga_TC_6Power"
-    },
-    {
       "id": 698950019,
       "name": "Toga Dolls",
       "image": "/prints/current-inventory/698950019-paper-poster-11x17-toga-dolls.jpg",
@@ -944,16 +977,28 @@
       "match_note": "override match: Toga_Neon_11x17"
     },
     {
-      "id": 3050601870,
-      "name": "Toga Ochaco Point",
-      "image": "/prints/current-inventory/3050601870-paper-poster-11x17-toga-ochaco-point.jpg",
+      "id": 2710468241,
+      "name": "Toga Ochaco Cover",
+      "image": "/prints/current-inventory/2710468241-paper-poster-11x17-toga-ochaco-cover.jpg",
       "material": "Paper poster",
       "size": "11x17",
       "status": "matched",
-      "matched_artwork": "TogaChaco_insert.jpg",
-      "source": "artwork zip",
-      "score": "160.0",
-      "match_note": "override match: TogaChaco_insert"
+      "matched_artwork": "TogaOcha_Cover_WhiteBG.jpg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "manual",
+      "match_note": "Added missing Toga/Ochaco white-background cover."
+    },
+    {
+      "id": 249738949,
+      "name": "Toga Split",
+      "image": "/prints/current-inventory/249738949-paper-poster-11x17-toga-split.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "Toga_SPLIT.jpg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "manual",
+      "match_note": "Added missing Toga Split standard poster."
     },
     {
       "id": 1308737101,
@@ -1208,6 +1253,18 @@
       "match_note": "override match: Toga_daylon_Red"
     },
     {
+      "id": 148849801,
+      "name": "Bathtub Blair",
+      "image": "/prints/current-inventory/148849801-metal-print-10x12-bathtub-blair.jpg",
+      "material": "Metal print",
+      "size": "10x12",
+      "status": "matched",
+      "matched_artwork": "2699172219-metal-print-large-metal-bathtub-blair.png",
+      "source": "existing catalog image",
+      "score": "manual",
+      "match_note": "Added missing Bathtub Blair 10x12 metal print."
+    },
+    {
       "id": 602992647,
       "name": "DXD Hug",
       "image": "/prints/current-inventory/602992647-metal-print-10x12-dxd-hug.jpg",
@@ -1218,18 +1275,6 @@
       "source": "artwork zip",
       "score": "160.0",
       "match_note": "override match: Asia_DXDHUG"
-    },
-    {
-      "id": 531936563,
-      "name": "FairyTail Cast",
-      "image": "/prints/current-inventory/531936563-metal-print-10x12-fairytail-cast.jpg",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "matched",
-      "matched_artwork": "mavisposter.jpg",
-      "source": "corrections zip: Large Metal Prints.zip",
-      "score": "160.0",
-      "match_note": "override match: mavisposter"
     },
     {
       "id": 698420662,
@@ -1266,6 +1311,30 @@
       "source": "artwork zip",
       "score": "160.0",
       "match_note": "override match: Mavis_Zeref_Scene"
+    },
+    {
+      "id": 362255905,
+      "name": "Orange Pumpkin Blair",
+      "image": "/prints/current-inventory/362255905-metal-print-10x12-orange-pumpkin-blair.jpg",
+      "material": "Metal print",
+      "size": "10x12",
+      "status": "matched",
+      "matched_artwork": "418646798-metal-print-large-metal-orange-pumpkin-blair.jpg",
+      "source": "existing catalog image",
+      "score": "manual",
+      "match_note": "Added missing Orange Pumpkin Blair 10x12 metal print."
+    },
+    {
+      "id": 1310446421,
+      "name": "Toga Dabi City",
+      "image": "/prints/current-inventory/1310446421-metal-print-10x12-toga-dabi-city.jpg",
+      "material": "Metal print",
+      "size": "10x12",
+      "status": "matched",
+      "matched_artwork": "toga_Dabi_City.jpg",
+      "source": "artwork zip",
+      "score": "manual",
+      "match_note": "Added missing Toga and Dabi in the city 10x12 metal print."
     },
     {
       "id": 3182448257,
@@ -1724,18 +1793,6 @@
       "match_note": "override match: Minatsuki_DeathCard"
     },
     {
-      "id": 34238197,
-      "name": "Devil Toga",
-      "image": "/prints/current-inventory/34238197-metal-trading-card-trading-card-devil-toga.jpg",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "matched",
-      "matched_artwork": "Toga_TC_6Power.jpg",
-      "source": "artwork zip",
-      "score": "182.0",
-      "match_note": "override match: Toga_TC_6Power"
-    },
-    {
       "id": 729782330,
       "name": "DoubleFinger Nami Card Art",
       "image": "/prints/current-inventory/729782330-metal-trading-card-trading-card-doublefinger-nami-card-art.jpg",
@@ -2138,6 +2195,28 @@
       "match_note": "tokens 1/2; sequence 0.43"
     },
     {
+      "name": "Toga Devil",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed trading-card artwork from standard posters."
+    },
+    {
+      "name": "Toga Ochaco Point",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed incorrect Toga/Ochaco point artwork."
+    },
+    {
       "name": "Eden of the East",
       "material": "Paper print",
       "size": "8.5x11",
@@ -2169,6 +2248,17 @@
       "source": "artwork zip",
       "score": "53.1",
       "match_note": "tokens 2/3; sequence 0.58"
+    },
+    {
+      "name": "FairyTail Cast",
+      "material": "Metal print",
+      "size": "10x12",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed from 10x12 metal prints per catalog correction."
     },
     {
       "name": "MVA Cover",
@@ -2345,6 +2435,17 @@
       "source": "nested zip: koby_tribute_print_files.zip",
       "score": "52.0",
       "match_note": "tokens 1/4; sequence 0.55"
+    },
+    {
+      "name": "Devil Toga",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "excluded from public catalog",
+      "image": "",
+      "matched_artwork": "",
+      "source": "",
+      "score": "",
+      "match_note": "Removed wrong blue playing-card artwork; needs actual Devil trading card art."
     },
     {
       "name": "Eri Empress",

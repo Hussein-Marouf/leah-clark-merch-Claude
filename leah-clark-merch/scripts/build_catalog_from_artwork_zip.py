@@ -28,9 +28,64 @@ from build_catalog_from_inventory_docx import CATALOG_FIELDS, extract_inventory,
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 PUBLIC_CATALOG_EXCLUSIONS = {
     ("black mask toga", "Paper poster", "11x17"): "Duplicate of Toga Black Mask standard poster.",
+    ("devil toga", "Metal trading card", "trading card"): "Removed wrong blue playing-card artwork; needs actual Devil trading card art.",
+    ("fairytail cast", "Metal print", "10x12"): "Removed from 10x12 metal prints per catalog correction.",
     ("kobayashi gift", "Paper poster", "11x17"): "Removed yellow-background Kobayashi standard poster.",
     ("lisa frank toga", "Paper poster", "11x17"): "Lisa Frank should only show as the 10x12 metal print.",
+    ("toga devil", "Paper poster", "11x17"): "Removed trading-card artwork from standard posters.",
+    ("toga ochaco point", "Paper poster", "11x17"): "Removed incorrect Toga/Ochaco point artwork.",
 }
+PUBLIC_CATALOG_ADDITIONS = [
+    {
+        "name": "Koby Mop",
+        "material": "Paper poster",
+        "size": "11x17",
+        "artwork": "KobyMOP_11x17",
+        "note": "Added missing Koby Mop standard poster.",
+    },
+    {
+        "name": "Red Toga",
+        "material": "Paper poster",
+        "size": "11x17",
+        "artwork": "Red Toga 11x17",
+        "note": "Added missing Red Toga standard poster.",
+    },
+    {
+        "name": "Toga Ochaco Cover",
+        "material": "Paper poster",
+        "size": "11x17",
+        "artwork": "TogaOcha_Cover_WhiteBG",
+        "note": "Added missing Toga/Ochaco white-background cover.",
+    },
+    {
+        "name": "Toga Split",
+        "material": "Paper poster",
+        "size": "11x17",
+        "artwork": "Toga_SPLIT",
+        "note": "Added missing Toga Split standard poster.",
+    },
+    {
+        "name": "Bathtub Blair",
+        "material": "Metal print",
+        "size": "10x12",
+        "artwork": "metal-print-large-metal-bathtub-blair",
+        "note": "Added missing Bathtub Blair 10x12 metal print.",
+    },
+    {
+        "name": "Orange Pumpkin Blair",
+        "material": "Metal print",
+        "size": "10x12",
+        "artwork": "metal-print-large-metal-orange-pumpkin-blair",
+        "note": "Added missing Orange Pumpkin Blair 10x12 metal print.",
+    },
+    {
+        "name": "Toga Dabi City",
+        "material": "Metal print",
+        "size": "10x12",
+        "artwork": "toga_Dabi_City",
+        "note": "Added missing Toga and Dabi in the city 10x12 metal print.",
+    },
+]
 AUDIT_FIELDS = [
     "name",
     "material",
@@ -241,6 +296,7 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
 }
 
 _NORMALIZED_OVERRIDES: dict[str, dict[str, str] | str] | None = None
+_NORMALIZED_PUBLIC_CATALOG_EXCLUSIONS: dict[tuple[str, str, str], str] | None = None
 
 
 @dataclass
@@ -300,7 +356,21 @@ def item_key(name: str) -> str:
 
 
 def public_catalog_exclusion_reason(item: dict) -> str | None:
-    return PUBLIC_CATALOG_EXCLUSIONS.get((item_key(item["name"]), item["material"], item["size"]))
+    global _NORMALIZED_PUBLIC_CATALOG_EXCLUSIONS
+    if _NORMALIZED_PUBLIC_CATALOG_EXCLUSIONS is None:
+        _NORMALIZED_PUBLIC_CATALOG_EXCLUSIONS = {
+            (normalize(name), material, size): reason
+            for (name, material, size), reason in PUBLIC_CATALOG_EXCLUSIONS.items()
+        }
+    return _NORMALIZED_PUBLIC_CATALOG_EXCLUSIONS.get((item_key(item["name"]), item["material"], item["size"]))
+
+
+def find_artwork_by_fragment(artworks: list[Artwork], fragment: str) -> Artwork | None:
+    fragment_lower = fragment.lower()
+    for artwork in artworks:
+        if fragment_lower in artwork.filename.lower():
+            return artwork
+    return None
 
 
 def override_fragment(name: str, size: str) -> str | None:
@@ -594,6 +664,54 @@ def correlate(inventory: list[dict], artworks: list[Artwork], output_dir: Path, 
                 "score": f"{score:.1f}" if best else "",
                 "match_note": best[0][1] if best else "No candidate artwork",
             })
+
+    existing_product_keys = {
+        (item_key(product["name"]), product["material"], product["size"])
+        for product in products
+    }
+    for addition in PUBLIC_CATALOG_ADDITIONS:
+        addition_key = (item_key(addition["name"]), addition["material"], addition["size"])
+        if addition_key in existing_product_keys:
+            continue
+
+        artwork = find_artwork_by_fragment(artworks, addition["artwork"])
+        if not artwork:
+            audit.append({
+                "name": addition["name"],
+                "material": addition["material"],
+                "size": addition["size"],
+                "status": "needs artwork review",
+                "image": "",
+                "matched_artwork": "",
+                "source": "",
+                "score": "",
+                "match_note": f"Manual addition artwork not found: {addition['artwork']}",
+            })
+            continue
+
+        item = {
+            "name": addition["name"],
+            "material": addition["material"],
+            "size": addition["size"],
+        }
+        image = write_web_image(artwork, item, output_dir)
+        product = {
+            "id": stable_id(item["name"], item["material"], item["size"]),
+            "name": item["name"],
+            "image": image,
+            "material": item["material"],
+            "size": item["size"],
+        }
+        products.append(product)
+        existing_product_keys.add(addition_key)
+        audit.append({
+            **product,
+            "status": "matched",
+            "matched_artwork": artwork.filename,
+            "source": artwork.source,
+            "score": "manual",
+            "match_note": addition["note"],
+        })
 
     products.sort(key=lambda row: (format_sort(row), row["name"].lower()))
     audit.sort(key=lambda row: (row["status"] != "matched", format_sort(row), row["name"].lower()))
