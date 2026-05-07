@@ -130,6 +130,7 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
     "asia clovers": "Asia_Clovers",
     "asia konako card art": "Asia_Konako_CardART",
     "asia lvl 4 card": "Asia_Lvl4-Card",
+    "asia swimsuit": "Asia_BloodArtisan",
     "asia xenovia dxd": "Asia_Xenovia-DXD",
     "asia xenovia leash": "Asia_Xenovia_Leash",
     "asia xenovia sparkly": "Asia_Xenovia_Sparkly",
@@ -141,15 +142,18 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
     "blood artisan blair": "Blair_BloodArtisan",
     "coby tribute card": "koby_tribute_trading_card",
     "death minatsuki": "Minatsuki_DeathCard",
+    "devil toga": "Toga_TC_6Power",
     "dragon maid nap": "Kob_Tohru_NAP",
     "dxd hug": "Asia_DXDHUG",
     "ecchi asia sitting": "Asia_Konoko_SittingCard",
     "elze smartphone": "elze_8.5x11",
     "elze the sun": "elze_sun_trading_card",
+    "fairytail cast": "mavisposter",
+    "forest mavis": "Mavis_Forest",
     "future diary murmur": "Murmur",
     "homura seven of wands": "homura_seven_of_wands_tradingcard",
     "kob tohru omurice": "Kob_Tohru_Omurice",
-    "kobayashi gift": "Kobayashi_w_dragons",
+    "kobayashi gift": "kobayashiGift_11x17_fullbleed",
     "kobayashi kabob": "Koba_Kabob",
     "kobayashi omurice": "Kob_Tohru_Omurice",
     "kobayashi tohru gift": "Kobayashi_w_dragons",
@@ -175,9 +179,13 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
         "trading card": "Nami_DF_Card",
     },
     "one piece duo": "one-piece-duo",
+    "pink manga cover toga": "Toga_Manga_Cover",
+    "pink shadows mavis": "forest-mavis",
     "power and toga": "TogawPower_CARD",
+    "red black white toga": "Himiko Toga  Mask 2",
     "ruby moonlight": "ruby_moonlight_8.5x11",
     "spice and wolf": "spice-and-wolf",
+    "saki the world": "Saki_Micha",
     "star mavis": "Mavis_Star",
     "sylvie hntsdl": "Sylvie_HNSDL",
     "toga 6 coat": {
@@ -192,6 +200,10 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
     "toga daylon pink": "Toga_Daylon_pink",
     "toga daylon red": "Toga_daylon_Red",
     "toga dolls": "TOGA.DOLLS",
+    "toga devil": "Toga_TC_6Power",
+    "toga in the middle": "Toga_SPLIT",
+    "toga manga cover": "Toga_Manga_Cover",
+    "toga mva cover": "Toga_Manga_Cover",
     "toga neon": "Toga_Neon_11x17",
     "toga ochaco awk hug": "Toga_Ocha_AwkHug",
     "toga ochaco fight knife": "Toga_Ocha_Fight_Knife",
@@ -215,8 +227,10 @@ OVERRIDES: dict[str, dict[str, str] | str] = {
     "toga sparkle purple": "Toga_Sparkle_Purple",
     "toga trail": "toga_trail_6x9",
     "toga tsu grayscale": "Toga_Tsu_grayscale",
-    "toga twice dance": "togatwice_11x17",
+    "toga twice dance": "TogaTwice_dance_11x17_fix",
     "toga v ochaco purple": "TogaOchaco_bi_85x11",
+    "tt toga": "ecchi-toga-flash",
+    "uraka v toga cover red bg": "TogaOcha_Cover_WhiteBG",
     "spy family girls": "spyxfamily_selfie_trading_card",
     "blair purple paws og": "purple-paws-blair",
 }
@@ -395,6 +409,51 @@ def iter_zip_artwork(zip_path: Path) -> list[Artwork]:
     return artworks
 
 
+def iter_corrections_artwork(corrections_dir: Path) -> list[Artwork]:
+    artworks: list[Artwork] = []
+    if not corrections_dir.exists():
+        return artworks
+
+    def add_artwork(filename: str, source: str, data: bytes | None, path: Path | None) -> None:
+        art_path = Path(filename)
+        if art_path.suffix.lower() not in IMAGE_SUFFIXES:
+            return
+        label = image_name_from_filename(art_path.name)
+        artworks.append(Artwork(
+            key=f"{source}:{filename}",
+            filename=art_path.name,
+            label=label,
+            source=source,
+            suffix=art_path.suffix.lower(),
+            data=data,
+            path=path,
+            normalized=normalize(art_path.name),
+            tokens=normalized_tokens(art_path.name),
+        ))
+
+    for path in sorted(corrections_dir.rglob("*")):
+        if not path.is_file():
+            continue
+        suffix = path.suffix.lower()
+        if suffix in IMAGE_SUFFIXES:
+            add_artwork(path.name, f"corrections: {path.parent.name}", None, path)
+        elif suffix == ".zip":
+            with zipfile.ZipFile(path) as archive:
+                for info in archive.infolist():
+                    if info.is_dir():
+                        continue
+                    nested_suffix = Path(info.filename).suffix.lower()
+                    if nested_suffix in IMAGE_SUFFIXES:
+                        add_artwork(
+                            info.filename,
+                            f"corrections zip: {path.name}",
+                            archive.read(info),
+                            None,
+                        )
+
+    return artworks
+
+
 def iter_fallback_artwork(catalog_dir: Path) -> list[Artwork]:
     artworks: list[Artwork] = []
     if not catalog_dir.exists():
@@ -426,6 +485,22 @@ def read_artwork_bytes(artwork: Artwork) -> bytes:
     raise ValueError(f"No artwork data for {artwork.filename}")
 
 
+def crop_for_catalog(image: Image.Image, item: dict) -> Image.Image:
+    if item_key(item["name"]) != "toga trail":
+        return image
+
+    width, height = image.size
+    # The source file includes a blurred print-bleed surround. Keep the clean
+    # inner artwork for the phone catalog view.
+    left = int(width * 0.03)
+    top = int(height * 0.214)
+    right = int(width * 0.971)
+    bottom = int(height * 0.842)
+    if right <= left or bottom <= top:
+        return image
+    return image.crop((left, top, right, bottom))
+
+
 def write_web_image(artwork: Artwork, item: dict, output_dir: Path) -> str:
     output_dir.mkdir(parents=True, exist_ok=True)
     output_name = f"{stable_id(item['name'], item['material'], item['size'])}-{slugify(item['material'])}-{slugify(item['size'])}-{slugify(item['name'])}.jpg"
@@ -442,6 +517,7 @@ def write_web_image(artwork: Artwork, item: dict, output_dir: Path) -> str:
             image = background
         else:
             image = image.convert("RGB")
+        image = crop_for_catalog(image, item)
         image.thumbnail((1400, 1400), Image.Resampling.LANCZOS)
         image.save(output_path, "JPEG", quality=82, optimize=True, progressive=True)
 
@@ -526,6 +602,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--inventory-docx", type=Path, default=Path("documents/Current_Inventory_Lst with Photos to USe.docx"))
     parser.add_argument("--artwork-zip", type=Path, default=Path("ALL ARTWORK /Merch_Art LeahClark-20260505T183511Z-3-001.zip"))
+    parser.add_argument("--corrections-dir", type=Path, default=Path("../Corrections"))
     parser.add_argument("--fallback-catalog-dir", type=Path, default=Path("prints/catalog"))
     parser.add_argument("--image-output-dir", type=Path, default=Path("prints/current-inventory"))
     parser.add_argument("--output", type=Path, default=Path("data/product-catalog.json"))
@@ -535,12 +612,17 @@ def main() -> None:
     args = parser.parse_args()
 
     inventory = extract_inventory(args.inventory_docx)
-    artworks = iter_zip_artwork(args.artwork_zip) + iter_fallback_artwork(args.fallback_catalog_dir)
+    artworks = (
+        iter_corrections_artwork(args.corrections_dir)
+        + iter_zip_artwork(args.artwork_zip)
+        + iter_fallback_artwork(args.fallback_catalog_dir)
+    )
     products, audit = correlate(inventory, artworks, args.image_output_dir, args.threshold)
 
     data = {
         "source": str(args.inventory_docx),
         "artwork_source": str(args.artwork_zip),
+        "corrections_source": str(args.corrections_dir),
         "snapshot_date": date.today().isoformat(),
         "product_fields": CATALOG_FIELDS,
         "counts": {

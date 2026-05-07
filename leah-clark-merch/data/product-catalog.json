@@ -1,7 +1,8 @@
 {
   "source": "documents/Current_Inventory_Lst with Photos to USe.docx",
   "artwork_source": "ALL ARTWORK /Merch_Art LeahClark-20260505T183511Z-3-001.zip",
-  "snapshot_date": "2026-05-05",
+  "corrections_source": "../Corrections",
+  "snapshot_date": "2026-05-06",
   "product_fields": [
     "name",
     "image",
@@ -10,9 +11,9 @@
   ],
   "counts": {
     "inventory_items": 155,
-    "artwork_candidates": 154,
-    "visible": 96,
-    "needs_artwork_review": 59
+    "artwork_candidates": 164,
+    "visible": 111,
+    "needs_artwork_review": 44
   },
   "products": [
     {
@@ -79,6 +80,20 @@
       "size": "11x17"
     },
     {
+      "id": 3631937049,
+      "name": "Pink Shadows Mavis",
+      "image": "/prints/current-inventory/3631937049-paper-poster-11x17-pink-shadows-mavis.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
+      "id": 765856435,
+      "name": "Red Black White Toga",
+      "image": "/prints/current-inventory/765856435-paper-poster-11x17-red-black-white-toga.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
       "id": 57781581,
       "name": "Toga Black Mask",
       "image": "/prints/current-inventory/57781581-paper-poster-11x17-toga-black-mask.jpg",
@@ -96,6 +111,13 @@
       "id": 1665010559,
       "name": "Toga Dabi Black White",
       "image": "/prints/current-inventory/1665010559-paper-poster-11x17-toga-dabi-black-white.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
+      "id": 3482750316,
+      "name": "Toga Devil",
+      "image": "/prints/current-inventory/3482750316-paper-poster-11x17-toga-devil.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -131,6 +153,13 @@
       "id": 415087461,
       "name": "Toga Twice Dance",
       "image": "/prints/current-inventory/415087461-paper-poster-11x17-toga-twice-dance.jpg",
+      "material": "Paper poster",
+      "size": "11x17"
+    },
+    {
+      "id": 1663462594,
+      "name": "TT Toga",
+      "image": "/prints/current-inventory/1663462594-paper-poster-11x17-tt-toga.jpg",
       "material": "Paper poster",
       "size": "11x17"
     },
@@ -240,6 +269,20 @@
       "size": "11x17"
     },
     {
+      "id": 2669193670,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/2669193670-metal-print-12x18-fairytail-cast.jpg",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
+      "id": 4096943604,
+      "name": "Pink Manga Cover Toga",
+      "image": "/prints/current-inventory/4096943604-metal-print-12x18-pink-manga-cover-toga.jpg",
+      "material": "Metal print",
+      "size": "12x18"
+    },
+    {
       "id": 1193800394,
       "name": "Toga Daylon Red",
       "image": "/prints/current-inventory/1193800394-metal-print-12x18-toga-daylon-red.jpg",
@@ -250,6 +293,13 @@
       "id": 602992647,
       "name": "DXD Hug",
       "image": "/prints/current-inventory/602992647-metal-print-10x12-dxd-hug.jpg",
+      "material": "Metal print",
+      "size": "10x12"
+    },
+    {
+      "id": 531936563,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/531936563-metal-print-10x12-fairytail-cast.jpg",
       "material": "Metal print",
       "size": "10x12"
     },
@@ -310,6 +360,13 @@
       "size": "6x9"
     },
     {
+      "id": 1233509092,
+      "name": "Asia Swimsuit",
+      "image": "/prints/current-inventory/1233509092-metal-print-6x9-asia-swimsuit.jpg",
+      "material": "Metal print",
+      "size": "6x9"
+    },
+    {
       "id": 3951056286,
       "name": "Asia Xenovia Leash",
       "image": "/prints/current-inventory/3951056286-metal-print-6x9-asia-xenovia-leash.jpg",
@@ -362,6 +419,13 @@
       "id": 1194598503,
       "name": "DXD Card Art",
       "image": "/prints/current-inventory/1194598503-metal-print-6x9-dxd-card-art.jpg",
+      "material": "Metal print",
+      "size": "6x9"
+    },
+    {
+      "id": 3586057916,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/3586057916-metal-print-6x9-fairytail-cast.jpg",
       "material": "Metal print",
       "size": "6x9"
     },
@@ -422,6 +486,13 @@
       "size": "6x9"
     },
     {
+      "id": 1119332136,
+      "name": "Uraka V Toga Cover red bg",
+      "image": "/prints/current-inventory/1119332136-metal-print-6x9-uraka-v-toga-cover-red-bg.jpg",
+      "material": "Metal print",
+      "size": "6x9"
+    },
+    {
       "id": 2811808333,
       "name": "Asia Card J",
       "image": "/prints/current-inventory/2811808333-metal-trading-card-trading-card-asia-card-j.jpg",
@@ -453,6 +524,13 @@
       "id": 1436320751,
       "name": "Asia lvl 4 card",
       "image": "/prints/current-inventory/1436320751-metal-trading-card-trading-card-asia-lvl-4-card.jpg",
+      "material": "Metal trading card",
+      "size": "trading card"
+    },
+    {
+      "id": 2384325203,
+      "name": "Asia Swimsuit",
+      "image": "/prints/current-inventory/2384325203-metal-trading-card-trading-card-asia-swimsuit.jpg",
       "material": "Metal trading card",
       "size": "trading card"
     },
@@ -509,6 +587,13 @@
       "id": 1823232763,
       "name": "Death Minatsuki",
       "image": "/prints/current-inventory/1823232763-metal-trading-card-trading-card-death-minatsuki.jpg",
+      "material": "Metal trading card",
+      "size": "trading card"
+    },
+    {
+      "id": 34238197,
+      "name": "Devil Toga",
+      "image": "/prints/current-inventory/34238197-metal-trading-card-trading-card-devil-toga.jpg",
       "material": "Metal trading card",
       "size": "trading card"
     },
@@ -611,6 +696,13 @@
       "size": "trading card"
     },
     {
+      "id": 1880408365,
+      "name": "Saki The World",
+      "image": "/prints/current-inventory/1880408365-metal-trading-card-trading-card-saki-the-world.jpg",
+      "material": "Metal trading card",
+      "size": "trading card"
+    },
+    {
       "id": 3373850721,
       "name": "Spy Family Girls",
       "image": "/prints/current-inventory/3373850721-metal-trading-card-trading-card-spy-family-girls.jpg",
@@ -642,6 +734,20 @@
       "id": 4154300878,
       "name": "Toga Goth",
       "image": "/prints/current-inventory/4154300878-metal-trading-card-trading-card-toga-goth.jpg",
+      "material": "Metal trading card",
+      "size": "trading card"
+    },
+    {
+      "id": 1006430193,
+      "name": "Toga in the Middle",
+      "image": "/prints/current-inventory/1006430193-metal-trading-card-trading-card-toga-in-the-middle.jpg",
+      "material": "Metal trading card",
+      "size": "trading card"
+    },
+    {
+      "id": 1758596449,
+      "name": "Toga MVA Cover",
+      "image": "/prints/current-inventory/1758596449-metal-trading-card-trading-card-toga-mva-cover.jpg",
       "material": "Metal trading card",
       "size": "trading card"
     },
@@ -732,10 +838,10 @@
       "material": "Paper poster",
       "size": "11x17",
       "status": "matched",
-      "matched_artwork": "1148734571-holographic-print-holographic-forest-mavis.jpg",
-      "source": "existing catalog image",
-      "score": "106.0",
-      "match_note": "tokens 2/2; sequence 0.41"
+      "matched_artwork": "Mavis_Forest.jpeg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "160.0",
+      "match_note": "override match: Mavis_Forest"
     },
     {
       "id": 3042366591,
@@ -798,6 +904,30 @@
       "match_note": "override match: one-piece-duo"
     },
     {
+      "id": 3631937049,
+      "name": "Pink Shadows Mavis",
+      "image": "/prints/current-inventory/3631937049-paper-poster-11x17-pink-shadows-mavis.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "1148734571-holographic-print-holographic-forest-mavis.jpg",
+      "source": "existing catalog image",
+      "score": "170.0",
+      "match_note": "override match: forest-mavis"
+    },
+    {
+      "id": 765856435,
+      "name": "Red Black White Toga",
+      "image": "/prints/current-inventory/765856435-paper-poster-11x17-red-black-white-toga.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "Himiko Toga  Mask 2.jpg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "160.0",
+      "match_note": "override match: Himiko Toga  Mask 2"
+    },
+    {
       "id": 57781581,
       "name": "Toga Black Mask",
       "image": "/prints/current-inventory/57781581-paper-poster-11x17-toga-black-mask.jpg",
@@ -832,6 +962,18 @@
       "source": "existing catalog image",
       "score": "170.0",
       "match_note": "override match: toga-dabi-black-white"
+    },
+    {
+      "id": 3482750316,
+      "name": "Toga Devil",
+      "image": "/prints/current-inventory/3482750316-paper-poster-11x17-toga-devil.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "Toga_TC_6Power.jpg",
+      "source": "artwork zip",
+      "score": "160.0",
+      "match_note": "override match: Toga_TC_6Power"
     },
     {
       "id": 698950019,
@@ -888,10 +1030,22 @@
       "material": "Paper poster",
       "size": "11x17",
       "status": "matched",
-      "matched_artwork": "togatwice_11x17_landscape.jpg",
-      "source": "artwork zip",
+      "matched_artwork": "TogaTwice_dance_11x17_fix.png",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
       "score": "182.0",
-      "match_note": "override match: togatwice_11x17"
+      "match_note": "override match: TogaTwice_dance_11x17_fix"
+    },
+    {
+      "id": 1663462594,
+      "name": "TT Toga",
+      "image": "/prints/current-inventory/1663462594-paper-poster-11x17-tt-toga.jpg",
+      "material": "Paper poster",
+      "size": "11x17",
+      "status": "matched",
+      "matched_artwork": "1157682858-holographic-print-holographic-ecchi-toga-flash.jpg",
+      "source": "existing catalog image",
+      "score": "170.0",
+      "match_note": "override match: ecchi-toga-flash"
     },
     {
       "id": 3726716797,
@@ -1074,6 +1228,30 @@
       "match_note": "override match: Toga_Tsu_grayscale"
     },
     {
+      "id": 2669193670,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/2669193670-metal-print-12x18-fairytail-cast.jpg",
+      "material": "Metal print",
+      "size": "12x18",
+      "status": "matched",
+      "matched_artwork": "mavisposter.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "160.0",
+      "match_note": "override match: mavisposter"
+    },
+    {
+      "id": 4096943604,
+      "name": "Pink Manga Cover Toga",
+      "image": "/prints/current-inventory/4096943604-metal-print-12x18-pink-manga-cover-toga.jpg",
+      "material": "Metal print",
+      "size": "12x18",
+      "status": "matched",
+      "matched_artwork": "Toga_Manga_Cover.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "160.0",
+      "match_note": "override match: Toga_Manga_Cover"
+    },
+    {
       "id": 1193800394,
       "name": "Toga Daylon Red",
       "image": "/prints/current-inventory/1193800394-metal-print-12x18-toga-daylon-red.jpg",
@@ -1096,6 +1274,18 @@
       "source": "artwork zip",
       "score": "160.0",
       "match_note": "override match: Asia_DXDHUG"
+    },
+    {
+      "id": 531936563,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/531936563-metal-print-10x12-fairytail-cast.jpg",
+      "material": "Metal print",
+      "size": "10x12",
+      "status": "matched",
+      "matched_artwork": "mavisposter.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "160.0",
+      "match_note": "override match: mavisposter"
     },
     {
       "id": 698420662,
@@ -1194,6 +1384,18 @@
       "match_note": "override match: AsiaCLOSEUP_card"
     },
     {
+      "id": 1233509092,
+      "name": "Asia Swimsuit",
+      "image": "/prints/current-inventory/1233509092-metal-print-6x9-asia-swimsuit.jpg",
+      "material": "Metal print",
+      "size": "6x9",
+      "status": "matched",
+      "matched_artwork": "Asia_BloodArtisan.jpg",
+      "source": "artwork zip",
+      "score": "160.0",
+      "match_note": "override match: Asia_BloodArtisan"
+    },
+    {
       "id": 3951056286,
       "name": "Asia Xenovia Leash",
       "image": "/prints/current-inventory/3951056286-metal-print-6x9-asia-xenovia-leash.jpg",
@@ -1288,6 +1490,18 @@
       "source": "artwork zip",
       "score": "100.0",
       "match_note": "tokens 1/1; sequence 1.00"
+    },
+    {
+      "id": 3586057916,
+      "name": "FairyTail Cast",
+      "image": "/prints/current-inventory/3586057916-metal-print-6x9-fairytail-cast.jpg",
+      "material": "Metal print",
+      "size": "6x9",
+      "status": "matched",
+      "matched_artwork": "mavisposter.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "160.0",
+      "match_note": "override match: mavisposter"
     },
     {
       "id": 2746585973,
@@ -1386,6 +1600,18 @@
       "match_note": "override match: TogaRAREcard_6x9"
     },
     {
+      "id": 1119332136,
+      "name": "Uraka V Toga Cover red bg",
+      "image": "/prints/current-inventory/1119332136-metal-print-6x9-uraka-v-toga-cover-red-bg.jpg",
+      "material": "Metal print",
+      "size": "6x9",
+      "status": "matched",
+      "matched_artwork": "TogaOcha_Cover_WhiteBG.jpg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "160.0",
+      "match_note": "override match: TogaOcha_Cover_WhiteBG"
+    },
+    {
       "id": 2811808333,
       "name": "Asia Card J",
       "image": "/prints/current-inventory/2811808333-metal-trading-card-trading-card-asia-card-j.jpg",
@@ -1444,6 +1670,18 @@
       "source": "artwork zip",
       "score": "182.0",
       "match_note": "override match: Asia_Lvl4-Card"
+    },
+    {
+      "id": 2384325203,
+      "name": "Asia Swimsuit",
+      "image": "/prints/current-inventory/2384325203-metal-trading-card-trading-card-asia-swimsuit.jpg",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "matched",
+      "matched_artwork": "Asia_BloodArtisan.jpg",
+      "source": "artwork zip",
+      "score": "160.0",
+      "match_note": "override match: Asia_BloodArtisan"
     },
     {
       "id": 3104933290,
@@ -1540,6 +1778,18 @@
       "source": "artwork zip",
       "score": "182.0",
       "match_note": "override match: Minatsuki_DeathCard"
+    },
+    {
+      "id": 34238197,
+      "name": "Devil Toga",
+      "image": "/prints/current-inventory/34238197-metal-trading-card-trading-card-devil-toga.jpg",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "matched",
+      "matched_artwork": "Toga_TC_6Power.jpg",
+      "source": "artwork zip",
+      "score": "182.0",
+      "match_note": "override match: Toga_TC_6Power"
     },
     {
       "id": 729782330,
@@ -1657,7 +1907,7 @@
       "size": "trading card",
       "status": "matched",
       "matched_artwork": "Mavis_Forest.jpeg",
-      "source": "artwork zip",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
       "score": "160.0",
       "match_note": "override match: Mavis_Forest"
     },
@@ -1708,6 +1958,18 @@
       "source": "artwork zip",
       "score": "182.0",
       "match_note": "override match: TogawPower_CARD"
+    },
+    {
+      "id": 1880408365,
+      "name": "Saki The World",
+      "image": "/prints/current-inventory/1880408365-metal-trading-card-trading-card-saki-the-world.jpg",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "matched",
+      "matched_artwork": "Saki_Micha.jpg",
+      "source": "corrections: Corrections",
+      "score": "160.0",
+      "match_note": "override match: Saki_Micha"
     },
     {
       "id": 3373850721,
@@ -1768,6 +2030,30 @@
       "source": "artwork zip",
       "score": "96.0",
       "match_note": "tokens 2/2; sequence 0.58"
+    },
+    {
+      "id": 1006430193,
+      "name": "Toga in the Middle",
+      "image": "/prints/current-inventory/1006430193-metal-trading-card-trading-card-toga-in-the-middle.jpg",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "matched",
+      "matched_artwork": "Toga_SPLIT.jpg",
+      "source": "corrections zip: Standard 11x17 Posters.zip",
+      "score": "160.0",
+      "match_note": "override match: Toga_SPLIT"
+    },
+    {
+      "id": 1758596449,
+      "name": "Toga MVA Cover",
+      "image": "/prints/current-inventory/1758596449-metal-trading-card-trading-card-toga-mva-cover.jpg",
+      "material": "Metal trading card",
+      "size": "trading card",
+      "status": "matched",
+      "matched_artwork": "Toga_Manga_Cover.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "160.0",
+      "match_note": "override match: Toga_Manga_Cover"
     },
     {
       "id": 3183190345,
@@ -1864,28 +2150,6 @@
       "match_note": "tokens 1/2; sequence 0.45"
     },
     {
-      "name": "Pink Shadows Mavis",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "1148734571-holographic-print-holographic-forest-mavis.jpg",
-      "source": "existing catalog image",
-      "score": "7.1",
-      "match_note": "tokens 1/3; sequence 0.31"
-    },
-    {
-      "name": "Red Black White Toga",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "1260659485-holographic-print-holographic-toga-dabi-black-white.png",
-      "source": "existing catalog image",
-      "score": "52.9",
-      "match_note": "tokens 3/4; sequence 0.37"
-    },
-    {
       "name": "Snowy Mavis",
       "material": "Paper poster",
       "size": "11x17",
@@ -1895,28 +2159,6 @@
       "source": "artwork zip",
       "score": "8.3",
       "match_note": "tokens 1/2; sequence 0.43"
-    },
-    {
-      "name": "Toga Devil",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "TOGA.DOLLS.png",
-      "source": "artwork zip",
-      "score": "61.6",
-      "match_note": "tokens 1/2; sequence 0.70"
-    },
-    {
-      "name": "TT Toga",
-      "material": "Paper poster",
-      "size": "11x17",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "2046891904-paper-print-11x17-holiday-toga-seasonal.jpg",
-      "source": "existing catalog image",
-      "score": "30.6",
-      "match_note": "tokens 1/2; sequence 0.19"
     },
     {
       "name": "Eden of the East",
@@ -1952,59 +2194,15 @@
       "match_note": "tokens 2/3; sequence 0.58"
     },
     {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "12x18",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "",
-      "source": "",
-      "score": "",
-      "match_note": "No candidate artwork"
-    },
-    {
-      "name": "Pink Manga Cover Toga",
-      "material": "Metal print",
-      "size": "12x18",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "Toga_Pink.png",
-      "source": "artwork zip",
-      "score": "66.7",
-      "match_note": "tokens 2/3; sequence 0.34"
-    },
-    {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "10x12",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "",
-      "source": "",
-      "score": "",
-      "match_note": "No candidate artwork"
-    },
-    {
       "name": "MVA Cover",
       "material": "Metal print",
       "size": "10x12",
       "status": "needs artwork review",
       "image": "",
-      "matched_artwork": "",
-      "source": "",
-      "score": "",
-      "match_note": "No candidate artwork"
-    },
-    {
-      "name": "Asia Swimsuit",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "AsiaCLOSEUP_card.jpg",
-      "source": "artwork zip",
-      "score": "19.3",
-      "match_note": "tokens 1/2; sequence 0.56"
+      "matched_artwork": "Toga_Manga_Cover.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "64.8",
+      "match_note": "tokens 1/2; sequence 0.74"
     },
     {
       "name": "Asia Temperence",
@@ -2038,17 +2236,6 @@
       "source": "nested zip: koby_tribute_print_files.zip",
       "score": "32.6",
       "match_note": "tokens 1/5; sequence 0.46"
-    },
-    {
-      "name": "FairyTail Cast",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "",
-      "source": "",
-      "score": "",
-      "match_note": "No candidate artwork"
     },
     {
       "name": "Lovely Smile",
@@ -2128,17 +2315,6 @@
       "match_note": "tokens 1/5; sequence 0.46"
     },
     {
-      "name": "Uraka V Toga Cover red bg",
-      "material": "Metal print",
-      "size": "6x9",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "Toga_daylon_Red.jpeg",
-      "source": "artwork zip",
-      "score": "42.9",
-      "match_note": "tokens 2/6; sequence 0.49"
-    },
-    {
       "name": "Aria Chariot",
       "material": "Metal trading card",
       "size": "trading card",
@@ -2148,17 +2324,6 @@
       "source": "",
       "score": "",
       "match_note": "No candidate artwork"
-    },
-    {
-      "name": "Asia Swimsuit",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "AsiaCLOSEUP_card.jpg",
-      "source": "artwork zip",
-      "score": "41.3",
-      "match_note": "tokens 1/2; sequence 0.56"
     },
     {
       "name": "Asia Temperance",
@@ -2203,17 +2368,6 @@
       "source": "nested zip: koby_tribute_print_files.zip",
       "score": "52.0",
       "match_note": "tokens 1/4; sequence 0.55"
-    },
-    {
-      "name": "Devil Toga",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "TogawPower_CARD.png",
-      "source": "artwork zip",
-      "score": "44.8",
-      "match_note": "tokens 1/2; sequence 0.60"
     },
     {
       "name": "Eri Empress",
@@ -2370,17 +2524,6 @@
       "match_note": "No candidate artwork"
     },
     {
-      "name": "Saki The World",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "Saki_Micah_Small.jpg",
-      "source": "artwork zip",
-      "score": "16.9",
-      "match_note": "tokens 1/3; sequence 0.53"
-    },
-    {
       "name": "Suzuka Strength",
       "material": "Metal trading card",
       "size": "trading card",
@@ -2425,17 +2568,6 @@
       "match_note": "tokens 1/2; sequence 0.52"
     },
     {
-      "name": "Toga in the Middle",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "TogaRARE_ENG_TC.jpg",
-      "source": "artwork zip",
-      "score": "37.4",
-      "match_note": "tokens 1/4; sequence 0.52"
-    },
-    {
       "name": "Toga in the Way",
       "material": "Metal trading card",
       "size": "trading card",
@@ -2458,17 +2590,6 @@
       "match_note": "tokens 1/3; sequence 0.53"
     },
     {
-      "name": "Toga MVA Cover",
-      "material": "Metal trading card",
-      "size": "trading card",
-      "status": "needs artwork review",
-      "image": "",
-      "matched_artwork": "Toga_TC_6Power.jpg",
-      "source": "artwork zip",
-      "score": "52.9",
-      "match_note": "tokens 1/3; sequence 0.69"
-    },
-    {
       "name": "Toga Thank You-End Scene",
       "material": "Metal trading card",
       "size": "trading card",
@@ -2485,10 +2606,10 @@
       "size": "trading card",
       "status": "needs artwork review",
       "image": "",
-      "matched_artwork": "Toga_TC_6Power.jpg",
-      "source": "artwork zip",
-      "score": "53.2",
-      "match_note": "tokens 1/2; sequence 0.70"
+      "matched_artwork": "Toga_Manga_Cover.jpg",
+      "source": "corrections zip: Large Metal Prints.zip",
+      "score": "75.4",
+      "match_note": "tokens 1/2; sequence 0.86"
     }
   ]
 }

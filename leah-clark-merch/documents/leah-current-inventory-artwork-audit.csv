@@ -2,20 +2,24 @@ name,material,size,status,image,matched_artwork,source,score,match_note
 Asia Argento Nun,Paper poster,11x17,matched,/prints/current-inventory/3107789476-paper-poster-11x17-asia-argento-nun.jpg,asiaNUN-85x11.png,artwork zip,160.0,override match: asiaNUN-85x11
 Asia Clovers,Paper poster,11x17,matched,/prints/current-inventory/1401390015-paper-poster-11x17-asia-clovers.jpg,Asia_Clovers.png,artwork zip,160.0,override match: Asia_Clovers
 Black Mask Toga,Paper poster,11x17,matched,/prints/current-inventory/3034021010-paper-poster-11x17-black-mask-toga.jpg,1278163348-holographic-print-holographic-toga-black-mask.png,existing catalog image,106.0,tokens 3/3; sequence 0.31
-Forest Mavis,Paper poster,11x17,matched,/prints/current-inventory/2195673667-paper-poster-11x17-forest-mavis.jpg,1148734571-holographic-print-holographic-forest-mavis.jpg,existing catalog image,106.0,tokens 2/2; sequence 0.41
+Forest Mavis,Paper poster,11x17,matched,/prints/current-inventory/2195673667-paper-poster-11x17-forest-mavis.jpg,Mavis_Forest.jpeg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: Mavis_Forest
 Kob_Tohru_Omurice,Paper poster,11x17,matched,/prints/current-inventory/3042366591-paper-poster-11x17-kob-tohru-omurice.jpg,Kob_Tohru_Omurice.png,artwork zip,160.0,override match: Kob_Tohru_Omurice
 Kobayashi Gift,Paper poster,11x17,matched,/prints/current-inventory/691670768-paper-poster-11x17-kobayashi-gift.jpg,Kobayashi_w_dragons.png,artwork zip,160.0,override match: Kobayashi_w_dragons
 Lisa Frank Toga,Paper poster,11x17,matched,/prints/current-inventory/2188702550-paper-poster-11x17-lisa-frank-toga.jpg,Toga_LisaFrank.png,artwork zip,160.0,override match: Toga_LisaFrank
 Mavis and Zeref Close,Paper poster,11x17,matched,/prints/current-inventory/2528009197-paper-poster-11x17-mavis-and-zeref-close.jpg,Mavis_Zeref_Close.jpg,artwork zip,160.0,override match: Mavis_Zeref_Close
 One Piece Duo,Paper poster,11x17,matched,/prints/current-inventory/1503566632-paper-poster-11x17-one-piece-duo.jpg,2012455711-paper-print-11x17-one-piece-duo.png,existing catalog image,204.0,override match: one-piece-duo
+Pink Shadows Mavis,Paper poster,11x17,matched,/prints/current-inventory/3631937049-paper-poster-11x17-pink-shadows-mavis.jpg,1148734571-holographic-print-holographic-forest-mavis.jpg,existing catalog image,170.0,override match: forest-mavis
+Red Black White Toga,Paper poster,11x17,matched,/prints/current-inventory/765856435-paper-poster-11x17-red-black-white-toga.jpg,Himiko Toga  Mask 2.jpg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: Himiko Toga  Mask 2
 Toga Black Mask,Paper poster,11x17,matched,/prints/current-inventory/57781581-paper-poster-11x17-toga-black-mask.jpg,1278163348-holographic-print-holographic-toga-black-mask.png,existing catalog image,170.0,override match: toga-black-mask
 Toga Cammie PINK,Paper poster,11x17,matched,/prints/current-inventory/1629934764-paper-poster-11x17-toga-cammie-pink.jpg,TOGA.CAMIE.png,artwork zip,160.0,override match: TOGA.CAMI
 Toga Dabi Black White,Paper poster,11x17,matched,/prints/current-inventory/1665010559-paper-poster-11x17-toga-dabi-black-white.jpg,1260659485-holographic-print-holographic-toga-dabi-black-white.png,existing catalog image,170.0,override match: toga-dabi-black-white
+Toga Devil,Paper poster,11x17,matched,/prints/current-inventory/3482750316-paper-poster-11x17-toga-devil.jpg,Toga_TC_6Power.jpg,artwork zip,160.0,override match: Toga_TC_6Power
 Toga Dolls,Paper poster,11x17,matched,/prints/current-inventory/698950019-paper-poster-11x17-toga-dolls.jpg,TOGA.DOLLS.png,artwork zip,160.0,override match: TOGA.DOLLS
 Toga Neon,Paper poster,11x17,matched,/prints/current-inventory/3748191632-paper-poster-11x17-toga-neon.jpg,Toga_Neon_11x17_fullbleed.jpg,artwork zip,182.0,override match: Toga_Neon_11x17
 Toga Ochaco Point,Paper poster,11x17,matched,/prints/current-inventory/3050601870-paper-poster-11x17-toga-ochaco-point.jpg,TogaChaco_insert.jpg,artwork zip,160.0,override match: TogaChaco_insert
 Toga Trail,Paper poster,11x17,matched,/prints/current-inventory/1308737101-paper-poster-11x17-toga-trail.jpg,toga_trail_6x9_300dpi.jpg,artwork zip,160.0,override match: toga_trail_6x9
-Toga Twice Dance,Paper poster,11x17,matched,/prints/current-inventory/415087461-paper-poster-11x17-toga-twice-dance.jpg,togatwice_11x17_landscape.jpg,artwork zip,182.0,override match: togatwice_11x17
+Toga Twice Dance,Paper poster,11x17,matched,/prints/current-inventory/415087461-paper-poster-11x17-toga-twice-dance.jpg,TogaTwice_dance_11x17_fix.png,corrections zip: Standard 11x17 Posters.zip,182.0,override match: TogaTwice_dance_11x17_fix
+TT Toga,Paper poster,11x17,matched,/prints/current-inventory/1663462594-paper-poster-11x17-tt-toga.jpg,1157682858-holographic-print-holographic-ecchi-toga-flash.jpg,existing catalog image,170.0,override match: ecchi-toga-flash
 Baka and Test_Minami,Paper print,8.5x11,matched,/prints/current-inventory/3726716797-paper-print-8-5x11-baka-and-test-minami.jpg,Minami_8511.jpg,artwork zip,182.0,override match: Minami_8511
 Ecchi Asia Sitting,Paper print,8.5x11,matched,/prints/current-inventory/4225532272-paper-print-8-5x11-ecchi-asia-sitting.jpg,Asia_Konoko_SittingCard.png,artwork zip,160.0,override match: Asia_Konoko_SittingCard
 Elze- Smartphone,Paper print,8.5x11,matched,/prints/current-inventory/1487932166-paper-print-8-5x11-elze-smartphone.jpg,elze_8.5x11_300dpi.png,artwork zip,182.0,override match: elze_8.5x11
@@ -31,8 +35,11 @@ Toga Pink Hearts,Holographic poster,11x17,matched,/prints/current-inventory/4141
 Toga Sparkle,Holographic poster,11x17,matched,/prints/current-inventory/1210835275-holographic-poster-11x17-toga-sparkle.jpg,Toga_Sparkle.jpg,artwork zip,162.0,override match: Toga_Sparkle.jpg
 Toga Sparkle Purple,Holographic poster,11x17,matched,/prints/current-inventory/4028629664-holographic-poster-11x17-toga-sparkle-purple.jpg,Toga_Sparkle_Purple.jpg,artwork zip,162.0,override match: Toga_Sparkle_Purple
 Toga Tsu Grayscale,Holographic poster,11x17,matched,/prints/current-inventory/2069361806-holographic-poster-11x17-toga-tsu-grayscale.jpg,Toga_Tsu_grayscale.png,artwork zip,162.0,override match: Toga_Tsu_grayscale
+FairyTail Cast,Metal print,12x18,matched,/prints/current-inventory/2669193670-metal-print-12x18-fairytail-cast.jpg,mavisposter.jpg,corrections zip: Large Metal Prints.zip,160.0,override match: mavisposter
+Pink Manga Cover Toga,Metal print,12x18,matched,/prints/current-inventory/4096943604-metal-print-12x18-pink-manga-cover-toga.jpg,Toga_Manga_Cover.jpg,corrections zip: Large Metal Prints.zip,160.0,override match: Toga_Manga_Cover
 Toga Daylon Red,Metal print,12x18,matched,/prints/current-inventory/1193800394-metal-print-12x18-toga-daylon-red.jpg,Toga_daylon_Red.jpeg,artwork zip,160.0,override match: Toga_daylon_Red
 DXD Hug,Metal print,10x12,matched,/prints/current-inventory/602992647-metal-print-10x12-dxd-hug.jpg,Asia_DXDHUG.jpg,artwork zip,160.0,override match: Asia_DXDHUG
+FairyTail Cast,Metal print,10x12,matched,/prints/current-inventory/531936563-metal-print-10x12-fairytail-cast.jpg,mavisposter.jpg,corrections zip: Large Metal Prints.zip,160.0,override match: mavisposter
 Kobayashi Kabob,Metal print,10x12,matched,/prints/current-inventory/698420662-metal-print-10x12-kobayashi-kabob.jpg,Koba_Kabob.png,artwork zip,160.0,override match: Koba_Kabob
 Lisa Frank Toga,Metal print,10x12,matched,/prints/current-inventory/4041940752-metal-print-10x12-lisa-frank-toga.jpg,Toga_LisaFrank.png,artwork zip,160.0,override match: Toga_LisaFrank
 Mavis Zeref Scene,Metal print,10x12,matched,/prints/current-inventory/1536708543-metal-print-10x12-mavis-zeref-scene.jpg,Mavis_Zeref_Scene.png,artwork zip,160.0,override match: Mavis_Zeref_Scene
@@ -41,6 +48,7 @@ Toga Ochaco AWK Hug,Metal print,10x12,matched,/prints/current-inventory/79847350
 Toga Pink Hearts,Metal print,10x12,matched,/prints/current-inventory/3873703915-metal-print-10x12-toga-pink-hearts.jpg,Toga_Pink.png,artwork zip,160.0,override match: Toga_Pink
 Asia Card J,Metal print,6x9,matched,/prints/current-inventory/658678016-metal-print-6x9-asia-card-j.jpg,Asia_Card_J.png,artwork zip,100.0,tokens 2/2; sequence 1.00
 Asia Closeup Card Art,Metal print,6x9,matched,/prints/current-inventory/1073674892-metal-print-6x9-asia-closeup-card-art.jpg,AsiaCLOSEUP_card.jpg,artwork zip,160.0,override match: AsiaCLOSEUP_card
+Asia Swimsuit,Metal print,6x9,matched,/prints/current-inventory/1233509092-metal-print-6x9-asia-swimsuit.jpg,Asia_BloodArtisan.jpg,artwork zip,160.0,override match: Asia_BloodArtisan
 Asia Xenovia Leash,Metal print,6x9,matched,/prints/current-inventory/3951056286-metal-print-6x9-asia-xenovia-leash.jpg,Asia_Xenovia_Leash.jpg,artwork zip,160.0,override match: Asia_Xenovia_Leash
 Asia Xenovia Sparkly,Metal print,6x9,matched,/prints/current-inventory/1421826245-metal-print-6x9-asia-xenovia-sparkly.jpg,Asia_Xenovia_Sparkly.png,artwork zip,160.0,override match: Asia_Xenovia_Sparkly
 Blair_Maka_MangaPanel,Metal print,6x9,matched,/prints/current-inventory/1287602772-metal-print-6x9-blair-maka-mangapanel.jpg,Blair_Maka_Panel_Page_.png,artwork zip,160.0,override match: Blair_Maka_Panel_Page_
@@ -49,6 +57,7 @@ Blood Artisan Blair,Metal print,6x9,matched,/prints/current-inventory/3269733603
 Coby Tribute Card,Metal print,6x9,matched,/prints/current-inventory/3671714371-metal-print-6x9-coby-tribute-card.jpg,koby_tribute_trading_card_with_bleed.png,nested zip: koby_tribute_print_files.zip,160.0,override match: koby_tribute_trading_card
 Dragon Maid Nap,Metal print,6x9,matched,/prints/current-inventory/429265287-metal-print-6x9-dragon-maid-nap.jpg,Kob_Tohru_NAP.jpg,artwork zip,160.0,override match: Kob_Tohru_NAP
 DXD Card Art,Metal print,6x9,matched,/prints/current-inventory/1194598503-metal-print-6x9-dxd-card-art.jpg,DXD_Card_Art.jpg,artwork zip,100.0,tokens 1/1; sequence 1.00
+FairyTail Cast,Metal print,6x9,matched,/prints/current-inventory/3586057916-metal-print-6x9-fairytail-cast.jpg,mavisposter.jpg,corrections zip: Large Metal Prints.zip,160.0,override match: mavisposter
 Maron- Not Bulma,Metal print,6x9,matched,/prints/current-inventory/2746585973-metal-print-6x9-maron-not-bulma.jpg,maron_not_bulma_6x9_bleed_6.25x9.25in_300dpi.png,artwork zip,182.0,override match: maron_not_bulma_6x9
 Mavis Zeref Touch,Metal print,6x9,matched,/prints/current-inventory/3949902989-metal-print-6x9-mavis-zeref-touch.jpg,Mavis_Zeref_Touch.png,artwork zip,160.0,override match: Mavis_Zeref_Touch
 Miss Doublefinger Card Art,Metal print,6x9,matched,/prints/current-inventory/2004531536-metal-print-6x9-miss-doublefinger-card-art.jpg,miss_doublefinger_6x9_with_bleed_300dpi.png,artwork zip,182.0,override match: miss_doublefinger_6x9
@@ -57,11 +66,13 @@ Star Mavis,Metal print,6x9,matched,/prints/current-inventory/430369640-metal-pri
 Toga #6 Coat Card Art,Metal print,6x9,matched,/prints/current-inventory/3998479041-metal-print-6x9-toga-6-coat-card-art.jpg,TogaCard6_6x9.jpg,artwork zip,182.0,override match: TogaCard6_6x9
 Toga Goth,Metal print,6x9,matched,/prints/current-inventory/2899905697-metal-print-6x9-toga-goth.jpg,toga_goth_8.5x11_300dpi.jpg,artwork zip,96.0,tokens 2/2; sequence 0.58
 Toga Rare Card,Metal print,6x9,matched,/prints/current-inventory/1349057464-metal-print-6x9-toga-rare-card.jpg,TogaRAREcard_6x9.jpg,artwork zip,182.0,override match: TogaRAREcard_6x9
+Uraka V Toga Cover red bg,Metal print,6x9,matched,/prints/current-inventory/1119332136-metal-print-6x9-uraka-v-toga-cover-red-bg.jpg,TogaOcha_Cover_WhiteBG.jpg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: TogaOcha_Cover_WhiteBG
 Asia Card J,Metal trading card,trading card,matched,/prints/current-inventory/2811808333-metal-trading-card-trading-card-asia-card-j.jpg,Asia_Card_J.png,artwork zip,122.0,tokens 2/2; sequence 1.00
 Asia Closeup Card Art,Metal trading card,trading card,matched,/prints/current-inventory/1784411290-metal-trading-card-trading-card-asia-closeup-card-art.jpg,AsiaCLOSEUP_card.jpg,artwork zip,182.0,override match: AsiaCLOSEUP_card
 Asia Clover,Metal trading card,trading card,matched,/prints/current-inventory/1341047880-metal-trading-card-trading-card-asia-clover.jpg,Asia_Clovers.png,artwork zip,160.0,override match: Asia_Clovers
 Asia Konako Card Art,Metal trading card,trading card,matched,/prints/current-inventory/342108241-metal-trading-card-trading-card-asia-konako-card-art.jpg,Asia_Konako_CardART.png,artwork zip,182.0,override match: Asia_Konako_CardART
 Asia lvl 4 card,Metal trading card,trading card,matched,/prints/current-inventory/1436320751-metal-trading-card-trading-card-asia-lvl-4-card.jpg,Asia_Lvl4-Card.jpg,artwork zip,182.0,override match: Asia_Lvl4-Card
+Asia Swimsuit,Metal trading card,trading card,matched,/prints/current-inventory/2384325203-metal-trading-card-trading-card-asia-swimsuit.jpg,Asia_BloodArtisan.jpg,artwork zip,160.0,override match: Asia_BloodArtisan
 Asia Xenovia DXD,Metal trading card,trading card,matched,/prints/current-inventory/3104933290-metal-trading-card-trading-card-asia-xenovia-dxd.jpg,Asia_Xenovia-DXD.jpg,artwork zip,160.0,override match: Asia_Xenovia-DXD
 Asia Xenovia leash,Metal trading card,trading card,matched,/prints/current-inventory/715444302-metal-trading-card-trading-card-asia-xenovia-leash.jpg,Asia_Xenovia_Leash.jpg,artwork zip,160.0,override match: Asia_Xenovia_Leash
 Bathtub Blair,Metal trading card,trading card,matched,/prints/current-inventory/197512314-metal-trading-card-trading-card-bathtub-blair.jpg,400650485-paper-print-8-5x11-bathtub-blair.png,existing catalog image,96.0,tokens 2/2; sequence 0.51
@@ -70,6 +81,7 @@ Blair_Maka_Panel,Metal trading card,trading card,matched,/prints/current-invento
 Blood Artisan Asia,Metal trading card,trading card,matched,/prints/current-inventory/1163688995-metal-trading-card-trading-card-blood-artisan-asia.jpg,Asia_BloodArtisan.jpg,artwork zip,160.0,override match: Asia_BloodArtisan
 Blood Artisan Blair,Metal trading card,trading card,matched,/prints/current-inventory/3944105749-metal-trading-card-trading-card-blood-artisan-blair.jpg,Blair_BloodArtisan_810.jpg,artwork zip,160.0,override match: Blair_BloodArtisan
 Death Minatsuki,Metal trading card,trading card,matched,/prints/current-inventory/1823232763-metal-trading-card-trading-card-death-minatsuki.jpg,Minatsuki_DeathCard.png,artwork zip,182.0,override match: Minatsuki_DeathCard
+Devil Toga,Metal trading card,trading card,matched,/prints/current-inventory/34238197-metal-trading-card-trading-card-devil-toga.jpg,Toga_TC_6Power.jpg,artwork zip,182.0,override match: Toga_TC_6Power
 DoubleFinger Nami Card Art,Metal trading card,trading card,matched,/prints/current-inventory/729782330-metal-trading-card-trading-card-doublefinger-nami-card-art.jpg,nami_vs_miss_doublefinger_metal_card_trading_card_with_bleed_300dpi.jpg,artwork zip,130.0,tokens 2/2; sequence 0.57
 Elze- The Sun,Metal trading card,trading card,matched,/prints/current-inventory/1884440639-metal-trading-card-trading-card-elze-the-sun.jpg,elze_sun_trading_card_2.5x3.5_300dpi.png,artwork zip,194.0,override match: elze_sun_trading_card
 Homura- Seven of Wands,Metal trading card,trading card,matched,/prints/current-inventory/1593936373-metal-trading-card-trading-card-homura-seven-of-wands.jpg,homura_seven_of_wands_tradingcard_2.5x3.5_300dpi.png,artwork zip,182.0,override match: homura_seven_of_wands_tradingcard
@@ -79,16 +91,19 @@ Koby Tribute Card,Metal trading card,trading card,matched,/prints/current-invent
 Lisa Frank Toga,Metal trading card,trading card,matched,/prints/current-inventory/1260961823-metal-trading-card-trading-card-lisa-frank-toga.jpg,Toga_LisaFrank.png,artwork zip,160.0,override match: Toga_LisaFrank
 Maron Not Bulma,Metal trading card,trading card,matched,/prints/current-inventory/308715684-metal-trading-card-trading-card-maron-not-bulma.jpg,maron_not_bulma_6x9_bleed_6.25x9.25in_300dpi.png,artwork zip,160.0,override match: maron_not_bulma_6x9
 Mavis Adventure,Metal trading card,trading card,matched,/prints/current-inventory/3318673673-metal-trading-card-trading-card-mavis-adventure.jpg,Mavis_Adventure.png,artwork zip,160.0,override match: Mavis_Adventure
-Mavis Forest,Metal trading card,trading card,matched,/prints/current-inventory/2586075243-metal-trading-card-trading-card-mavis-forest.jpg,Mavis_Forest.jpeg,artwork zip,160.0,override match: Mavis_Forest
+Mavis Forest,Metal trading card,trading card,matched,/prints/current-inventory/2586075243-metal-trading-card-trading-card-mavis-forest.jpg,Mavis_Forest.jpeg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: Mavis_Forest
 Mavis Zeref Touch,Metal trading card,trading card,matched,/prints/current-inventory/1849192843-metal-trading-card-trading-card-mavis-zeref-touch.jpg,Mavis_Zeref_Touch.png,artwork zip,160.0,override match: Mavis_Zeref_Touch
 Minami- Queen of Wands,Metal trading card,trading card,matched,/prints/current-inventory/2198287725-metal-trading-card-trading-card-minami-queen-of-wands.jpg,MinamiTCQueen.png,artwork zip,182.0,override match: MinamiTCQueen
 Miss DoubleFinger Card Art,Metal trading card,trading card,matched,/prints/current-inventory/2004552972-metal-trading-card-trading-card-miss-doublefinger-card-art.jpg,miss_doublefinger_trading_card_with_bleed_300dpi.png,artwork zip,194.0,override match: miss_doublefinger_trading_card
 Power and Toga,Metal trading card,trading card,matched,/prints/current-inventory/3001291282-metal-trading-card-trading-card-power-and-toga.jpg,TogawPower_CARD.png,artwork zip,182.0,override match: TogawPower_CARD
+Saki The World,Metal trading card,trading card,matched,/prints/current-inventory/1880408365-metal-trading-card-trading-card-saki-the-world.jpg,Saki_Micha.jpg,corrections: Corrections,160.0,override match: Saki_Micha
 Spy Family Girls,Metal trading card,trading card,matched,/prints/current-inventory/3373850721-metal-trading-card-trading-card-spy-family-girls.jpg,spyxfamily_selfie_trading_card_2.5x3.5_300dpi.png,artwork zip,194.0,override match: spyxfamily_selfie_trading_card
 Star Mavis,Metal trading card,trading card,matched,/prints/current-inventory/38335779-metal-trading-card-trading-card-star-mavis.jpg,Mavis_Star_2.png,artwork zip,160.0,override match: Mavis_Star
 Toga 6 Coat,Metal trading card,trading card,matched,/prints/current-inventory/1918648237-metal-trading-card-trading-card-toga-6-coat.jpg,TogaCard6_TCsize.jpg,artwork zip,194.0,override match: TogaCard6_TCsize
 Toga Black Mask,Metal trading card,trading card,matched,/prints/current-inventory/2479970815-metal-trading-card-trading-card-toga-black-mask.jpg,2838209485-metal-trading-card-trading-card-toga-black-mask.png,existing catalog image,194.0,override match: toga-black-mask
 Toga Goth,Metal trading card,trading card,matched,/prints/current-inventory/4154300878-metal-trading-card-trading-card-toga-goth.jpg,toga_goth_8.5x11_300dpi.jpg,artwork zip,96.0,tokens 2/2; sequence 0.58
+Toga in the Middle,Metal trading card,trading card,matched,/prints/current-inventory/1006430193-metal-trading-card-trading-card-toga-in-the-middle.jpg,Toga_SPLIT.jpg,corrections zip: Standard 11x17 Posters.zip,160.0,override match: Toga_SPLIT
+Toga MVA Cover,Metal trading card,trading card,matched,/prints/current-inventory/1758596449-metal-trading-card-trading-card-toga-mva-cover.jpg,Toga_Manga_Cover.jpg,corrections zip: Large Metal Prints.zip,160.0,override match: Toga_Manga_Cover
 Toga Ochaco Fight Knife,Metal trading card,trading card,matched,/prints/current-inventory/3183190345-metal-trading-card-trading-card-toga-ochaco-fight-knife.jpg,Toga_Ocha_Fight_Knife.png,artwork zip,160.0,override match: Toga_Ocha_Fight_Knife
 Toga RARE card art,Metal trading card,trading card,matched,/prints/current-inventory/2411811680-metal-trading-card-trading-card-toga-rare-card-art.jpg,TogaRARE_ENG_TC.jpg,artwork zip,182.0,override match: TogaRARE_ENG_TC
 Toga RareStab,Metal trading card,trading card,matched,/prints/current-inventory/851418911-metal-trading-card-trading-card-toga-rarestab.jpg,Toga_RareStab_TC.jpg,artwork zip,182.0,override match: Toga_RareStab_TC
@@ -97,23 +112,14 @@ Toga V Ochaco Purple,Metal trading card,trading card,matched,/prints/current-inv
 TogaOchaco_Awk_Hug,Metal trading card,trading card,matched,/prints/current-inventory/4245556048-metal-trading-card-trading-card-togaochaco-awk-hug.jpg,Toga_Ocha_AwkHug.png,artwork zip,85.6,tokens 2/4; sequence 0.97
 Blair Magician,Paper poster,11x17,needs artwork review,,Blair_Pumpkin_Fly.png,artwork zip,21.1,tokens 1/2; sequence 0.58
 Pink Mavis,Paper poster,11x17,needs artwork review,,Mavis_Star_2.png,artwork zip,10.0,tokens 1/2; sequence 0.45
-Pink Shadows Mavis,Paper poster,11x17,needs artwork review,,1148734571-holographic-print-holographic-forest-mavis.jpg,existing catalog image,7.1,tokens 1/3; sequence 0.31
-Red Black White Toga,Paper poster,11x17,needs artwork review,,1260659485-holographic-print-holographic-toga-dabi-black-white.png,existing catalog image,52.9,tokens 3/4; sequence 0.37
 Snowy Mavis,Paper poster,11x17,needs artwork review,,Mavis_Star_2.png,artwork zip,8.3,tokens 1/2; sequence 0.43
-Toga Devil,Paper poster,11x17,needs artwork review,,TOGA.DOLLS.png,artwork zip,61.6,tokens 1/2; sequence 0.70
-TT Toga,Paper poster,11x17,needs artwork review,,2046891904-paper-print-11x17-holiday-toga-seasonal.jpg,existing catalog image,30.6,tokens 1/2; sequence 0.19
 Eden of the East,Paper print,8.5x11,needs artwork review,,,,,No candidate artwork
 Future Diary Murmur,Paper print,8.5x11,needs artwork review,,,,,No candidate artwork
 Blair Fly Moon,Holographic poster,11x17,needs artwork review,,Blair_Pumpkin_Fly.png,artwork zip,53.1,tokens 2/3; sequence 0.58
-FairyTail Cast,Metal print,12x18,needs artwork review,,,,,No candidate artwork
-Pink Manga Cover Toga,Metal print,12x18,needs artwork review,,Toga_Pink.png,artwork zip,66.7,tokens 2/3; sequence 0.34
-FairyTail Cast,Metal print,10x12,needs artwork review,,,,,No candidate artwork
-MVA Cover,Metal print,10x12,needs artwork review,,,,,No candidate artwork
-Asia Swimsuit,Metal print,6x9,needs artwork review,,AsiaCLOSEUP_card.jpg,artwork zip,19.3,tokens 1/2; sequence 0.56
+MVA Cover,Metal print,10x12,needs artwork review,,Toga_Manga_Cover.jpg,corrections zip: Large Metal Prints.zip,64.8,tokens 1/2; sequence 0.74
 Asia Temperence,Metal print,6x9,needs artwork review,,asia_Card_English.png,artwork zip,15.6,tokens 1/2; sequence 0.52
 Blood Artisan Toga,Metal print,6x9,needs artwork review,,TogawPower_69.jpg,artwork zip,31.7,tokens 1/3; sequence 0.45
 Coby At Least I Tried,Metal print,6x9,needs artwork review,,koby_tribute_6x9_with_bleed.png,nested zip: koby_tribute_print_files.zip,32.6,tokens 1/5; sequence 0.46
-FairyTail Cast,Metal print,6x9,needs artwork review,,,,,No candidate artwork
 Lovely Smile,Metal print,6x9,needs artwork review,,,,,No candidate artwork
 Lovers Toga,Metal print,6x9,needs artwork review,,TogawPower_CARD.png,artwork zip,67.0,tokens 1/2; sequence 0.76
 Magician Blair,Metal print,6x9,needs artwork review,,2699172219-metal-print-large-metal-bathtub-blair.png,existing catalog image,28.0,tokens 1/2; sequence 0.41
@@ -121,14 +127,11 @@ Purple Ochaco,Metal print,6x9,needs artwork review,,220698729-metal-print-large-
 Toga Boyfriend,Metal print,6x9,needs artwork review,,TogaRAREcard_6x9.jpg,artwork zip,34.5,tokens 1/2; sequence 0.48
 Toga Sadness Deep Inside,Metal print,6x9,needs artwork review,,TogaRAREcard_6x9.jpg,artwork zip,32.6,tokens 1/4; sequence 0.46
 Toga Thank You- End Scene,Metal print,6x9,needs artwork review,,TogaRAREcard_6x9.jpg,artwork zip,32.6,tokens 1/5; sequence 0.46
-Uraka V Toga Cover red bg,Metal print,6x9,needs artwork review,,Toga_daylon_Red.jpeg,artwork zip,42.9,tokens 2/6; sequence 0.49
 Aria Chariot,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
-Asia Swimsuit,Metal trading card,trading card,needs artwork review,,AsiaCLOSEUP_card.jpg,artwork zip,41.3,tokens 1/2; sequence 0.56
 Asia Temperance,Metal trading card,trading card,needs artwork review,,asia_Card_English.png,artwork zip,37.6,tokens 1/2; sequence 0.52
 Blair_Color_Card_,Metal trading card,trading card,needs artwork review,,Blair_Manga_Card.png,artwork zip,47.0,tokens 1/2; sequence 0.62
 Blood Artisan Toga,Metal trading card,trading card,needs artwork review,,TogawPower_CARD.png,artwork zip,36.0,tokens 1/3; sequence 0.50
 Coby Join The Marines,Metal trading card,trading card,needs artwork review,,koby_tribute_trading_card_with_bleed.png,nested zip: koby_tribute_print_files.zip,52.0,tokens 1/4; sequence 0.55
-Devil Toga,Metal trading card,trading card,needs artwork review,,TogawPower_CARD.png,artwork zip,44.8,tokens 1/2; sequence 0.60
 Eri Empress,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
 Frenda- Wheel of Fortune,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
 High School Toga,Metal trading card,trading card,needs artwork review,,TogawPower_CARD.png,artwork zip,32.6,tokens 1/3; sequence 0.46
@@ -143,14 +146,11 @@ No Use For Heroes,Metal trading card,trading card,needs artwork review,,,,,No ca
 Nodoka -High Priestess,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
 Ruby High Priestess,Metal trading card,trading card,needs artwork review,,ruby_moonlight_11x17_300dpi.png,artwork zip,5.2,tokens 1/3; sequence 0.40
 Sadness Deep Inside,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
-Saki The World,Metal trading card,trading card,needs artwork review,,Saki_Micah_Small.jpg,artwork zip,16.9,tokens 1/3; sequence 0.53
 Suzuka Strength,Metal trading card,trading card,needs artwork review,,,,,No candidate artwork
 Toga Boyfriend,Metal trading card,trading card,needs artwork review,,TogaRARE_ENG_TC.jpg,artwork zip,44.1,tokens 1/2; sequence 0.59
 Toga Food,Metal trading card,trading card,needs artwork review,,Toga_TC_6Power.jpg,artwork zip,42.3,tokens 1/2; sequence 0.57
 Toga Gucci,Metal trading card,trading card,needs artwork review,,TogaRARE_ENG_TC.jpg,artwork zip,37.9,tokens 1/2; sequence 0.52
-Toga in the Middle,Metal trading card,trading card,needs artwork review,,TogaRARE_ENG_TC.jpg,artwork zip,37.4,tokens 1/4; sequence 0.52
 Toga in the Way,Metal trading card,trading card,needs artwork review,,Toga_RareStab_TC.jpg,artwork zip,40.6,tokens 1/4; sequence 0.55
 Toga Lovely Smile,Metal trading card,trading card,needs artwork review,,TogaRARE_ENG_TC.jpg,artwork zip,38.9,tokens 1/3; sequence 0.53
-Toga MVA Cover,Metal trading card,trading card,needs artwork review,,Toga_TC_6Power.jpg,artwork zip,52.9,tokens 1/3; sequence 0.69
 Toga Thank You-End Scene,Metal trading card,trading card,needs artwork review,,2838209485-metal-trading-card-trading-card-toga-black-mask.png,existing catalog image,35.7,tokens 1/5; sequence 0.36
-Toga-Lovers,Metal trading card,trading card,needs artwork review,,Toga_TC_6Power.jpg,artwork zip,53.2,tokens 1/2; sequence 0.70
+Toga-Lovers,Metal trading card,trading card,needs artwork review,,Toga_Manga_Cover.jpg,corrections zip: Large Metal Prints.zip,75.4,tokens 1/2; sequence 0.86
